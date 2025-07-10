@@ -9,7 +9,6 @@ import {
 } from "./styled";
 import { useState } from "react";
 import SectionInfoLegacy from "../../components/SectionInfoLegacy/SectionInfoLegacy";
-import Timeline from "../../components/Timeline/Timeline";
 
 const Legado = () => {
   const [mostrarContainerPCD, setMostrarContainerPCD] = useState(false);
@@ -50,8 +49,19 @@ const Legado = () => {
           to make a type specimen book. It has survived not only fivpopularised
           in the 1960s with the release of
         </a>
+        <a>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it
+          to make a type specimen book. It has survived not only fivpopularised
+          in the 1960s with the release of
+        </a>
+        <a>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it
+          to make a type specimen book. It has survived not only fivpopularised
+          in the 1960s with the release of
+        </a>
       </ContainerAboutUs>
-      <Timeline />
       <SectionAboutLegado>
         <CardAboutLegado>
           <h1>Projeto PCD</h1>

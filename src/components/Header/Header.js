@@ -34,28 +34,25 @@ export function Header() {
       <img src="./images/logoYc.png" alt="TESTE" />
       <ContainerSection>
         <LinkNav onClick={() => goToPage(navigate, "")}>Home</LinkNav>
+        <LinkNav onClick={() => goToPage(navigate, "quemsomos")}>
+          Quem Somos
+        </LinkNav>
+        <LinkNav onClick={() => goToPage(navigate, "legado")}>Legado</LinkNav>
+       
 
-        {/* Dropdown para "Sobre" */}
-        <DropdownContainer
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          ref={dropdownRef}
-        >
-          <LinkNav>Sobre</LinkNav>
-          {activeDropdown && (
-            <DropdownMenu>
-              <LinkNav onClick={() => goToPage(navigate, "quemsomos")}>
-                Quem Somos
-              </LinkNav>
-              <LinkNav onClick={() => goToPage(navigate, "legado")}>
-                Legado
-              </LinkNav>
-              <LinkNav onClick={() => goToPage(navigate, "unidades")}>
-                Unidades
-              </LinkNav>
-            </DropdownMenu>
-          )}
-        </DropdownContainer>
+        {/* Dropdown para "Sobre"
+        // <DropdownContainer
+        //   onMouseEnter={handleMouseEnter}
+        //   onMouseLeave={handleMouseLeave}
+        //   ref={dropdownRef}
+        // >
+        //   <LinkNav>Sobre</LinkNav>
+        //   {activeDropdown && (
+        //     <DropdownMenu>
+              
+        //     </DropdownMenu>
+        //   )}
+        // </DropdownContainer> */}
 
         <LinkNav onClick={() => goToPage(navigate, "contato")}>Contato</LinkNav>
       </ContainerSection>

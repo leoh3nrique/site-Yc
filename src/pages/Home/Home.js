@@ -10,6 +10,7 @@ import MapComponent from "../../components/Map/Map";
 import Servicos from "../../components/Servicos/Servicos";
 import { ContainerUnidade, SectionUnidade } from "../Unidades/styled";
 import Unidades from "../Unidades/Unidades";
+import CtaSection from "../../components/CtaSection/CtaSection";
 
 function Home() {
   const [selectedUnit, setSelectedUnit] = useState(null);
@@ -22,7 +23,7 @@ function Home() {
       <Servicos />
       <Estatisticas />
       {/* <Carousel images={images} title="Conheça nossas unidades" /> */}
-
+      <CtaSection />
       <Footer />
     </div>
   );

@@ -37,7 +37,7 @@ function WelcomeSection() {
             Funcionários bem alimentados são mais produtivos, felizes e leais à
             sua empresa.
           </Description>
-          <CtaButton>Solicitar Orçamento Gratuito &rarr;</CtaButton>
+          <CtaButton> Entre em Contato &rarr;</CtaButton>
         </LeftColumn>
 
         {/* Coluna da Direita com o Card de Informações */}

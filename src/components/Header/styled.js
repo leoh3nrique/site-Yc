@@ -31,8 +31,9 @@ export const LinkNav = styled.button`
   outline: none;
   color: white;
   position: relative;
+  width: 170px;
 
-  &::after {
+  /* &::after {
     content: "";
     position: absolute;
     left: 0;
@@ -45,7 +46,7 @@ export const LinkNav = styled.button`
 
   &:hover::after {
     width: 100%;
-  }
+  } */
 `;
 
 export const DropdownContainer = styled.div`
