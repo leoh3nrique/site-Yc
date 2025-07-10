@@ -14,6 +14,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Carousel from "../../components/Carousel/Carousel";
+import Estatisticas from "../../components/Estatisticas/Estatisticas";
 
 function AboutUs() {
   // Define os caminhos base para as imagens que estão na pasta public
@@ -130,24 +131,7 @@ function AboutUs() {
           </CardOqueFazemos>
         </SectionOqueFazemos>
 
-        <SectionInformacoes>
-          <CardInformacoes>
-            <img src={coracaoImg} alt="Ícone de coração" />
-            <span>Aproximadamente 100 colaboradores</span>
-          </CardInformacoes>
-          <CardInformacoes>
-            <img src={coracaoImg} alt="Ícone de coração" />
-            <span>8.000 quilos de insumos consumidos</span>
-          </CardInformacoes>
-          <CardInformacoes>
-            <img src={coracaoImg} alt="Ícone de coração" />
-            <span>6 unidades atendidas</span>
-          </CardInformacoes>
-          <CardInformacoes>
-            <img src={coracaoImg} alt="Ícone de coração" />
-            <span>Mais de 9.000 refeições servidas por dia</span>
-          </CardInformacoes>
-        </SectionInformacoes>
+        <Estatisticas/>
 
         {/* <SectionFoodImages>
           <img
