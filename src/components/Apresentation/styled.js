@@ -1,105 +1,152 @@
 import styled from "styled-components";
 
-export const ContainerApresentation = styled.div`
+export const WelcomeContainer = styled.div`
   width: 100%;
-  height: 110vh;
-  background-image: url(${(props) => props.bgImage});
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-
-  /* Adiciona uma cor de fundo (em RGBA) para dar o efeito de escurecer */
-  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% transparente */
-
-  /* Define o modo de mesclagem para escurecer */
-  background-blend-mode: darken;
-`;
-
-export const Apresentation = styled.div`
+  height: 70vh;
+  padding: 60px 20px;
+  position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+`;
+
+export const ContentWrapper = styled.div`
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 110px;
-  h1 {
-    font-family: "Staatliches", sans-serif;
-    font-size: 55px;
-    color: #fb4121;
-    text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
-      1px 1px 0px black;
-  }
-  a {
-    font-size: 55px;
-    color: white;
-    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
-    text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
-      1px 1px 0px black;
+  gap: 60px;
+  max-width: 1300px;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 `;
 
-export const SectionButtons = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 300px;
-  margin: 10px;
-  padding: 10px;
-`;
-
-export const StyledButton = styled.button`
-  font-size: 15px;
-  border: none;
-  background: none;
-  display: inline-block;
-  padding: 10px;
-  margin: 10px;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
+export const LeftColumn = styled.div`
   color: white;
-  background-color: #1bb7d1;
-  border-radius: 5px;
-  width: 110px;
-  height: 60px;
-  transition: background-color 0.3s, color 0.3s;
-
-  &:hover {
-    background: transparent;
-    border: 0.7px solid white;
+  @media (max-width: 1024px) {
+    order: 2; /* Coloca o texto depois do card no mobile */
   }
 `;
 
-export const SectionPlayVideo = styled.div`
-  width: 200px;
+export const RightColumn = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  @media (max-width: 1024px) {
+    order: 1; /* Coloca o card antes do texto no mobile */
+  }
+`;
+
+export const Badge = styled.div`
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fb4121; /* Laranja do projeto */
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #fb4121;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
+
+export const MainTitle = styled.h1`
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: #1bb7d1;
 
   span {
-    color: white;
+    font-weight: 700;
   }
+`;
 
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-  }
+export const Subtitle = styled.h2`
+  font-size: 28px;
+  color: #fb4121; /* Laranja */
+  font-weight: 700;
+  margin-bottom: 20px;
+`;
 
-  img {
-    width: 40%; /* O ícone ocupa 40% do botão */
-    height: auto; /* Mantém a proporção da imagem */
-    filter: brightness(1); /* Brilho normal */
-    transition: filter 0.3s ease; /* Transição suave no hover */
+export const Description = styled.p`
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 30px;
+  color: black;
+  @media (max-width: 1024px) {
+    margin-left: auto;
+    margin-right: auto;
   }
+`;
+
+export const CtaButton = styled.button`
+  background-color: #fb4121; /* Laranja */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+// Card da Direita
+export const InfoCard = styled.div`
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  overflow: hidden;
+`;
+
+export const CardImage = styled.img`
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+`;
+
+export const CardBody = styled.div`
+  padding: 25px;
+  text-align: center;
+`;
+
+export const Rating = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 15px;
+  color: #f39c12; /* Cor de estrela amarela */
+
+  span {
+    color: #34495e; /* Cor do texto de avaliação */
+    font-weight: bold;
+    margin-left: 10px;
+  }
+`;
+
+export const CardTitle = styled.h3`
+  font-size: 22px;
+  color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
+
+export const CardText = styled.p`
+  font-size: 15px;
+  color: #7f8c8d;
+  line-height: 1.6;
 `;

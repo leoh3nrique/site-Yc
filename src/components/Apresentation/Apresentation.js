@@ -1,36 +1,62 @@
 import {
-  Apresentation,
-  ContainerApresentation,
-  SectionButtons,
-  SectionPlayVideo,
-  StyledButton,
+  WelcomeContainer,
+  ContentWrapper,
+  LeftColumn,
+  RightColumn,
+  Badge,
+  MainTitle,
+  Subtitle,
+  Description,
+  CtaButton,
+  InfoCard,
+  CardImage,
+  CardBody,
+  Rating,
+  CardTitle,
+  CardText,
 } from "./styled";
-// import background from ".";
-// import iconPlay from "../../assets/iconPlay.png";
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import { FaStar, FaRegLightbulb } from "react-icons/fa"; // Usando react-icons
 
 function WelcomeSection() {
-  const background = "./images/teste.png";
+  const background = "./images/teste.png"; // Imagem de fundo de batatas fritas
+  const cardImageUrl = "./images/quemsomos/qs1.jpg"; // Imagem para o card da direita
 
   return (
-    <ContainerApresentation bgImage={background}>
-      <Apresentation>
-        <h1> Bem vindo a Yes Cooking</h1>
-        <a>A nossa missão é fazer a missão!</a>
-        <SectionButtons>
-          <StyledButton class="btn-conheca" onclick="scrollToSection()">
-            Conheça
-          </StyledButton>
-          <SectionPlayVideo>
-            <button>
-              
-              <VideoPlayer videoId="dQw4w9WgXcQ" />
-            </button>
-            <span>Assistir Vídeo</span>
-          </SectionPlayVideo>
-        </SectionButtons>
-      </Apresentation>
-    </ContainerApresentation>
+    <WelcomeContainer>
+      <ContentWrapper>
+        {/* Coluna da Esquerda com os Textos */}
+        <LeftColumn>
+          <MainTitle>
+            Bem-vindo à <span>Yes Cooking</span>
+          </MainTitle>
+          <Subtitle>
+            Nutrimos seus funcionários, potencializamos sua empresa!
+          </Subtitle>
+          <Description>
+            Transforme a alimentação corporativa em um diferencial competitivo.
+            Funcionários bem alimentados são mais produtivos, felizes e leais à
+            sua empresa.
+          </Description>
+          <CtaButton>Solicitar Orçamento Gratuito &rarr;</CtaButton>
+        </LeftColumn>
+
+        {/* Coluna da Direita com o Card de Informações */}
+        <RightColumn>
+          <InfoCard>
+            <CardImage src={cardImageUrl} alt="Equipe preparando alimentos" />
+            <CardBody>
+              <CardTitle>
+                Qualidade Comprovada por Centenas de Empresas
+              </CardTitle>
+              <CardText>
+                Desde 2008 oferecendo soluções completas em alimentação
+                corporativa com foco total na satisfação do cliente.
+              </CardText>
+            </CardBody>
+          </InfoCard>
+        </RightColumn>
+      </ContentWrapper>
+    </WelcomeContainer>
   );
 }
 

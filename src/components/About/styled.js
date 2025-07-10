@@ -22,7 +22,7 @@ export const ContainerAbout = styled.div`
   }
 `;
 
-export const ButtonAbout = styled(StyledButton)`
+export const ButtonAbout = styled.button`
   background-color: #1bb7d1;
   &:hover {
     background: #1bb7d1;

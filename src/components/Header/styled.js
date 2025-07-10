@@ -7,7 +7,7 @@ export const ContainerHeader = styled.div`
   align-items: center;
 
   img {
-    width: 260px;
+    width: 145px;
   }
 `;
 
