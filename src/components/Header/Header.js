@@ -1,64 +1,57 @@
-import { useState, useRef } from "react";
+// src/components/Header/Header.js
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { goToPage } from "../../App";
 import {
   ContainerHeader,
-  ContainerSection,
+  NavLinks,
   LinkNav,
   DropdownContainer,
   DropdownMenu,
+  MobileIcon,
+  Logo,
 } from "./styled";
-// import logo from "../../assets/logoYc.png";
-import { goToPage } from "../../App";
-import { useNavigate } from "react-router-dom";
 
 export function Header() {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(false);
-  const dropdownRef = useRef(null);
 
-  // Abre o dropdown ao passar o mouse
-  const handleMouseEnter = () => {
-    setActiveDropdown(true);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Fecha o dropdown com um pequeno delay para evitar sumiço abrupto
-  const handleMouseLeave = () => {
-    setTimeout(() => {
-      if (!dropdownRef.current?.matches(":hover")) {
-        setActiveDropdown(false);
-      }
-    }, 200); // Pequeno delay para evitar fechamento abrupto
+  const handleNavigate = (page) => {
+    goToPage(navigate, page);
+    setIsOpen(false); // Fecha o menu ao navegar
   };
 
   return (
     <ContainerHeader>
-      <img src="./images/logoYc.png" alt="TESTE" />
-      <ContainerSection>
-        <LinkNav onClick={() => goToPage(navigate, "")}>Home</LinkNav>
+      <Logo src="./images/logoYc.png" alt="Yes Cooking Logo" onClick={() => handleNavigate("")} />
+      
+      <MobileIcon onClick={toggleMenu}>
+        {/* Ícone de Hambúrguer/Fechar */}
+        <div />
+        <div />
+        <div />
+      </MobileIcon>
 
-        {/* Dropdown para "Sobre" */}
+      <NavLinks isOpen={isOpen}>
+        <LinkNav onClick={() => handleNavigate("")}>Home</LinkNav>
         <DropdownContainer
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          ref={dropdownRef}
+          onMouseEnter={() => setActiveDropdown(true)}
+          onMouseLeave={() => setActiveDropdown(false)}
         >
           <LinkNav>Sobre</LinkNav>
           {activeDropdown && (
             <DropdownMenu>
-              <LinkNav onClick={() => goToPage(navigate, "quemsomos")}>
-                Quem Somos
-              </LinkNav>
-              <LinkNav onClick={() => goToPage(navigate, "legado")}>
-                Legado
-              </LinkNav>
-              <LinkNav onClick={() => goToPage(navigate, "unidades")}>
-                Unidades
-              </LinkNav>
+              <LinkNav onClick={() => handleNavigate("quemsomos")}>Quem Somos</LinkNav>
+              <LinkNav onClick={() => handleNavigate("legado")}>Legado</LinkNav>
+              <LinkNav onClick={() => handleNavigate("unidades")}>Unidades</LinkNav>
             </DropdownMenu>
           )}
         </DropdownContainer>
-
-        <LinkNav onClick={() => goToPage(navigate, "contato")}>Contato</LinkNav>
-      </ContainerSection>
+        <LinkNav onClick={() => handleNavigate("contato")}>Contato</LinkNav>
+      </NavLinks>
     </ContainerHeader>
   );
 }
