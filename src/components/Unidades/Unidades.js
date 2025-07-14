@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
-import MapComponent from "../../components/Map/Map";
+import { Footer } from "../Footer/Footer";
+import { Header } from "../Header/Header";
+import MapComponent from "../Map/Map";
 import { unidades } from "../../data";
-import Carousel from "../../components/Carousel/Carousel";
+import Carousel from "../Carousel/Carousel";
 import {
   PageContainer,
   HeaderSection,
@@ -31,12 +31,12 @@ const Unidades = () => {
 
   return (
     <>
-      <Header />
       <PageContainer>
         <HeaderSection>
           <MainTitle>Nossas Unidades</MainTitle>
           <Subtitle>
-            Clique em um ponto no mapa para ver fotos e detalhes de cada unidade.
+            Clique em um ponto no mapa para ver fotos e detalhes de cada
+            unidade.
           </Subtitle>
         </HeaderSection>
 
@@ -66,23 +66,34 @@ const Unidades = () => {
 
               <ContactList>
                 <ContactItem>
-                  <Icon><FaMapMarkerAlt /></Icon>
-                  <span><strong>Endereço:</strong> {selectedUnit.endereco}</span>
+                  <Icon>
+                    <FaMapMarkerAlt />
+                  </Icon>
+                  <span>
+                    <strong>Endereço:</strong> {selectedUnit.endereco}
+                  </span>
                 </ContactItem>
                 <ContactItem>
-                  <Icon><FaPhone /></Icon>
-                  <span><strong>Telefone:</strong> {selectedUnit.contato.telefone}</span>
+                  <Icon>
+                    <FaPhone />
+                  </Icon>
+                  <span>
+                    <strong>Telefone:</strong> {selectedUnit.contato.telefone}
+                  </span>
                 </ContactItem>
                 <ContactItem>
-                  <Icon><FaEnvelope /></Icon>
-                  <span><strong>Email:</strong> {selectedUnit.contato.email}</span>
+                  <Icon>
+                    <FaEnvelope />
+                  </Icon>
+                  <span>
+                    <strong>Email:</strong> {selectedUnit.contato.email}
+                  </span>
                 </ContactItem>
               </ContactList>
             </DetailsCard>
           )}
         </ContentGrid>
       </PageContainer>
-      <Footer />
     </>
   );
 };
