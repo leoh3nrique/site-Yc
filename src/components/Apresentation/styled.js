@@ -1,3 +1,4 @@
+// src/components/Apresentation/styled.js
 import styled from "styled-components";
 
 export const ContainerApresentation = styled.div`
@@ -6,12 +7,15 @@ export const ContainerApresentation = styled.div`
   background-image: url(${(props) => props.bgImage});
   background-size: 100% auto;
   background-repeat: no-repeat;
-
-  /* Adiciona uma cor de fundo (em RGBA) para dar o efeito de escurecer */
-  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% transparente */
-
-  /* Define o modo de mesclagem para escurecer */
+  background-position: center; /* Centraliza a imagem */
+  background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: darken;
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 80vh;
+    background-size: cover; /* Cobre a área sem distorcer */
+  }
 `;
 
 export const Apresentation = styled.div`
@@ -20,6 +24,8 @@ export const Apresentation = styled.div`
   justify-content: center;
   align-items: center;
   padding: 110px;
+  text-align: center; /* Centraliza o texto */
+
   h1 {
     font-family: "Staatliches", sans-serif;
     font-size: 55px;
@@ -34,16 +40,33 @@ export const Apresentation = styled.div`
     text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
       1px 1px 0px black;
   }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+    h1 {
+      font-size: 40px;
+    }
+    a {
+      font-size: 24px;
+    }
+  }
 `;
 
 export const SectionButtons = styled.div`
   display: flex;
+  flex-direction: column; /* Empilha os botões */
   justify-content: space-around;
   align-items: center;
-  width: 300px;
+  width: 100%; /* Ocupa a largura toda */
   margin: 10px;
   padding: 10px;
+
+  @media (min-width: 768px) {
+    flex-direction: row; /* Volta para a linha em telas maiores */
+    width: 300px;
+  }
 `;
+
 
 export const StyledButton = styled.button`
   font-size: 15px;

@@ -52,23 +52,19 @@ export const IconMedal = styled.svg.attrs({
 
 // Estilos do Componente
 export const StatsContainer = styled.div`
-  background-color: #f8f9fa; /* Fundo cinza bem claro para dar contraste */
-  padding: 80px 20px;
+  background-color: #f8f9fa;
+  padding: 4rem 5%;
   text-align: center;
 
   h1 {
-    color: #2c3e50; /* Um tom de azul escuro para o título principal */
-    font-size: 50px;
-    font-family: "Lucida Handwriting", "Brush Script MT", normal;
-    margin-bottom: 60px;
+    /* ... */
   }
 `;
 
 export const StatsGrid = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid responsivo */
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 `;
@@ -76,9 +72,8 @@ export const StatsGrid = styled.div`
 export const StatCard = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
-  border-top: 4px solid #fb4121; /* Borda superior laranja */
-  padding: 40px 20px;
-  width: 270px;
+  border-top: 4px solid #fb4121;
+  padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;

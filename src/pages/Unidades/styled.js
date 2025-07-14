@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const PageContainer = styled.section`
   padding: 60px 20px;
   background-color: #f8f9fa;
+
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
 `;
 
 export const HeaderSection = styled.div`
@@ -16,6 +20,10 @@ export const MainTitle = styled.h1`
   color: #2c3e50;
   margin-bottom: 16px;
   font-family: "Lucida Handwriting", "Brush Script MT", normal;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -35,6 +43,7 @@ export const ContentGrid = styled.div`
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr; /* Coluna única em telas menores */
+    gap: 20px;
   }
 `;
 
@@ -47,7 +56,11 @@ export const DetailsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 650px; /* Altura fixa para alinhar com o mapa */
+  height: auto; /* Altura automática para se ajustar ao conteúdo */
+
+  @media (min-width: 1201px) {
+    height: 650px; /* Altura fixa apenas para telas grandes */
+  }
 `;
 
 export const DetailsTitle = styled.h2`
