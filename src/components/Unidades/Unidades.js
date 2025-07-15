@@ -1,15 +1,16 @@
-import { useState } from "react";
-import { Footer } from "../Footer/Footer";
-import { Header } from "../Header/Header";
-import MapComponent from "../Map/Map";
+import React, { useState } from "react";
+import { Footer } from "../../components/Footer/Footer";
+import { Header } from "../../components/Header/Header";
+import MapComponent from "../../components/Map/Map";
 import { unidades } from "../../data";
-import Carousel from "../Carousel/Carousel";
+import Carousel from "../../components/Carousel/Carousel";
 import {
   PageContainer,
   HeaderSection,
   MainTitle,
   Subtitle,
-  ContentGrid,
+  ContentContainer,
+  MapWrapper,
   DetailsCard,
   DetailsTitle,
   Tag,
@@ -21,10 +22,8 @@ import {
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Unidades = () => {
-  // A unidade selecionada começa como a primeira da lista
   const [selectedUnit, setSelectedUnit] = useState(unidades[0]);
 
-  // Função para ser chamada pelo mapa quando um marcador for clicado
   const handleSelectUnit = (unit) => {
     setSelectedUnit(unit);
   };
@@ -40,15 +39,15 @@ const Unidades = () => {
           </Subtitle>
         </HeaderSection>
 
-        <ContentGrid>
-          {/* Coluna do Mapa */}
-          <MapComponent
-            unidades={unidades}
-            selectedUnit={selectedUnit}
-            onSelectUnit={handleSelectUnit} // Passando a função para o mapa
-          />
+        <ContentContainer>
+          <MapWrapper>
+            <MapComponent
+              unidades={unidades}
+              selectedUnit={selectedUnit}
+              onSelectUnit={handleSelectUnit}
+            />
+          </MapWrapper>
 
-          {/* Coluna de Detalhes da Unidade Selecionada */}
           {selectedUnit && (
             <DetailsCard>
               <div>
@@ -92,7 +91,7 @@ const Unidades = () => {
               </ContactList>
             </DetailsCard>
           )}
-        </ContentGrid>
+        </ContentContainer>
       </PageContainer>
     </>
   );

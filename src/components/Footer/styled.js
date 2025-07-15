@@ -44,10 +44,6 @@ export const FooterLink = styled.a`
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s ease;
-
-  &:hover {
-    color: #1bb7d1; /* Ciano do seu projeto no hover */
-  }
 `;
 
 export const ContactInfo = styled.div`

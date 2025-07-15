@@ -21,10 +21,7 @@ export function Footer() {
               style={{ width: "150px" }}
             />
           </FooterTitle>
-          <p>
-            Alimentação corporativa de excelência para empresas que
-            verdadeiramente valorizam seus colaboradores.
-          </p>
+          <p>Alimentamos com propósito. Servimos com excelência.</p>
         </FooterColumn>
 
         <FooterColumn>
@@ -38,24 +35,24 @@ export function Footer() {
 
         <FooterColumn>
           <FooterTitle>Empresa</FooterTitle>
-          <FooterLink href="/quemsomos">Sobre Nós</FooterLink>
-          <FooterLink href="/legado">Legado</FooterLink>
-          <FooterLink href="/contato">Unidades</FooterLink>
+          <FooterLink href="/cultura">Cultura</FooterLink>
+          <FooterLink href="/trabalhe-conosco">Trabalhe Conosco</FooterLink>
+          <FooterLink href="/contato">Contato</FooterLink>
         </FooterColumn>
 
         <FooterColumn>
           <FooterTitle>Contato</FooterTitle>
           <ContactInfo>
             <Icon>📞</Icon>
-            <span>(11) 99999-9999</span>
+            <span>(16) 3376-9997 </span>
           </ContactInfo>
           <ContactInfo>
             <Icon>📧</Icon>
-            <span>contato@yescooking.com.br</span>
+            <span>comercial.yescooking@gmail.com</span>
           </ContactInfo>
           <ContactInfo>
             <Icon>📍</Icon>
-            <span>São Paulo, SP - Brasil</span>
+            <span>São Carlos, SP - Brasil</span>
           </ContactInfo>
         </FooterColumn>
       </FooterContent>
