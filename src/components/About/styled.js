@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledButton } from "../Apresentation/styled";
+import { StyledAnchor, StyledButton } from "../Apresentation/styled";
 
 export const ContainerAbout = styled.div`
   width: 100%;
@@ -22,7 +22,7 @@ export const ContainerAbout = styled.div`
   }
 `;
 
-export const ButtonAbout = styled(StyledButton)`
+export const ButtonAbout = styled(StyledAnchor)`
   background-color: #1bb7d1;
   &:hover {
     background: #1bb7d1;

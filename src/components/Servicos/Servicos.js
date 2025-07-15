@@ -20,7 +20,7 @@ const mainServiceData = [
     title: "Refeições Universitárias",
     description:
       "A Yes Cooking oferece um serviço completo de alimentação para universidades públicas, com foco em nutrição, sabor e eficiência. Planejamos e executamos cardápios que atendem às necessidades de uma rotina acadêmica agitada, garantindo qualidade e bem-estar em cada prato.",
-    image: "./images/comidas/comida1.jpg",
+    image: "./images/servicos/principal.png",
     reverse: false,
   },
 ];
@@ -47,7 +47,7 @@ const differentialsData = [
 ];
 
 const otherServicesData = [
-  { image: "./images/comidas/comida2.jpg", title: "Marmitas" },
+  { image: "./images/servicos/marmitas.jpg", title: "Marmitas" },
   { image: "./images/comidas/comida3.jpg", title: "Coffee Breaks" },
   { image: "./images/quemsomos/qs1.jpg", title: "Lanches" },
   { image: "./images/quemsomos/qs2.jpg", title: "Desjejum" },

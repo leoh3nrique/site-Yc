@@ -33,13 +33,6 @@ export const Apresentation = styled.div`
     text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
       1px 1px 0px black;
   }
-  a {
-    font-size: 55px;
-    color: white;
-    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
-    text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
-      1px 1px 0px black;
-  }
 
   @media (max-width: 768px) {
     padding: 60px 20px;
@@ -50,6 +43,14 @@ export const Apresentation = styled.div`
       font-size: 24px;
     }
   }
+`;
+
+export const StyledTitleApresentation = styled.a`
+  font-size: 55px;
+  color: white;
+  font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+  text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
+    1px 1px 0px black;
 `;
 
 export const SectionButtons = styled.div`
@@ -67,17 +68,17 @@ export const SectionButtons = styled.div`
   }
 `;
 
-export const StyledButton = styled.button`
-  font-size: 15px;
+export const StyledAnchor = styled.a`
   border: none;
   background: none;
   display: inline-block;
   padding: 10px;
-  margin: 10px;
+  margin: 0 auto;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  text-decoration: none;
   outline: none;
   color: white;
   background-color: #1bb7d1;

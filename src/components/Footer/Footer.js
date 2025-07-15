@@ -26,16 +26,15 @@ export function Footer() {
 
         <FooterColumn>
           <FooterTitle>Serviços</FooterTitle>
-          <FooterLink href="/servicos/gestao">Serviços Alimentares</FooterLink>
-          <FooterLink href="/servicos/catering">Marmitas</FooterLink>
-          <FooterLink href="/servicos/consultoria">
-            Lanches e Coofebreaks
-          </FooterLink>
+          <FooterLink href="/servicos">Serviços Alimentares</FooterLink>
+          <FooterLink href="/servicos">Marmitas</FooterLink>
+          <FooterLink href="/servicos">Lanches e Coofebreaks</FooterLink>
         </FooterColumn>
 
         <FooterColumn>
           <FooterTitle>Empresa</FooterTitle>
           <FooterLink href="/cultura">Cultura</FooterLink>
+          <FooterLink href="/servicos">Serviços</FooterLink>
           <FooterLink href="/trabalhe-conosco">Trabalhe Conosco</FooterLink>
           <FooterLink href="/contato">Contato</FooterLink>
         </FooterColumn>

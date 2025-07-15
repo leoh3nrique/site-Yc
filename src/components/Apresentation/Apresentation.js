@@ -3,7 +3,8 @@ import {
   ContainerApresentation,
   SectionButtons,
   SectionPlayVideo,
-  StyledButton,
+  StyledAnchor,
+  StyledTitleApresentation,
 } from "./styled";
 // import background from ".";
 // import iconPlay from "../../assets/iconPlay.png";
@@ -16,14 +17,15 @@ function WelcomeSection() {
     <ContainerApresentation bgImage={background}>
       <Apresentation>
         <h1> Bem vindo a Yes Cooking</h1>
-        <a>A nossa missão é fazer a missão!</a>
+        <StyledTitleApresentation>
+          A nossa missão é fazer a missão!
+        </StyledTitleApresentation>
         <SectionButtons>
-          <StyledButton class="btn-conheca" onclick="scrollToSection()">
+          <StyledAnchor class="btn-conheca" href="/servicos">
             Conheça
-          </StyledButton>
+          </StyledAnchor>
           <SectionPlayVideo>
             <button>
-              
               <VideoPlayer videoId="dQw4w9WgXcQ" />
             </button>
             <span>Assistir Vídeo</span>
