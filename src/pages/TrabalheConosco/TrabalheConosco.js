@@ -72,10 +72,7 @@ const TrabalheConosco = () => {
     e.preventDefault();
     setIsSending(true);
 
-    // NOTA: O envio de ARQUIVOS (como o currículo) via EmailJS é complexo
-    // e geralmente requer um backend ou um serviço de upload de arquivos.
-    // O código abaixo enviará apenas os dados de texto.
-    console.log("Dados do formulário:", formData);
+    
 
     // Simulação de envio
     setTimeout(() => {
@@ -96,9 +93,9 @@ const TrabalheConosco = () => {
   return (
     <>
       <Header />
-      <Notification show={notification.show} type={notification.type}>
+      {/* <Notification show={notification.show} type={notification.type}>
         {notification.message}
-      </Notification>
+      </Notification> */}
       <TabNav activeTab="work" />
 
       <PageContainer>

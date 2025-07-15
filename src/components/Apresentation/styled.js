@@ -7,7 +7,7 @@ export const ContainerApresentation = styled.div`
   background-image: url(${(props) => props.bgImage});
   background-size: 100% auto;
   background-repeat: no-repeat;
-  background-position: center; /* Centraliza a imagem */
+  background-position: top; /* Centraliza a imagem */
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: darken;
 
@@ -66,7 +66,6 @@ export const SectionButtons = styled.div`
     width: 300px;
   }
 `;
-
 
 export const StyledButton = styled.button`
   font-size: 15px;

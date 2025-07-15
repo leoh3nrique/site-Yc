@@ -104,10 +104,9 @@ const Contact = () => {
   return (
     <>
       <Header />
-      {/* Renderiza a notificação se 'show' for true */}
-      <Notification show={notification.show} type={notification.type}>
+      {/* <Notification show={notification.show} type={notification.type}>
         {notification.message}
-      </Notification>
+      </Notification> */}
       <TabNav activeTab="contact" />
 
       <ContactPageContainer>

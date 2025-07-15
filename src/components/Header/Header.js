@@ -30,9 +30,8 @@ export function Header() {
 
       <NavLinks isOpen={isOpen}>
         <LinkNav onClick={() => handleNavigate("")}>Início</LinkNav>
-        <LinkNav onClick={() => handleNavigate("cultura")}>
-          Cultura
-        </LinkNav>
+        <LinkNav onClick={() => handleNavigate("cultura")}>Cultura</LinkNav>
+        <LinkNav onClick={() => handleNavigate("servicos")}>Serviços</LinkNav>
         <LinkNav onClick={() => handleNavigate("trabalhe-conosco")}>
           Trabalhe Conosco
         </LinkNav>

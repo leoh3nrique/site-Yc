@@ -12,30 +12,33 @@ export const SwiperContainer = styled.div`
   position: relative;
 `;
 
+
+
 export const StyledSwiper = styled(Swiper)`
   width: 100%;
-  height: 400px;
+  border-radius: 10px;
+  
+  aspect-ratio: 16 / 9;
+  max-height: 350px; /* Limita a altura máxima, tornando-o menor */
 
-  /* Exemplo de customização das bullets de paginação */
   .swiper-pagination-bullet {
-    background-color: gray;
-    opacity: 0.7;
+    background-color: #aaa;
   }
   .swiper-pagination-bullet-active {
-    background-color: red;
-    opacity: 1;
+    background-color: #fb4121;
   }
 
-  /* Exemplo de customização dos botões de navegação */
   .swiper-button-next,
   .swiper-button-prev {
-    color: #333;
-  }
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    color: #000;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    --swiper-navigation-size: 14px;
   }
 `;
+
 
 export const StyledSlide = styled(SwiperSlide)`
   display: flex;

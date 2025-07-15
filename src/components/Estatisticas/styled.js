@@ -92,7 +92,7 @@ export const StatsGrid = styled.div`
   grid-template-columns: repeat(
     auto-fit,
     minmax(250px, 1fr)
-  ); /* Grid responsivo */
+  ); 
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;

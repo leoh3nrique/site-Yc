@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const PageContainer = styled.section`
+  /* Estilo padronizado com as outras páginas */
   padding: 3rem 5%;
   background-color: #f8f9fa;
 `;
@@ -23,39 +24,39 @@ export const Subtitle = styled.p`
   margin: 1rem auto 0;
 `;
 
-// Container principal que controla o layout
+// Container principal que agora usa FLEXBOX
 export const ContentContainer = styled.div`
-  display: grid;
+  display: flex;
   gap: 2.5rem;
-  align-items: flex-start;
+  align-items: flex-start; /* Alinha os itens no topo */
   max-width: 1600px;
   margin: 0 auto;
 
-  /* Layout para Mobile (padrão): uma coluna */
-  grid-template-columns: 1fr;
-
-  /* Layout para Desktop: duas colunas */
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr;
+  /* Layout para Mobile: um abaixo do outro */
+  @media (max-width: 1023px) {
+    flex-direction: column;
   }
 `;
 
+// Flex-item 1: O mapa
 export const MapWrapper = styled.div`
   position: relative;
-  width: 100%;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-  /* Altura para Mobile: um tamanho fixo e razoável */
+  
+  /* Em mobile, ocupa a largura toda */
+  width: 100%;
   height: 450px;
 
-  /* Altura para Desktop */
+  /* Em desktop, ocupa metade do espaço e tem altura maior */
   @media (min-width: 1024px) {
+    flex: 1; /* Equivalente a 50% do espaço */
     height: 650px;
   }
 `;
 
+// Flex-item 2: O card de detalhes
 export const DetailsCard = styled.div`
   background-color: #ffffff;
   border-radius: 15px;
@@ -64,10 +65,17 @@ export const DetailsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  /* A altura se ajusta automaticamente ao conteúdo */
+  
+  /* Em mobile, ocupa a largura toda */
+  width: 100%;
+
+  /* Em desktop, ocupa a outra metade */
+  @media (min-width: 1024px) {
+    flex: 1;
+  }
 `;
 
-// --- Estilos dos elementos internos do Card ---
+// --- Estilos dos elementos internos (sem grandes mudanças) ---
 export const DetailsTitle = styled.h2`
   font-family: "Staatliches", sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.2rem);
