@@ -1,20 +1,28 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ContainerHeader = styled.header`
+  position: sticky;
+  top: 0; /* Gruda no topo da tela */
+  z-index: 1000; /* Garante que ele fique sobre todos os outros elementos */
+
+  width: 100%;
   background-color: #1bb7d1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  position: relative; /* Mantém o contexto para o dropdown em desktop (se voltar) */
-  width: 100%;
-  z-index: 100; /* Garante que o header fique sobre a maioria dos conteúdos */
+  padding: 0.5rem 5%; /* Padding reduzido para um header mais compacto */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: padding 0.3s ease-in-out;
 `;
-
 export const Logo = styled.img`
-  width: 200px;
+  width: 140px; /* Tamanho padrão para desktop */
+  height: auto;
   cursor: pointer;
-  z-index: 1002; /* Garante que a logo fique acima do menu aberto */
+  transition: width 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    width: 100px; /* Tamanho menor para mobile */
+  }
 `;
 
 export const MobileIcon = styled.div`
@@ -63,59 +71,68 @@ export const MobileIcon = styled.div`
 export const NavLinks = styled.nav`
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem; /* Espaçamento entre os links ajustado */
 
   @media (max-width: 768px) {
-    /* Menu Mobile */
     flex-direction: column;
     justify-content: center;
     gap: 3rem;
-
-    /* Posicionamento e visibilidade */
-    position: fixed; /* Cobre a tela inteira, ignorando o scroll */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Ocupa a altura toda da tela */
+    height: 100vh;
     background: #1bb7d1;
-
     transition: transform 0.3s ease-in-out;
-
-    /* Esconde o menu fora da tela à direita */
     transform: ${({ isOpen }) =>
       isOpen ? "translateX(0)" : "translateX(100%)"};
-
-    z-index: 1001; /* Fica acima de todo o site, mas abaixo da logo/ícone */
+    z-index: 1010;
   }
 `;
 
 export const LinkNav = styled.button`
   font-size: 1.1rem;
+  font-weight: 500;
   border: none;
   background: none;
-  padding: 10px 0;
+  padding: 0.5rem 1rem; /* Padding para criar o fundo ao redor do texto */
   cursor: pointer;
   color: white;
   position: relative;
   text-decoration: none;
+  border-radius: 20px; /* Borda arredondada para o fundo */
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   &::after {
     content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0;
+    bottom: -5px; /* Posição do sublinhado */
     width: 0;
     height: 2px;
     background-color: #fb4121;
     transition: width 0.3s ease;
   }
 
-  &:hover::after {
-    width: 100%;
+  &:hover:not(:disabled)::after {
+    width: 80%;
   }
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
   }
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      background-color: white;
+      color: #1bb7d1;
+      font-weight: bold;
+
+      /* Remove o efeito de sublinhado quando o link está ativo */
+      &::after {
+        display: none;
+      }
+    `}
 `;

@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const PageContainer = styled.section`
-  /* Estilo padronizado com as outras páginas */
   padding: 3rem 5%;
   background-color: #f8f9fa;
 `;
@@ -24,39 +23,35 @@ export const Subtitle = styled.p`
   margin: 1rem auto 0;
 `;
 
-// Container principal que agora usa FLEXBOX
 export const ContentContainer = styled.div`
   display: flex;
+  flex-direction: column; /* Padrão mobile: um abaixo do outro */
   gap: 2.5rem;
-  align-items: flex-start; /* Alinha os itens no topo */
-  max-width: 1600px;
+  align-items: center; /* Centraliza os itens na coluna */
+  max-width: 1200px; /* Largura máxima para o conteúdo */
   margin: 0 auto;
 
-  /* Layout para Mobile: um abaixo do outro */
-  @media (max-width: 1023px) {
-    flex-direction: column;
+  /* Layout para Desktop: duas colunas */
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: flex-start;
   }
 `;
 
-// Flex-item 1: O mapa
 export const MapWrapper = styled.div`
   position: relative;
+  width: 100%;
+  height: 450px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  
-  /* Em mobile, ocupa a largura toda */
-  width: 100%;
-  height: 450px;
 
-  /* Em desktop, ocupa metade do espaço e tem altura maior */
   @media (min-width: 1024px) {
-    flex: 1; /* Equivalente a 50% do espaço */
-    height: 650px;
+    flex: 1;
+    height: 600px;
   }
 `;
 
-// Flex-item 2: O card de detalhes
 export const DetailsCard = styled.div`
   background-color: #ffffff;
   border-radius: 15px;
@@ -65,29 +60,30 @@ export const DetailsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  
-  /* Em mobile, ocupa a largura toda */
   width: 100%;
+  max-width: 550px; /* Limita a largura do card */
 
-  /* Em desktop, ocupa a outra metade */
   @media (min-width: 1024px) {
     flex: 1;
+    max-width: none; /* Remove a largura máxima no desktop */
   }
 `;
 
-// --- Estilos dos elementos internos (sem grandes mudanças) ---
+// ... resto dos estilos (DetailsTitle, Tag, etc.) ...
 export const DetailsTitle = styled.h2`
   font-family: "Staatliches", sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.2rem);
   color: #2c3e50;
-  margin: 0;
 `;
-
+// ... (outros estilos de texto permanecem os mesmos) ...
 export const Tag = styled.span`
   font-size: 0.8rem;
   color: #fb4121;
   font-weight: bold;
-  &::before { content: "●"; margin-right: 8px; }
+  &::before {
+    content: "●";
+    margin-right: 8px;
+  }
 `;
 
 export const Description = styled.p`

@@ -7,8 +7,6 @@ export const IconWrapper = styled.div`
   font-size: 50px; /* Tamanho dos ícones */
 `;
 
-// --- ESTILOS EXISTENTES ATUALIZADOS ---
-
 export const ContainerAboutUs = styled.div`
   display: flex;
   flex-direction: column;

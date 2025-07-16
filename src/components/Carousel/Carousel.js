@@ -1,53 +1,60 @@
-import React from "react";
+import React, { useState } from 'react';
 import {
-  SwiperContainer,
-  StyledSwiper,
-  StyledSlide,
-  Styledh1,
-  ContainerCarousel,
-} from "./styled";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+  CarouselContainer,
+  CarouselWrapper,
+  CarouselSlide,
+  NavButton,
+  DotsContainer,
+  Dot,
+} from './styled';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-const Carousel = ({
-  images = [],
-  title = "",
-  slidesPerView = 1,
-  spaceBetween = 10,
-  navigation = true,
-  pagination = { clickable: true },
-  loop = true,
-  modules = [Navigation, Pagination],
-  ...swiperProps
-}) => {
+const Carousel = ({ images = [] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === images.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
   return (
-    <ContainerCarousel>
-      {title && <Styledh1>{title}</Styledh1>}
-      <SwiperContainer>
-        <StyledSwiper
-          modules={modules}
-          spaceBetween={spaceBetween}
-          slidesPerView={slidesPerView}
-          navigation={navigation}
-          pagination={pagination}
-          loop={loop}
-          {...swiperProps} // Ex: loop, autoplay, breakpoints etc.
-        >
-          {images.map((img, index) => (
-            <StyledSlide key={index}>
-              {/* Se o array for de strings, use diretamente o valor. 
-                  Se for de objetos { src, alt }, ajuste conforme abaixo. */}
-              <img
-                src={typeof img === "string" ? img : img.src}
-                alt={img.alt || `Slide ${index + 1}`}
-              />
-            </StyledSlide>
+    <CarouselContainer>
+      <NavButton onClick={goToPrevious} className="left">
+        <FaChevronLeft />
+      </NavButton>
+      <CarouselWrapper>
+        <div style={{ transform: `translateX(-${currentIndex * 100}%)`, transition: 'transform 0.5s ease' }}>
+          {images.map((image, index) => (
+            <CarouselSlide key={index}>
+              <img src={image} alt={`Slide ${index + 1}`} />
+            </CarouselSlide>
           ))}
-        </StyledSwiper>
-      </SwiperContainer>
-    </ContainerCarousel>
+        </div>
+      </CarouselWrapper>
+      <NavButton onClick={goToNext} className="right">
+        <FaChevronRight />
+      </NavButton>
+      <DotsContainer>
+        {images.map((_, slideIndex) => (
+          <Dot
+            key={slideIndex}
+            isActive={currentIndex === slideIndex}
+            onClick={() => goToSlide(slideIndex)}
+          />
+        ))}
+      </DotsContainer>
+    </CarouselContainer>
   );
 };
 

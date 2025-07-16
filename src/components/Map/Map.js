@@ -33,7 +33,7 @@ const MapComponent = ({ unidades, selectedUnit, onSelectUnit }) => {
   return (
     <MapContainer
       center={center}
-      zoom={7}
+      zoom={7.5}
       style={{ height: "650px", width: "100%", borderRadius: "10px", boxShadow: "0 10px 25px rgba(0,0,0,0.07)" }}
     >
       <TileLayer
