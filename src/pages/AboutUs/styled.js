@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // --- NOVO WRAPPER PARA OS ÍCONES ---
 // Este componente envolve os ícones e aplica os estilos de cor e tamanho
@@ -16,7 +16,8 @@ export const ContainerAboutUs = styled.div`
   padding: 3rem 5%;
   text-align: center;
 
-  h1, h2 {
+  h1,
+  h2 {
     color: #1bb7d1;
     font-size: clamp(2rem, 5vw, 2.8rem);
     font-family: "Lucida Handwriting", "Brush Script MT", normal;
@@ -45,7 +46,7 @@ export const CardCultura = styled.div`
   background-color: #fff;
   min-height: 250px;
   border-radius: 15px;
-  border-top: 5px solid #1bb7d1;
+  border-top: 5px solid#fb4121;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   display: flex;
@@ -65,7 +66,7 @@ export const CardCultura = styled.div`
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    
+
     h3 {
       font-size: 1.8rem;
       color: #333;
@@ -88,7 +89,7 @@ export const ValoresList = styled.ul`
   color: #666;
 
   li::before {
-    content: '✓';
+    content: "✓";
     margin-right: 10px;
     color: #fb4121;
     font-weight: bold;

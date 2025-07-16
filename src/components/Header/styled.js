@@ -2,31 +2,100 @@ import styled, { css } from "styled-components";
 
 export const ContainerHeader = styled.header`
   position: sticky;
-  top: 0; /* Gruda no topo da tela */
-  z-index: 1000; /* Garante que ele fique sobre todos os outros elementos */
-
+  top: 0;
+  z-index: 1010;
   width: 100%;
+  /* O header em si terá sempre o fundo azul */
   background-color: #1bb7d1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 5%; /* Padding reduzido para um header mais compacto */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 0.5rem 5%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: padding 0.3s ease-in-out;
 `;
+
 export const Logo = styled.img`
-  width: 140px; /* Tamanho padrão para desktop */
+  width: 180px;
   height: auto;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
 
+  /* Garante que a logo fique na frente do menu aberto */
+  position: relative;
+  z-index: 1012;
+
   @media (max-width: 768px) {
-    width: 100px; /* Tamanho menor para mobile */
+    width: 150px;
+  }
+`;
+
+export const NavLinks = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    /* CORREÇÃO 1: Alinha os itens ao topo e adiciona padding */
+    justify-content: flex-start;
+    padding-top: 8rem; /* Espaço para não ficar atrás do header */
+
+    gap: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    /* CORREÇÃO 2: Fundo um pouco mais claro */
+    background-color: rgba(0, 0, 0, 0.75); /* 75% de opacidade */
+    backdrop-filter: blur(5px);
+
+    transition: transform 0.3s ease-in-out;
+    transform: ${({ isOpen }) =>
+      isOpen ? "translateX(0)" : "translateX(100%)"};
+    /* Z-index abaixo do header, logo e ícone */
+    z-index: 1011;
+  }
+`;
+
+export const LinkNav = styled.button`
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  background: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: white;
+  position: relative;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    ${({ isActive }) =>
+      isActive &&
+      css`
+        background-color: #1bb7d1;
+        color: white;
+      `}
+  }
+
+  @media (min-width: 769px) {
+    ${({ isActive }) =>
+      isActive &&
+      css`
+        background-color: white;
+        color: #1bb7d1;
+        font-weight: bold;
+      `}
   }
 `;
 
 export const MobileIcon = styled.div`
-  display: none; /* Escondido em desktop */
+  display: none;
 
   @media (max-width: 768px) {
     display: flex;
@@ -34,11 +103,8 @@ export const MobileIcon = styled.div`
     justify-content: space-around;
     width: 2rem;
     height: 2rem;
-    background: transparent;
-    border: none;
     cursor: pointer;
-    padding: 0;
-    z-index: 1002; /* z-index maior para ficar na frente do menu */
+    z-index: 1012; /* Z-index mais alto para ficar na frente do menu */
 
     div {
       width: 2rem;
@@ -50,89 +116,19 @@ export const MobileIcon = styled.div`
       transform-origin: 1px;
     }
 
-    /* Animação do ícone para "X" quando o menu está aberto */
     ${({ isOpen }) =>
       isOpen &&
-      `
-      div:nth-child(1) {
-        transform: rotate(45deg);
-      }
-      div:nth-child(2) {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-      div:nth-child(3) {
-        transform: rotate(-45deg);
-      }
-    `}
+      css`
+        div:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        div:nth-child(2) {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        div:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      `}
   }
-`;
-
-export const NavLinks = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* Espaçamento entre os links ajustado */
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-    gap: 3rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #1bb7d1;
-    transition: transform 0.3s ease-in-out;
-    transform: ${({ isOpen }) =>
-      isOpen ? "translateX(0)" : "translateX(100%)"};
-    z-index: 1010;
-  }
-`;
-
-export const LinkNav = styled.button`
-  font-size: 1.1rem;
-  font-weight: 500;
-  border: none;
-  background: none;
-  padding: 0.5rem 1rem; /* Padding para criar o fundo ao redor do texto */
-  cursor: pointer;
-  color: white;
-  position: relative;
-  text-decoration: none;
-  border-radius: 20px; /* Borda arredondada para o fundo */
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -5px; /* Posição do sublinhado */
-    width: 0;
-    height: 2px;
-    background-color: #fb4121;
-    transition: width 0.3s ease;
-  }
-
-  &:hover:not(:disabled)::after {
-    width: 80%;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
-
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      background-color: white;
-      color: #1bb7d1;
-      font-weight: bold;
-
-      /* Remove o efeito de sublinhado quando o link está ativo */
-      &::after {
-        display: none;
-      }
-    `}
 `;
