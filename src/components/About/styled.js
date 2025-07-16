@@ -27,7 +27,9 @@ export const ContainerAbout = styled.div`
 
 export const ButtonAbout = styled(StyledAnchor)`
   background-color: #1bb7d1;
-  width: 15%;
+  max-width: 150px;
+  font-size: 1.1rem;
+
   &:hover {
     background: #1bb7d1;
     border: 0.7px solid white;

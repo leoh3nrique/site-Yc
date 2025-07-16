@@ -96,8 +96,8 @@ const TrabalheConosco = () => {
       {/* <Notification show={notification.show} type={notification.type}>
         {notification.message}
       </Notification> */}
-      <TabNav activeTab="work" />
 
+      <TabNav activeTab="work" />
       <PageContainer>
         <FormContainer>
           <FormTitle>Trabalhe Conosco</FormTitle>
