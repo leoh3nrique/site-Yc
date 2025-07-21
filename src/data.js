@@ -11,9 +11,9 @@ export const unidades = [
       email: "sac@ufs.car.br",
     },
     images: [
-      "./images/unidades/sc2.jpg",
-      "./images/unidades/sc3.jpg",
-      "./images/unidades/sc1.jpg",
+      "./images/timeline/timeline01.jpg",
+      "./images/unidades/sc/sc3.jpg",
+      "./images/unidades/sc/sc1.jpg",
     ],
   },
   {
@@ -27,10 +27,8 @@ export const unidades = [
       email: "aras@ufs.car.br",
     },
     images: [
-      "./images/comidas/comida1.jpg",
-      "./images/comidas/comida2.jpg",
-      "./images/comidas/comida3.jpg",
-      "./images/comidas/comida4.jpg",
+      "./images/unidades/ar/teste1.jpg",
+      "./images/unidades/ar/teste2.jpg",
     ],
   },
   {

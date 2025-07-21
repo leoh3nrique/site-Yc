@@ -1,55 +1,87 @@
-import styled from "styled-components";
-import { Swiper, SwiperSlide } from "swiper/react";
+import styled from 'styled-components';
 
-export const ContainerCarousel = styled.div`
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-`;
-
-export const SwiperContainer = styled.div`
-  width: 100%;
+export const CarouselContainer = styled.div`
   position: relative;
-`;
-
-export const StyledSwiper = styled(Swiper)`
   width: 100%;
-  height: 400px;
+  height: 100%;
+  max-height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+`;
 
-  /* Exemplo de customização das bullets de paginação */
-  .swiper-pagination-bullet {
-    background-color: gray;
-    opacity: 0.7;
-  }
-  .swiper-pagination-bullet-active {
-    background-color: red;
-    opacity: 1;
-  }
-
-  /* Exemplo de customização dos botões de navegação */
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: #333;
-  }
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    color: #000;
+export const CarouselWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  
+  > div {
+    display: flex;
+    height: 100%;
   }
 `;
 
-export const StyledSlide = styled(SwiperSlide)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+export const CarouselSlide = styled.div`
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  
   img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 `;
 
-export const Styledh1 = styled.h1`
-  text-align: center;
-  margin-bottom: 20px;
+export const NavButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  color: #333;
+
+  ${CarouselContainer}:hover & {
+    opacity: 1;
+  }
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  &.left {
+    left: 10px;
+  }
+  
+  &.right {
+    right: 10px;
+  }
+`;
+
+export const DotsContainer = styled.div`
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+`;
+
+export const Dot = styled.button`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: ${({ isActive }) => (isActive ? 'white' : 'rgba(255, 255, 255, 0.5)')};
+  transition: background-color 0.3s;
 `;

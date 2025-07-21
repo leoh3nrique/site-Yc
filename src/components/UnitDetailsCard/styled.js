@@ -6,10 +6,10 @@ export const DetailsContainer = styled.div`
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   padding: 30px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Essencial para o layout interno */
   gap: 20px;
   border-top: 4px solid #1bb7d1;
-  height: 700px; /* Mesma altura do mapa */
+  height: 100%; /* Faz o card preencher a altura do grid container */
 `;
 
 export const BackButton = styled.button`
@@ -50,7 +50,7 @@ export const Description = styled.p`
   font-size: 15px;
   color: #7f8c8d;
   line-height: 1.6;
-  text-align: center;
+  text-align: left; /* Alinhamento mais comum para descrições */
   margin-top: 10px;
 `;
 
@@ -58,7 +58,7 @@ export const ContactList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: auto; /* Empurra para o final */
+  margin-top: auto; /* A MÁGICA: Isso empurra a lista de contatos para o final do card */
   border-top: 1px solid #f1f2f6;
   padding-top: 20px;
 `;

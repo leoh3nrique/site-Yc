@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const PageContainer = styled.section`
   padding: 3rem 5%;
@@ -7,7 +7,7 @@ export const PageContainer = styled.section`
 
 export const HeaderSection = styled.div`
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 `;
 
 export const MainTitle = styled.h1`
@@ -23,36 +23,29 @@ export const Subtitle = styled.p`
   margin: 1rem auto 0;
 `;
 
-// Container principal que controla o layout
 export const ContentContainer = styled.div`
-  display: grid;
+  display: grid; /* Alterado para Grid */
   gap: 2.5rem;
-  align-items: flex-start;
-  max-width: 1600px;
+  max-width: 1400px; /* Aumentei um pouco para dar mais espaço */
   margin: 0 auto;
+  align-items: stretch; /* Garante que os itens preencham a altura */
 
-  /* Layout para Mobile (padrão): uma coluna */
-  grid-template-columns: 1fr;
-
-  /* Layout para Desktop: duas colunas */
+  /* Layout para Desktop: duas colunas com Grid */
   @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
   }
 `;
 
 export const MapWrapper = styled.div`
   position: relative;
   width: 100%;
+  height: 300px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
-  /* Altura para Mobile: um tamanho fixo e razoável */
-  height: 450px;
-
-  /* Altura para Desktop */
   @media (min-width: 1024px) {
-    height: 650px;
+    height: 700px; /
   }
 `;
 
@@ -64,22 +57,27 @@ export const DetailsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  /* A altura se ajusta automaticamente ao conteúdo */
+
+  @media (min-width: 1024px) {
+    height: 700px; /* Mesma altura do mapa, para um alinhamento perfeito */
+  }
 `;
 
-// --- Estilos dos elementos internos do Card ---
+// Estilos para o conteúdo dentro do card
 export const DetailsTitle = styled.h2`
   font-family: "Staatliches", sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.2rem);
   color: #2c3e50;
-  margin: 0;
 `;
 
 export const Tag = styled.span`
   font-size: 0.8rem;
   color: #fb4121;
   font-weight: bold;
-  &::before { content: "●"; margin-right: 8px; }
+  &::before {
+    content: "●";
+    margin-right: 8px;
+  }
 `;
 
 export const Description = styled.p`
@@ -92,7 +90,7 @@ export const ContactList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: auto; /* Mágica do Flexbox: empurra a lista para o fundo */
   padding-top: 1.5rem;
   border-top: 1px solid #f1f2f6;
 `;

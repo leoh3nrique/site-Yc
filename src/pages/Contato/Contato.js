@@ -18,6 +18,7 @@ import {
   Notification, // Importe o novo componente de notificação
 } from "./styled";
 import TabNav from "../../components/TabNav/TabNav";
+import { ContainerDescription } from "../TrabalheConosco/styled";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -104,15 +105,27 @@ const Contact = () => {
   return (
     <>
       <Header />
-      {/* Renderiza a notificação se 'show' for true */}
-      <Notification show={notification.show} type={notification.type}>
+      {/* <Notification show={notification.show} type={notification.type}>
         {notification.message}
-      </Notification>
+      </Notification> */}
       <TabNav activeTab="contact" />
 
       <ContactPageContainer>
         <FormContainer>
           <FormTitle>Entre em Contato</FormTitle>
+          <ContainerDescription>
+            <p className="main-description">
+              Tem um produto ou serviço que pode contribuir com a nossa missão?
+              A Yes Cooking está sempre aberta a parcerias com fornecedores
+              comprometidos com qualidade, responsabilidade e ética.
+            </p>
+            <p className="main-description">
+              Se você deseja fornecer insumos, equipamentos, ou outras soluções,
+              entre em contato conosco. Vamos juntos alimentar vidas com
+              excelência.
+            </p>
+            <p className="main-description">Preencha o formulário abaixo:</p>
+          </ContainerDescription>
           <Form onSubmit={handleSubmit}>
             {/* ... o resto do seu formulário ... */}
             <TwoColumns>

@@ -1,8 +1,5 @@
 import styled, { css, keyframes } from "styled-components"; // Adicione css e keyframes
 
-// ... todos os seus estilos existentes (ContactPageContainer, Form, etc.) ...
-
-// Adicione este novo componente de estilo no final do arquivo
 
 const slideIn = keyframes`
   from {
@@ -63,7 +60,6 @@ export const ContactPageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 2rem;
   background-color: #fdfaf7; /* Cor de fundo suave do exemplo */
 `;
 

@@ -16,6 +16,7 @@ import {
   FileInputWrapper,
   FileInput,
   FileInputLabel,
+  ContainerDescription,
 } from "./styled";
 import TabNav from "../../components/TabNav/TabNav";
 
@@ -72,11 +73,6 @@ const TrabalheConosco = () => {
     e.preventDefault();
     setIsSending(true);
 
-    // NOTA: O envio de ARQUIVOS (como o currículo) via EmailJS é complexo
-    // e geralmente requer um backend ou um serviço de upload de arquivos.
-    // O código abaixo enviará apenas os dados de texto.
-    console.log("Dados do formulário:", formData);
-
     // Simulação de envio
     setTimeout(() => {
       showNotification("Candidatura enviada com sucesso!");
@@ -96,14 +92,28 @@ const TrabalheConosco = () => {
   return (
     <>
       <Header />
-      <Notification show={notification.show} type={notification.type}>
+      {/* <Notification show={notification.show} type={notification.type}>
         {notification.message}
-      </Notification>
-      <TabNav activeTab="work" />
+      </Notification> */}
 
+      <TabNav activeTab="work" />
       <PageContainer>
         <FormContainer>
           <FormTitle>Trabalhe Conosco</FormTitle>
+          <ContainerDescription>
+            <p className="main-description">
+              Você acredita que é possível transformar vidas através da
+              alimentação? Na Yes Cooking, buscamos pessoas comprometidas,
+              éticas e empenhadas por servir com excelência.
+            </p>
+            <p className="main-description">
+              Somos uma equipe que valoriza a dedicação, o trabalho em equipe e
+              o propósito de impactar positivamente a comunidade acadêmica.
+              Venha fazer parte da nossa missão.
+            </p>
+            {/* <p className="main-description"></p> */}
+            <p className="main-description">Preencha o formulário abaixo:</p>
+          </ContainerDescription>
           <Form onSubmit={handleSubmit}>
             <TwoColumns>
               <FormGroup>

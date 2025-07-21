@@ -14,10 +14,14 @@ export function Header() {
     setIsOpen(false);
   };
 
+  const checkIsActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <ContainerHeader>
       <Logo
-        src="./images/logoYc.png"
+        src="./images/utils/logoYc.png"
         alt="Yes Cooking Logo"
         onClick={() => handleNavigate("")}
       />
@@ -29,14 +33,36 @@ export function Header() {
       </MobileIcon>
 
       <NavLinks isOpen={isOpen}>
-        <LinkNav onClick={() => handleNavigate("")}>Início</LinkNav>
-        <LinkNav onClick={() => handleNavigate("cultura")}>
+        <LinkNav
+          isActive={checkIsActive("/")}
+          onClick={() => handleNavigate("")}
+        >
+          Início
+        </LinkNav>
+        <LinkNav
+          isActive={checkIsActive("/cultura")}
+          onClick={() => handleNavigate("cultura")}
+        >
           Cultura
         </LinkNav>
-        <LinkNav onClick={() => handleNavigate("trabalhe-conosco")}>
+        <LinkNav
+          isActive={checkIsActive("/servicos")}
+          onClick={() => handleNavigate("servicos")}
+        >
+          Serviços
+        </LinkNav>
+        <LinkNav
+          isActive={checkIsActive("/trabalhe-conosco")}
+          onClick={() => handleNavigate("trabalhe-conosco")}
+        >
           Trabalhe Conosco
         </LinkNav>
-        <LinkNav onClick={() => handleNavigate("contato")}>Contato</LinkNav>
+        <LinkNav
+          isActive={checkIsActive("/contato")}
+          onClick={() => handleNavigate("contato")}
+        >
+          Contato
+        </LinkNav>
       </NavLinks>
     </ContainerHeader>
   );
