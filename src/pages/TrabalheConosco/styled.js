@@ -8,7 +8,6 @@ export const PageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 2rem;
   background-color: #fdfaf7;
 `;
 
@@ -183,7 +182,7 @@ export const ContainerDescription = styled.div`
   text-align: center;
   .main-description {
     max-width: 900px;
-    width: 850px;
+    width: 100%;
     font-size: 1.1rem;
     line-height: 1.7;
     color: #555;

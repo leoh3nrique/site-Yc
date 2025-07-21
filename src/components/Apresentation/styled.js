@@ -5,7 +5,7 @@ export const ContainerApresentation = styled.div`
   height: 110vh;
   background-image: url(${(props) => props.bgImage});
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: darken;

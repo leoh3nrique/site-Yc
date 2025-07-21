@@ -11,7 +11,7 @@ export const unidades = [
       email: "sac@ufs.car.br",
     },
     images: [
-      "./images/unidades/sc/sc2.jpg",
+      "./images/timeline/timeline01.jpg",
       "./images/unidades/sc/sc3.jpg",
       "./images/unidades/sc/sc1.jpg",
     ],

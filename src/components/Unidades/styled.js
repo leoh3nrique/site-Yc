@@ -20,35 +20,32 @@ export const Subtitle = styled.p`
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   color: #7f8c8d;
   max-width: 700px;
-  margin: 0%.5 auto 0;
+  margin: 1rem auto 0;
 `;
 
 export const ContentContainer = styled.div`
-  display: flex;
-  flex-direction: column; /* Padrão mobile: um abaixo do outro */
-  gap: 1.3rem;
-  align-items: center; /* Centraliza os itens na coluna */
-  max-width: 1200px; /* Largura máxima para o conteúdo */
+  display: grid; /* Alterado para Grid */
+  gap: 2.5rem;
+  max-width: 1400px; /* Aumentei um pouco para dar mais espaço */
   margin: 0 auto;
+  align-items: stretch; /* Garante que os itens preencham a altura */
 
-  /* Layout para Desktop: duas colunas */
+  /* Layout para Desktop: duas colunas com Grid */
   @media (min-width: 1024px) {
-    flex-direction: row;
-    align-items: flex-start;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
   }
 `;
 
 export const MapWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 290px;
+  height: 300px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
   @media (min-width: 1024px) {
-    flex: 1;
-    height: 400px;
+    height: 700px; /
   }
 `;
 
@@ -60,22 +57,19 @@ export const DetailsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  width: 100%;
-  max-width: 550px; /* Limita a largura do card */
 
   @media (min-width: 1024px) {
-    flex: 1;
-    max-width: none; /* Remove a largura máxima no desktop */
+    height: 700px; /* Mesma altura do mapa, para um alinhamento perfeito */
   }
 `;
 
-// ... resto dos estilos (DetailsTitle, Tag, etc.) ...
+// Estilos para o conteúdo dentro do card
 export const DetailsTitle = styled.h2`
   font-family: "Staatliches", sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.2rem);
   color: #2c3e50;
 `;
-// ... (outros estilos de texto permanecem os mesmos) ...
+
 export const Tag = styled.span`
   font-size: 0.8rem;
   color: #fb4121;
@@ -96,7 +90,7 @@ export const ContactList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: auto; /* Mágica do Flexbox: empurra a lista para o fundo */
   padding-top: 1.5rem;
   border-top: 1px solid #f1f2f6;
 `;

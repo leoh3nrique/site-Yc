@@ -15,7 +15,7 @@ export const ContainerHeader = styled.header`
 `;
 
 export const Logo = styled.img`
-  width: 180px;
+  width: 150px;
   height: auto;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
