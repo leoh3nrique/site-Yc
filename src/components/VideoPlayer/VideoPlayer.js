@@ -11,7 +11,7 @@ const VideoPlayer = ({ videoId }) => {
     <div>
       {!isPlaying ? (
         <button onClick={handlePlayVideo}>
-          <img src="./images/iconPlay.png" />
+          <img src="./images/utils/iconPlay.png" />
         </button>
       ) : (
         <iframe
@@ -19,7 +19,6 @@ const VideoPlayer = ({ videoId }) => {
           height="340"
           src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
           title="YouTube Video"
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>

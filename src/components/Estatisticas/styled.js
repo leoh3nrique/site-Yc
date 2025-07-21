@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// Ícones como Styled Components (SVG)
 const IconStyle = `
   width: 32px;
   height: 32px;
@@ -9,7 +8,7 @@ export const IconBuilding = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#fb4121", // Laranja do projeto
+  stroke: "#fb4121", 
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -26,7 +25,7 @@ export const IconCalendar = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#1bb7d1", // Ciano do projeto
+  stroke: "#1bb7d1", 
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -44,7 +43,7 @@ export const IconChart = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#2ecc71", // Verde para sucesso
+  stroke: "#2ecc71", 
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -60,7 +59,7 @@ export const IconMedal = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#9b59b6", // Roxo para destaque
+  stroke: "#9b59b6", 
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -73,7 +72,6 @@ export const IconMedal = styled.svg.attrs({
   ${IconStyle}
 `;
 
-// Estilos do Componente
 export const StatsContainer = styled.div`
   background-color: #f8f9fa;
   padding: 4rem 5%;

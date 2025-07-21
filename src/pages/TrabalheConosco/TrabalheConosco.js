@@ -16,6 +16,7 @@ import {
   FileInputWrapper,
   FileInput,
   FileInputLabel,
+  ContainerDescription,
 } from "./styled";
 import TabNav from "../../components/TabNav/TabNav";
 
@@ -72,8 +73,6 @@ const TrabalheConosco = () => {
     e.preventDefault();
     setIsSending(true);
 
-    
-
     // Simulação de envio
     setTimeout(() => {
       showNotification("Candidatura enviada com sucesso!");
@@ -101,6 +100,20 @@ const TrabalheConosco = () => {
       <PageContainer>
         <FormContainer>
           <FormTitle>Trabalhe Conosco</FormTitle>
+          <ContainerDescription>
+            <p className="main-description">
+              Você acredita que é possível transformar vidas através da
+              alimentação? Na Yes Cooking, buscamos pessoas comprometidas,
+              éticas e empenhadas por servir com excelência.
+            </p>
+            <p className="main-description">
+              Somos uma equipe que valoriza a dedicação, o trabalho em equipe e
+              o propósito de impactar positivamente a comunidade acadêmica.
+              Venha fazer parte da nossa missão.
+            </p>
+            {/* <p className="main-description"></p> */}
+            <p className="main-description">Preencha o formulário abaixo:</p>
+          </ContainerDescription>
           <Form onSubmit={handleSubmit}>
             <TwoColumns>
               <FormGroup>

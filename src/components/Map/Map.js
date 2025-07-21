@@ -1,12 +1,9 @@
-import React from "react";
 import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "100%",
   height: "100%",
 };
-
-// REMOVA A DEFINIÇÃO DOS ÍCONES DAQUI
 
 const MapComponent = ({ unidades, selectedUnit, onSelectUnit }) => {
   const { isLoaded, loadError } = useJsApiLoader({
@@ -19,16 +16,13 @@ const MapComponent = ({ unidades, selectedUnit, onSelectUnit }) => {
     lng: -47.9,
   };
 
-  // ---- CORREÇÃO: Defina os ícones AQUI DENTRO do componente ----
-  // Isso garante que este código só será lido quando o componente renderizar,
-  // e o 'isLoaded' abaixo garante que window.google existirá.
   const defaultIcon = {
-    url: "./images/redmarker.png",
+    url: "./images/utils/redmarker.png",
     scaledSize: isLoaded ? new window.google.maps.Size(35, 35) : null,
   };
 
   const highlightedIcon = {
-    url: "./images/bluemarker.png",
+    url: "./images/utils/bluemarker.png",
     scaledSize: isLoaded ? new window.google.maps.Size(45, 45) : null,
   };
 
@@ -44,7 +38,7 @@ const MapComponent = ({ unidades, selectedUnit, onSelectUnit }) => {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={7.5}
+      zoom={6.8}
       options={{
         streetViewControl: false,
         mapTypeControl: false,

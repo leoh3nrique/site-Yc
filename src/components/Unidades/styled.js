@@ -7,7 +7,7 @@ export const PageContainer = styled.section`
 
 export const HeaderSection = styled.div`
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 `;
 
 export const MainTitle = styled.h1`
@@ -20,13 +20,13 @@ export const Subtitle = styled.p`
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   color: #7f8c8d;
   max-width: 700px;
-  margin: 1rem auto 0;
+  margin: 0%.5 auto 0;
 `;
 
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column; /* Padrão mobile: um abaixo do outro */
-  gap: 2.5rem;
+  gap: 1.3rem;
   align-items: center; /* Centraliza os itens na coluna */
   max-width: 1200px; /* Largura máxima para o conteúdo */
   margin: 0 auto;
@@ -41,14 +41,14 @@ export const ContentContainer = styled.div`
 export const MapWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 290px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
   @media (min-width: 1024px) {
     flex: 1;
-    height: 600px;
+    height: 400px;
   }
 `;
 

@@ -21,7 +21,7 @@ export function Header() {
   return (
     <ContainerHeader>
       <Logo
-        src="./images/logoYc.png"
+        src="./images/utils/logoYc.png"
         alt="Yes Cooking Logo"
         onClick={() => handleNavigate("")}
       />

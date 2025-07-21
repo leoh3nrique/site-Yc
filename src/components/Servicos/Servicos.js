@@ -14,13 +14,21 @@ import {
 } from "./styled";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
+import Carousel from "../Carousel/Carousel"; // 1. Importar o Carousel
+
+// 2. Definir as imagens para o carrossel
+const carouselImages = [
+  "./images/servicos/principal.jpg",
+  "./images/servicos/principal.jpg",
+  "./images/servicos/principal.jpg",
+  "./images/servicos/principal.jpg",
+];
 
 const mainServiceData = [
   {
     title: "Refeições Universitárias",
     description:
       "A Yes Cooking oferece um serviço completo de alimentação para universidades públicas, com foco em nutrição, sabor e eficiência. Planejamos e executamos cardápios que atendem às necessidades de uma rotina acadêmica agitada, garantindo qualidade e bem-estar em cada prato.",
-    image: "./images/servicos/principal.jpg",
     reverse: false,
   },
 ];
@@ -28,21 +36,21 @@ const mainServiceData = [
 const differentialsData = [
   {
     icon: "⚙️",
-    title: "Equipamentos de Última Geração",
+    title: "Equipamentos",
     description:
-      "Utilizamos tecnologia de ponta para garantir a máxima eficiência, segurança alimentar e qualidade em todos os processos.",
+      "Contamos com equipamentos de última geração que asseguram eficiência, segurança alimentar e alto padrão de qualidade em cada etapa do processo.",
   },
   {
     icon: "❄️",
     title: "Ultracongelamento Cook & Chill",
     description:
-      "Nossa técnica preserva o sabor, os nutrientes e a textura dos alimentos, garantindo refeições sempre frescas e seguras.",
+      "Aplicamos a técnica Cook & Chill para preservar sabor, textura e valor nutricional dos alimentos, refeições sempre frescas e deliciosas.",
   },
   {
     icon: "🌱",
-    title: "Opções Veganas e Vegetarianas",
+    title: "Cardápios inclusivos",
     description:
-      "Desenvolvemos cardápios inclusivos e saborosos, com opções completas para dietas vegetarianas e veganas.",
+      "Oferecemos opções vegetarianas e veganas cuidadosamente elaboradas, garantindo refeições equilibradas, saborosas e acessíveis a todos os perfis alimentares.",
   },
 ];
 
@@ -62,7 +70,12 @@ function Servicos() {
           {mainServiceData.map((service, index) => (
             <ServiceRow key={index} reverse={service.reverse}>
               <ImageContainer>
-                <img src={service.image} alt={service.title} />
+                {/* 3. Substituir a <img> pelo <Carousel> */}
+                <Carousel
+                  images={carouselImages}
+                  autoplay={true}
+                  interval={2500}
+                />
               </ImageContainer>
               <TextContainer>
                 <h3>{service.title}</h3>
@@ -79,7 +92,6 @@ function Servicos() {
           <div className="cards-container">
             {differentialsData.map((item, index) => (
               <DifferentialCard key={index}>
-                <IconWrapper>{item.icon}</IconWrapper>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
               </DifferentialCard>

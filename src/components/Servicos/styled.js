@@ -64,10 +64,9 @@ export const TextContainer = styled.div`
   }
 `;
 
-// --- 2. Estilos da Seção de Diferenciais ---
 export const DifferentialsSection = styled.section`
   width: 100%;
-  padding: 4rem 5%;
+  padding: rem 5%;
   background-color: #fff;
 
   .cards-container {

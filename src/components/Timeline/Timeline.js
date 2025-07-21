@@ -1,37 +1,31 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
-// Dados da timeline (mantidos como antes)
+// Seus dados atualizados da timeline
 const events = [
   {
-    year: "1992",
+    year: "2020",
     title: "Fundação da Empresa",
-    description: "Inicio da empresa",
-    image: "./images/quemsomos/qs1.jpg",
+    description: "Fundação da empresa.",
+    image: "./images/timeline/timeline01.jpg",
   },
   {
-    year: "2005",
-    title: "Primeiro Produto",
-    description: "Lançamento do primeiro produto no mercado em 2005.",
-    image: "./images/quemsomos/qs2.jpg",
+    year: "2022",
+    title: "Primeiras Unidades",
+    description: "Primeiras Unidades na UFSCAR.",
+    image: "./images/timeline/timeline3.jpg",
   },
   {
-    year: "2012",
-    title: "Expansão Internacional",
-    description: "A empresa expandiu para outros países em 2012.",
-    image: "./images/comidas/comida1.jpg",
+    year: "2023",
+    title: "Expansão para outras unidades",
+    description: "A empresa expandiu para outras unidades em 2023.",
+    image: "./images/timeline/timeline4.jpg",
   },
   {
-    year: "2024",
-    title: "Novo Escritório",
-    description: "Inauguração de um novo escritório regional em 2024.",
-    image: "./images/unidades/sc1.jpg",
-  },
-  {
-    year: "2028",
-    title: "Futuro",
-    description: "Planos futuros da empresa.",
-    image: "./images/caminhaoTeste.png",
+    year: "2025",
+    title: "Construção de novas lanchonetes",
+    description: "Inauguração de uma nova lanchonete regional em 2025.",
+    image: "./images/timeline/timeline4.jpg",
   },
 ];
 
@@ -40,7 +34,6 @@ const Timeline = () => {
   const selectedEvent = events.find((event) => event.year === selectedYear);
   const navRef = useRef(null);
 
-  // Efeito para centralizar o ano ativo na navegação
   useEffect(() => {
     const selectedElement = navRef.current?.querySelector(
       `[data-year="${selectedYear}"]`
@@ -65,7 +58,7 @@ const Timeline = () => {
               key={event.year}
               isActive={event.year === selectedYear}
               onClick={() => setSelectedYear(event.year)}
-              data-year={event.year} // Atributo para o useEffect
+              data-year={event.year}
             >
               <span>{event.year}</span>
             </YearMarker>
@@ -79,7 +72,8 @@ const Timeline = () => {
             <img src={selectedEvent.image} alt={selectedEvent.title} />
           </ImageContainer>
           <TextContainer>
-            <h2>{selectedEvent.year}</h2>
+            {/* O h2 aqui foi trocado para o Título do evento, para mais dinamismo */}
+            <h2>{selectedEvent.title}</h2>
             <p>{selectedEvent.description}</p>
           </TextContainer>
         </ContentArea>
@@ -88,58 +82,65 @@ const Timeline = () => {
   );
 };
 
-// --- ESTILOS REFINADOS ---
+// --- ESTILOS AJUSTADOS PARA O FORMATO DE CARD ---
 
 const TimelineContainer = styled.section`
+  /* Estilos de Card restaurados */
   width: 100%;
-  max-width: 960px; /* Reduz a largura máxima para um layout mais compacto */
-  margin: 3rem auto;
-  padding: 1.5rem;
+  max-width: 960px; /* Limita a largura para o efeito de card */
+  margin: 3rem auto; /* Centraliza o card na página */
+  padding: 2.5rem; /* Espaçamento interno */
   font-family: "Helvetica", "Arial", sans-serif;
-  background: #fff; /* Adiciona um fundo para destacar o componente */
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background: #ffffff; /* Fundo branco para contraste */
+  border-radius: 12px; /* Bordas arredondadas */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+  @media (max-width: 768px) {
+    /* Ajustes para telas menores */
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
 `;
 
 const MainTitle = styled.h1`
   text-align: center;
-  /* Fonte fluida para se adaptar melhor */
   font-size: clamp(1.8rem, 4vw, 2.2rem);
-  font-family: "Lucida Handwriting", "Brush Script MT", normal;
-  margin-bottom: 1.5rem;
   color: #fb4121;
-  margin-bottom: 2.5rem;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
 `;
 
 const TimelineNavWrapper = styled.div`
   width: 100%;
-  overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
-  -webkit-overflow-scrolling: touch; /* Melhora a experiência em iOS */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 1rem 0;
   margin-bottom: 1.5rem;
 
-  /* Esconde a barra de rolagem mas mantém a funcionalidade */
   &::-webkit-scrollbar {
     display: none;
   }
-  scrollbar-width: none; /* Para Firefox */
+  scrollbar-width: none;
 `;
 
 const TimelineTrack = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  min-width: 600px; /* Garante que a linha não fique muito comprimida */
-  padding: 0 1rem;
+  min-width: 600px;
+  padding: 1rem 1rem;
+  margin-top: 0.5rem;
 
   &::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 1rem;
     right: 1rem;
     height: 2px;
-    background-color: #e0e0e0;
+    background-color: #ddd;
     transform: translateY(-50%);
     z-index: 1;
   }
@@ -160,30 +161,31 @@ const YearMarker = styled.div`
 
   &::before {
     content: "";
-    width: 12px;
+    background-color: ${({ isActive }) => (isActive ? "#fb4121" : "#ccc")};
+    width: ${({ isActive }) => (isActive ? "12px" : "2px")};
     height: 12px;
-    background-color: #fff;
-    border: 3px solid ${({ isActive }) => (isActive ? "#fb4121" : "#e0e0e0")};
-    border-radius: 50%;
-    transition: border-color 0.3s;
-    margin-bottom: 0.5rem;
+    border-radius: ${({ isActive }) => (isActive ? "0" : "2px")};
+    transition: all 0.3s;
+    position: absolute;
+    top: -6px;
   }
 
   span {
-    font-size: 0.9rem; /* Fonte um pouco menor */
+    font-size: 0.9rem;
     font-weight: ${({ isActive }) => (isActive ? "bold" : "normal")};
     color: ${({ isActive }) => (isActive ? "#fb4121" : "#555")};
-    /* Posição do texto do ano ajustada */
     position: absolute;
     top: -30px;
+    white-space: nowrap;
   }
 `;
 
 const ContentArea = styled.div`
   display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  margin-top: 1rem;
+  align-items: center; /* Centraliza verticalmente a imagem e o texto */
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -193,15 +195,14 @@ const ContentArea = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  flex: 0 0 35%; /* Imagem ocupa menos espaço */
+  flex: 0 0 45%; /* A imagem ocupa 45% do espaço */
+  max-width: 400px;
 
   img {
     width: 100%;
-    height: auto;
+    height: 350px;
     object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    padding: 4px;
+    border-radius: 8px;
   }
 `;
 
@@ -209,15 +210,16 @@ const TextContainer = styled.div`
   flex: 1;
 
   h2 {
-    font-size: 1.8rem; /* Título do ano menor */
-    color: #fb4121;
+    font-size: 1.8rem;
+    color: #333; /* Cor mais escura para o título do evento */
     margin-bottom: 0.8rem;
+    font-weight: bold;
   }
 
   p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #666;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555; /* Tom de cinza para o texto */
   }
 `;
 

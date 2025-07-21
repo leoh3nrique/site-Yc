@@ -32,7 +32,7 @@ const DetailsMap = ({ unit }) => {
         images={unit.images}
         slidesPerView={1}
         spaceBetween={20}
-        loop // Ativa o loop
+        loop
         autoplay={{ delay: 5 }}
         pagination={{ clickable: true }}
       />

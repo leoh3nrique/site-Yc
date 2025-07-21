@@ -22,23 +22,23 @@ const culturaData = [
   {
     title: "Missão",
     description:
-      "Garantir refeições seguras, equilibradas e saborosas, contribuindo para a saúde e o bem-estar da comunidade acadêmica.",
+      "Oferecer refeições equilibradas e saborosas que promovam saúde, acolhimento e bem-estar à comunidade acadêmica, servindo com propósito e compromisso diário",
     icon: <FaHeart />,
   },
   {
     title: "Visão",
     description:
-      "Sermos referência em alimentação universitária, reconhecida por nosso compromisso com a qualidade, inovação e impacto social.",
+      "Sempre continuar com excelência no serviço, e impacto positivo na sociedade e na vida de cada pessoa servida",
     icon: <MdOutlineRemoveRedEye />,
   },
   {
     title: "Valores",
     items: [
-      "Qualidade em cada etapa",
-      "Ética e responsabilidade",
-      "Valorização das pessoas",
-      "Respeito à diversidade",
-      "Sustentabilidade e transparência",
+      "Qualidade em cada etapa do processo",
+      "Ética, responsabilidade e transparência",
+      "Compromisso com a saúde e bem-estar",
+      "Respeito à diversidade, à inclusão e ao ambiente acadêmico",
+      "Inovação com propósito",
     ],
     icon: <LuMountain />,
   },

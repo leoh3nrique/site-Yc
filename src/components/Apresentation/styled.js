@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-// ... (ContainerApresentation, Apresentation, StyledTitleApresentation) ...
-
 export const ContainerApresentation = styled.div`
   width: 100%;
   height: 110vh;
@@ -56,17 +54,16 @@ export const StyledTitleApresentation = styled.a`
 export const SectionButtons = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Alterado para 'center' para melhor alinhamento */
+  justify-content: center;
   align-items: center;
   width: 100%;
   margin: 13px;
 
-  /* CORREÇÃO: Adicionado 'gap' para criar espaço entre os itens */
-  gap: 1.5rem; /* Adiciona 1.5rem de espaço (aprox. 24px) */
+  gap: 1.5rem;
 
   @media (min-width: 768px) {
     flex-direction: row;
-    width: auto; /* Largura automática para acomodar o gap */
+    width: auto;
     justify-content: center;
   }
 `;
@@ -97,11 +94,10 @@ export const StyledAnchor = styled.a`
 `;
 
 export const SectionPlayVideo = styled.div`
-  /* Removido width fixo para flexibilidade */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem; /* Espaço entre o botão de play e o texto */
+  gap: 1rem;
 
   span {
     color: white;
@@ -119,7 +115,7 @@ export const SectionPlayVideo = styled.div`
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    flex-shrink: 0; /* Impede que o botão encolha */
+    flex-shrink: 0;
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.2);

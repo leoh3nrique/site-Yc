@@ -36,7 +36,7 @@ export const ContainerAboutUs = styled.div`
 export const SectionCultura = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
   width: 100%;
   max-width: 1200px;
   margin-top: 1rem;
@@ -46,7 +46,7 @@ export const CardCultura = styled.div`
   background-color: #fff;
   min-height: 250px;
   border-radius: 15px;
-  border-top: 5px solid#fb4121;
+  border-top: 5px solid #fb4121;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   display: flex;

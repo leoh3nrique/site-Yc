@@ -5,7 +5,6 @@ export const ContainerHeader = styled.header`
   top: 0;
   z-index: 1010;
   width: 100%;
-  /* O header em si terá sempre o fundo azul */
   background-color: #1bb7d1;
   display: flex;
   justify-content: space-between;
@@ -21,12 +20,11 @@ export const Logo = styled.img`
   cursor: pointer;
   transition: width 0.3s ease-in-out;
 
-  /* Garante que a logo fique na frente do menu aberto */
   position: relative;
   z-index: 1012;
 
   @media (max-width: 768px) {
-    width: 150px;
+    width: 110px;
   }
 `;
 
@@ -37,9 +35,8 @@ export const NavLinks = styled.nav`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    /* CORREÇÃO 1: Alinha os itens ao topo e adiciona padding */
     justify-content: flex-start;
-    padding-top: 8rem; /* Espaço para não ficar atrás do header */
+    padding-top: 8rem;
 
     gap: 3rem;
     position: fixed;
@@ -104,7 +101,7 @@ export const MobileIcon = styled.div`
     width: 2rem;
     height: 2rem;
     cursor: pointer;
-    z-index: 1012; /* Z-index mais alto para ficar na frente do menu */
+    z-index: 1012;
 
     div {
       width: 2rem;

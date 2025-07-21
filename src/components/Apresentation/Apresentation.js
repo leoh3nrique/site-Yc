@@ -6,12 +6,10 @@ import {
   StyledAnchor,
   StyledTitleApresentation,
 } from "./styled";
-// import background from ".";
-// import iconPlay from "../../assets/iconPlay.png";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 
 function WelcomeSection() {
-  const background = "./images/teste.png";
+  const background = "./images/utils/apresentation.jpeg";
 
   return (
     <ContainerApresentation bgImage={background}>

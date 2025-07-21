@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from "styled-components";
 
 // Reutilizando os estilos da página de Contato, com pequenas adaptações.
 
@@ -75,7 +75,7 @@ export const Input = styled.input`
 export const Select = styled.select`
   ${commonInputStyles}
   appearance: none;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5z%22%20fill%3D%22%23999%22%2F%3E%3C%2Fsvg%3E');
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5z%22%20fill%3D%22%23999%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
 `;
@@ -133,7 +133,7 @@ export const FileInputLabel = styled.label`
   display: block;
   text-align: center;
   cursor: pointer;
-  
+
   &:hover {
     border-color: #1bb7d1;
   }
@@ -155,15 +155,38 @@ export const Notification = styled.div`
   left: 0;
   right: 0;
   padding: 1rem 1.5rem;
-  background-color: ${({ type }) => (type === 'error' ? '#fb4121' : '#2ecc71')};
+  background-color: ${({ type }) => (type === "error" ? "#fb4121" : "#2ecc71")};
   color: white;
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
   z-index: 1000;
   transform: translateY(-100%);
-  
-  ${({ show }) => show
-    ? css`animation: ${slideIn} 0.5s forwards;`
-    : css`animation: ${slideOut} 0.5s forwards;`}
+
+  ${({ show }) =>
+    show
+      ? css`
+          animation: ${slideIn} 0.5s forwards;
+        `
+      : css`
+          animation: ${slideOut} 0.5s forwards;
+        `}
+`;
+
+export const ContainerDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 5%;
+  text-align: center;
+  .main-description {
+    max-width: 900px;
+    width: 850px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1rem;
+  }
 `;
