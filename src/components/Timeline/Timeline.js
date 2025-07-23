@@ -82,10 +82,8 @@ const Timeline = () => {
   );
 };
 
-// --- ESTILOS AJUSTADOS PARA O FORMATO DE CARD ---
 
 const TimelineContainer = styled.section`
-  /* Estilos de Card restaurados */
   width: 100%;
   max-width: 960px; /* Limita a largura para o efeito de card */
   margin: 3rem auto; /* Centraliza o card na página */
@@ -96,7 +94,6 @@ const TimelineContainer = styled.section`
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
 
   @media (max-width: 768px) {
-    /* Ajustes para telas menores */
     margin: 2rem 1rem;
     padding: 1.5rem;
   }

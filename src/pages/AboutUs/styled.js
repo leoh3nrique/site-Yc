@@ -20,7 +20,7 @@ export const ContainerAboutUs = styled.div`
   h2 {
     color: #1bb7d1;
     font-size: clamp(2rem, 5vw, 2.8rem);
-    font-family: "Lucida Handwriting", "Brush Script MT", normal;
+    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
     margin-bottom: 1.5rem;
   }
 

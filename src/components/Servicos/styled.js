@@ -14,7 +14,7 @@ export const HeaderSection = styled.div`
 export const MainTitle = styled.h1`
   color: #1bb7d1;
   font-size: clamp(2.2rem, 5vw, 2.8rem);
-  font-family: "Lucida Handwriting", "Brush Script MT", normal;
+  font-family: "Lucida Handwriting", "Brush Script MT", cursive;
 `;
 
 // --- 1. Estilos da Seção Principal ---
