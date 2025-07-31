@@ -78,10 +78,10 @@ export const StatsContainer = styled.div`
   text-align: center;
 
   h1 {
-    color: #1bb7d1;
+    color: #1c779f;
     font-size: clamp(2rem, 5vw, 3rem); /* Fonte fluida */
     font-family: "Lucida Handwriting", "Brush Script MT", normal;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 `;
 
@@ -104,21 +104,21 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1c779f;
+  background-color: ${(props) => props.color};
   border-radius: 10px;
 `;
 
 export const StatNumber = styled.p`
   font-family: "Staatliches", sans-serif;
   font-size: 60px;
-  color: #1c779f;
+  color: ${(props) => props.color};
   font-weight: 600;
   margin: 0;
 `;
 
 export const StatTitle = styled.h3`
   font-size: 25px;
-  color: #1c779f;
+  color: ${(props) => props.color};
   font-weight: 500;
   margin: 0;
 `;

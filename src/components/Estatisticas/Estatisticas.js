@@ -12,30 +12,33 @@ import {
   IconChart,
   IconMedal,
 } from "./styled";
+import { MdOutlineFoodBank, MdOutlineMapsHomeWork } from "react-icons/md";
 
 const statsData = [
   {
     icon: <IoPeopleSharp size={230} color="#FAF9F6" />,
     number: "150+",
     title: "Colaboradores",
+    color: "#1c779f",
   },
   {
-    icon: <IconCalendar />,
-    number: "5+",
-    title: "Anos de Experiência",
-    description: "Mais de uma década de excelência e sabor.",
+    icon: <MdOutlineFoodBank size={230} color="#FAF9F6" />,
+    number: "9.000KG",
+    title: "de insumos por dia",
+    color: "#A73129",
   },
   {
-    icon: <IconBuilding />,
+    icon: <MdOutlineMapsHomeWork size={230} color="#FAF9F6" />,
     number: "6",
-    title: "Unidades",
+    title: "Unidades atendidas",
     description: "Índice de aprovação de nossos clientes.",
+    color: "#F1B75C",
   },
   {
-    icon: <IconMedal />,
-    number: "150K+",
-    title: "Refeições Servidas",
-    description: "Mensalmente em todos os nossos contratos.",
+    icon: <MdOutlineFoodBank size={230} color="#FAF9F6" />,
+    number: "150.000",
+    title: "Refeições por mês",
+    color: "#1c779f",
   },
 ];
 
@@ -46,10 +49,9 @@ function Estatisticas() {
       <StatsGrid>
         {statsData.map((stat, index) => (
           <StatCard key={index}>
-            <IconWrapper>{stat.icon}</IconWrapper>
-            <StatNumber>{stat.number}</StatNumber>
-            <StatTitle>{stat.title}</StatTitle>
-            <StatDescription>{stat.description}</StatDescription>
+            <IconWrapper color={stat.color}>{stat.icon}</IconWrapper>
+            <StatNumber color={stat.color}>{stat.number}</StatNumber>
+            <StatTitle color={stat.color}>{stat.title}</StatTitle>
           </StatCard>
         ))}
       </StatsGrid>
