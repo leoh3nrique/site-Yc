@@ -16,7 +16,7 @@ function WelcomeSection() {
       <Apresentation>
         <h1> Bem vindo a Yes Cooking</h1>
         <StyledTitleApresentation>
-          A nossa missão é fazer a missão!
+          A nossa missão é fazer missão!
         </StyledTitleApresentation>
         <SectionButtons>
           <StyledAnchor class="btn-conheca" href="/servicos">

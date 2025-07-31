@@ -1,3 +1,4 @@
+import React from "react";
 import {
   ServicesPageContainer,
   MainSection,
@@ -6,76 +7,85 @@ import {
   ServiceRow,
   ImageContainer,
   TextContainer,
+  // Botões removidos dos imports
   DifferentialsSection,
   DifferentialCard,
   IconWrapper,
   OtherServicesSection,
   OtherServiceCard,
+  ContainerInsumos,
+  TitleInsumos,
+  ContentInsumos,
+  BackgroundInsumos,
+  ButtonInsumos,
 } from "./styled";
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
-import Carousel from "../Carousel/Carousel"; // 1. Importar o Carousel
+import { Header } from "../Header/Header";
+import { Footer } from "../Footer/Footer";
 
-// 2. Definir as imagens para o carrossel
-const carouselImages = [
-  "./images/servicos/principal.jpg",
-  "./images/servicos/principal.jpg",
-  "./images/servicos/principal.jpg",
-  "./images/servicos/principal.jpg",
-];
-
+// --- Dados da Seção Principal ---
 const mainServiceData = [
   {
-    title: "Refeições Universitárias",
+    title: "Refeição Administrada",
     description:
-      "A Yes Cooking oferece um serviço completo de alimentação para universidades públicas, com foco em nutrição, sabor e eficiência. Planejamos e executamos cardápios que atendem às necessidades de uma rotina acadêmica agitada, garantindo qualidade e bem-estar em cada prato.",
+      "Assumimos a gestão completa do seu restaurante ou refeitório. Cuidamos de tudo, desde a compra de insumos e gestão de equipe até o preparo final das refeições no local, permitindo que sua empresa foque no que faz de melhor.",
+    image: "./images/quemsomos/qs1.jpg",
+    reverse: false,
+  },
+  {
+    title: "Refeição Transportada",
+    description:
+      "Nossas refeições são preparadas em nossa cozinha central com os mais altos padrões de qualidade e segurança, e então transportadas em veículos climatizados, garantindo que o sabor e a temperatura cheguem perfeitos ao seu refeitório.",
+    image: "./images/caminhaoTeste.png",
+    reverse: true,
+  },
+  {
+    title: "Refeição Hospitalar",
+    description:
+      "Desenvolvemos cardápios específicos para o ambiente hospitalar, seguindo rigorosas dietas e restrições. Nosso foco é oferecer uma alimentação segura, nutritiva e saborosa, que contribua para a recuperação e o bem-estar dos pacientes.",
+    image: "./images/comidas/comida2.jpg",
     reverse: false,
   },
 ];
 
 const differentialsData = [
   {
-    icon: "⚙️",
-    title: "Equipamentos",
+    title: "Equipamentos de Última Geração",
     description:
       "Contamos com equipamentos de última geração que asseguram eficiência, segurança alimentar e alto padrão de qualidade em cada etapa do processo.",
   },
   {
-    icon: "❄️",
     title: "Ultracongelamento Cook & Chill",
     description:
-      "Aplicamos a técnica Cook & Chill para preservar sabor, textura e valor nutricional dos alimentos, refeições sempre frescas e deliciosas.",
+      "Aplicamos a técnica Cook & Chill para preservar sabor, textura e valor nutricional dos alimentos — refeições sempre frescas, seguras e deliciosas.",
   },
   {
-    icon: "🌱",
-    title: "Cardápios inclusivos",
+    title: "Opções Veganas e Vegetarianas",
     description:
       "Oferecemos opções vegetarianas e veganas cuidadosamente elaboradas, garantindo refeições equilibradas, saborosas e acessíveis a todos os perfis alimentares.",
   },
 ];
-
 const otherServicesData = [
-  { image: "./images/servicos/marmitas.jpg", title: "Marmitas" },
-  { image: "./images/comidas/coofebreak.jpg", title: "Coffee Breaks" },
-  { image: "./images/comidas/lanche.jpg", title: "Lanches" },
-  { image: "./images/comidas/desjejum.jpg", title: "Desjejum" },
+  { image: "./images/comidas/comida2.jpg", title: "Marmitas" },
+  { image: "./images/comidas/comida3.jpg", title: "Coffee Breaks" },
+  { image: "./images/quemsomos/qs1.jpg", title: "Lanches" },
+  { image: "./images/quemsomos/qs2.jpg", title: "Desjejum" },
 ];
 
 function Servicos() {
+  const background = "./images/fundo-insumos.png";
+
   return (
-    <div>
+    <>
       <Header />
       <ServicesPageContainer>
         <MainSection>
+          <HeaderSection>
+            <MainTitle>Nossos Modelos de Serviço</MainTitle>
+          </HeaderSection>
           {mainServiceData.map((service, index) => (
             <ServiceRow key={index} reverse={service.reverse}>
               <ImageContainer>
-                {/* 3. Substituir a <img> pelo <Carousel> */}
-                <Carousel
-                  images={carouselImages}
-                  autoplay={true}
-                  interval={2500}
-                />
+                <img src={service.image} alt={service.title} />
               </ImageContainer>
               <TextContainer>
                 <h3>{service.title}</h3>
@@ -99,7 +109,7 @@ function Servicos() {
           </div>
         </DifferentialsSection>
 
-        <OtherServicesSection>
+        {/* <OtherServicesSection>
           <HeaderSection>
             <MainTitle>Outras Soluções</MainTitle>
           </HeaderSection>
@@ -111,10 +121,25 @@ function Servicos() {
               </OtherServiceCard>
             ))}
           </div>
-        </OtherServicesSection>
+        </OtherServicesSection> */}
+        <BackgroundInsumos bgImage={background}>
+          <ContainerInsumos>
+            <TitleInsumos>Seleção de Insumos</TitleInsumos>
+            <ContentInsumos>
+              A Yes Cooking acredita que uma alimentação saudável começa na
+              seleção dos fornecedores qualificando a rastreabilidade dos
+              insumos. Não importa se será servida em uma universidade, um
+              hospital ou uma lanchonete.
+            </ContentInsumos>
+            <ContentInsumos>
+              Gostaria de fazer parte do time? Entre em contato!
+            </ContentInsumos>
+            <ButtonInsumos>Contato</ButtonInsumos>
+          </ContainerInsumos>
+        </BackgroundInsumos>
       </ServicesPageContainer>
       <Footer />
-    </div>
+    </>
   );
 }
 

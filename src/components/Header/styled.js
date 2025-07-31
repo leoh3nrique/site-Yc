@@ -15,7 +15,7 @@ export const ContainerHeader = styled.header`
 `;
 
 export const Logo = styled.img`
-  width: 150px;
+  width: 190px;
   height: auto;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
@@ -58,7 +58,7 @@ export const NavLinks = styled.nav`
 `;
 
 export const LinkNav = styled.button`
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   border: none;
   background: none;
@@ -68,7 +68,6 @@ export const LinkNav = styled.button`
   position: relative;
   text-decoration: none;
   border-radius: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
 
   @media (max-width: 768px) {
     font-size: 1.5rem;

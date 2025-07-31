@@ -38,7 +38,6 @@ const culturaData = [
       "Ética, responsabilidade e transparência",
       "Compromisso com a saúde e bem-estar",
       "Respeito à diversidade, à inclusão e ao ambiente acadêmico",
-      "Inovação com propósito",
     ],
     icon: <LuMountain />,
   },

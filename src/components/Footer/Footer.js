@@ -14,22 +14,15 @@ export function Footer() {
     <FooterContainer>
       <FooterContent>
         <FooterColumn>
+          <img
+            src="./images/utils/logo-inteirobranco.png"
+            alt="Yes Cooking Logo"
+            style={{ width: "240px" }}
+          />
           <FooterTitle>
-            <img
-              src="./images/utils/logoYc.png"
-              alt="Yes Cooking Logo"
-              style={{ width: "150px" }}
-            />
+            <p>A nossa missão é fazer a missão!</p>
           </FooterTitle>
-          <p>A nossa missão é fazer a missão!</p>
         </FooterColumn>
-
-        {/* <FooterColumn>
-          <FooterTitle>Serviços</FooterTitle>
-          <FooterLink href="/servicos">Serviços Alimentares</FooterLink>
-          <FooterLink href="/servicos">Marmitas</FooterLink>
-          <FooterLink href="/servicos">Lanches e Coofebreaks</FooterLink>
-        </FooterColumn> */}
 
         <FooterColumn>
           <FooterTitle>Empresa</FooterTitle>

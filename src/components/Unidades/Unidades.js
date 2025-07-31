@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Footer } from "../../components/Footer/Footer";
+import { Footer } from "../Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import MapComponent from "../../components/Map/Map";
 import { unidades } from "../../data";
-import Carousel from "../../components/Carousel/Carousel";
+import Carousel from "../Carousel/Carousel";
 import {
   PageContainer,
   HeaderSection,

@@ -1,3 +1,4 @@
+import { MdMapsHomeWork, MdOutlineFoodBank, MdOutlineMapsHomeWork } from "react-icons/md";
 import {
   StatsContainer,
   StatsGrid,
@@ -20,13 +21,13 @@ const statsData = [
     description: "Equipe dedicada e apaixonada por servir.",
   },
   {
-    icon: <IconCalendar />,
-    number: "5+",
-    title: "Anos de Experiência",
-    description: "Mais de uma década de excelência e sabor.",
+    icon: <MdOutlineFoodBank size={50} color="#fb4121" />,
+    number: "9",
+    title: "Toneladas",
+    description: "Mais de 9 toneladas consumidas por dia.",
   },
   {
-    icon: <IconBuilding />,
+    icon: <MdOutlineMapsHomeWork size={50} color="#fb4121" />,
     number: "6",
     title: "Unidades",
     description: "Índice de aprovação de nossos clientes.",

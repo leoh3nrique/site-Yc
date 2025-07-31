@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledAnchor } from "../Apresentation/styled";
 
 export const ServicesPageContainer = styled.div`
   width: 100%;
@@ -14,10 +15,10 @@ export const HeaderSection = styled.div`
 export const MainTitle = styled.h1`
   color: #1bb7d1;
   font-size: clamp(2.2rem, 5vw, 2.8rem);
-  font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+  font-family: "Lucida Handwriting", "Brush Script MT", normal;
 `;
 
-// --- 1. Estilos da Seção Principal ---
+// --- 1. Estilos da Seção Principal (MainSection) ---
 export const MainSection = styled.section`
   width: 100%;
   padding: 4rem 5%;
@@ -30,6 +31,11 @@ export const ServiceRow = styled.div`
   gap: 4rem;
   max-width: 1100px;
   margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
   flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
 
   @media (max-width: 768px) {
@@ -39,34 +45,49 @@ export const ServiceRow = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  flex: 0.8;
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
   img {
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: auto;
+    border-radius: 8px;
+    display: block;
   }
 `;
 
 export const TextContainer = styled.div`
   flex: 1;
+
   h3 {
     font-size: clamp(1.8rem, 4vw, 2.2rem);
-    color: #fb4121;
+    color: #333;
     margin-bottom: 1rem;
+    font-family: "Staatliches", sans-serif;
   }
+
   p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #666;
+    /* Removido margin-bottom para o texto ficar alinhado ao final */
   }
+
   @media (max-width: 768px) {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
+// --- 2. Estilos da Seção de Diferenciais (SEM ALTERAÇÃO) ---
 export const DifferentialsSection = styled.section`
   width: 100%;
-  padding: rem 5%;
+  padding: 4rem 5%;
   background-color: #fff;
 
   .cards-container {
@@ -100,7 +121,7 @@ export const IconWrapper = styled.div`
   margin-bottom: 1rem;
 `;
 
-// --- 3. Estilos da Seção de Outras Soluções ---
+// --- 3. Estilos da Seção de Outras Soluções (SEM ALTERAÇÃO) ---
 export const OtherServicesSection = styled.section`
   width: 100%;
   padding: 4rem 5%;
@@ -145,4 +166,48 @@ export const OtherServiceCard = styled.div`
   &:hover img {
     transform: scale(1.05);
   }
+`;
+
+export const BackgroundInsumos = styled.div`
+  width: 100%;
+  height: 75vh;
+  background-image: url(${(props) => props.bgImage});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+
+  padding: 5rem;
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 80vh;
+  }
+`;
+
+export const ContainerInsumos = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+  max-width: 960px;
+  margin: 2rem auto;
+`;
+export const TitleInsumos = styled.h2`
+  font-family: "Staatliches", sans-serif;
+  font-size: 55px;
+  color: #fb4121;
+`;
+
+export const ContentInsumos = styled.p`
+  font-size: 25px;
+  color: white;
+`;
+
+export const ButtonInsumos = styled(StyledAnchor)`
+  background-color: #1bb7d1;
+  max-width: 215px;
+  font-size: 1.3rem;
 `;
