@@ -101,12 +101,12 @@ const TimelineContainer = styled.section`
 
 const MainTitle = styled.h1`
   text-align: center;
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
-  color: #fb4121;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: #A73129;
   font-weight: bold;
   font-family: "Arial", sans-serif;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 `;
 
 const TimelineNavWrapper = styled.div`
@@ -114,7 +114,7 @@ const TimelineNavWrapper = styled.div`
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding: 1rem 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0%.4;
 
   &::-webkit-scrollbar {
     display: none;
@@ -158,7 +158,7 @@ const YearMarker = styled.div`
 
   &::before {
     content: "";
-    background-color: ${({ isActive }) => (isActive ? "#fb4121" : "#ccc")};
+    background-color: ${({ isActive }) => (isActive ? "#A73129" : "#ccc")};
     width: ${({ isActive }) => (isActive ? "12px" : "2px")};
     height: 12px;
     border-radius: ${({ isActive }) => (isActive ? "0" : "2px")};
@@ -170,7 +170,7 @@ const YearMarker = styled.div`
   span {
     font-size: 0.9rem;
     font-weight: ${({ isActive }) => (isActive ? "bold" : "normal")};
-    color: ${({ isActive }) => (isActive ? "#fb4121" : "#555")};
+    color: ${({ isActive }) => (isActive ? "#A73129" : "#555")};
     position: absolute;
     top: -30px;
     white-space: nowrap;
