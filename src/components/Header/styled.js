@@ -15,7 +15,7 @@ export const ContainerHeader = styled.header`
 `;
 
 export const Logo = styled.img`
-  width: 150px;
+  width: 180px;
   height: auto;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
@@ -58,13 +58,13 @@ export const NavLinks = styled.nav`
 `;
 
 export const LinkNav = styled.button`
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 500;
   border: none;
   background: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  color: #1bb7d1;
+  color: #1c779f;
   position: relative;
   text-decoration: none;
   border-radius: 20px;
@@ -84,8 +84,8 @@ export const LinkNav = styled.button`
     ${({ isActive }) =>
       isActive &&
       css`
-        background-color: white;
-        color: #1bb7d1;
+        background-color: #1c779f;
+        color: white;
         font-weight: bold;
       `}
   }

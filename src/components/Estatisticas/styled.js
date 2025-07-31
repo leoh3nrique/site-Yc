@@ -8,7 +8,7 @@ export const IconBuilding = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#fb4121", 
+  stroke: "#fb4121",
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -25,7 +25,7 @@ export const IconCalendar = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#1bb7d1", 
+  stroke: "#1bb7d1",
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -43,7 +43,7 @@ export const IconChart = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#2ecc71", 
+  stroke: "#2ecc71",
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -59,7 +59,7 @@ export const IconMedal = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#9b59b6", 
+  stroke: "#9b59b6",
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -87,55 +87,38 @@ export const StatsContainer = styled.div`
 
 export const StatsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 `;
 
 export const StatCard = styled.div`
-  background-color: #ffffff;
-  border-radius: 10px;
-  border-top: 4px solid #fb4121;
-  padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  }
 `;
 
 export const IconWrapper = styled.div`
-  background-color: #f1f2f6;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
+  background-color: #1c779f;
+  border-radius: 10px;
 `;
 
 export const StatNumber = styled.p`
   font-family: "Staatliches", sans-serif;
-  font-size: 48px;
-  color: #2c3e50;
+  font-size: 60px;
+  color: #1c779f;
   font-weight: 600;
   margin: 0;
 `;
 
 export const StatTitle = styled.h3`
-  font-size: 20px;
-  color: #34495e;
+  font-size: 25px;
+  color: #1c779f;
   font-weight: 500;
   margin: 0;
 `;

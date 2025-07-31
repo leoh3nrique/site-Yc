@@ -1,3 +1,4 @@
+import { IoPeopleOutline, IoPeopleSharp } from "react-icons/io5";
 import {
   StatsContainer,
   StatsGrid,
@@ -14,10 +15,9 @@ import {
 
 const statsData = [
   {
-    icon: <IconBuilding />,
+    icon: <IoPeopleSharp size={230} color="#FAF9F6" />,
     number: "150+",
     title: "Colaboradores",
-    description: "Equipe dedicada e apaixonada por servir.",
   },
   {
     icon: <IconCalendar />,
