@@ -5,7 +5,7 @@ export const ContainerHeader = styled.header`
   top: 0;
   z-index: 1010;
   width: 100%;
-  background-color: #1bb7d1;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,7 +64,7 @@ export const LinkNav = styled.button`
   background: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  color: white;
+  color: #1bb7d1;
   position: relative;
   text-decoration: none;
   border-radius: 20px;
