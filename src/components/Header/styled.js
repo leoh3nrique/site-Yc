@@ -106,7 +106,7 @@ export const MobileIcon = styled.div`
     div {
       width: 2rem;
       height: 0.25rem;
-      background: white;
+      background: #1c779f;
       border-radius: 10px;
       transition: all 0.3s linear;
       position: relative;

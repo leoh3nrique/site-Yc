@@ -39,11 +39,9 @@ export const ServiceRow = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  flex: 0.8;
+  flex: 1.13;
   img {
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 `;
 

@@ -20,8 +20,8 @@ import Carousel from "../Carousel/Carousel"; // 1. Importar o Carousel
 const carouselImages = [
   "./images/servicos/principal.jpg",
   "./images/servicos/principal.jpg",
-  "./images/servicos/principal.jpg",
-  "./images/servicos/principal.jpg",
+  "./images/servicos/administradas.jpg",
+  "./images/servicos/transportadas.jpg",
 ];
 
 const mainServiceData = [
@@ -30,6 +30,21 @@ const mainServiceData = [
     description:
       "A Yes Cooking oferece um serviço completo de alimentação para universidades públicas, com foco em nutrição, sabor e eficiência. Planejamos e executamos cardápios que atendem às necessidades de uma rotina acadêmica agitada, garantindo qualidade e bem-estar em cada prato.",
     reverse: false,
+    image: "./images/servicos/principal.jpg",
+  },
+  {
+    title: "Refeições Tranportadas",
+    description:
+      "Na nossa empresa, preparamos as refeições em uma cozinha central de última geração e as entregamos diretamente no seu ponto de consumo, sempre respeitando rigorosos padrões de higiene e controle de temperatura. Utilizamos embalagens térmicas de alta performance e nossa frota de veículos isotérmicos garante que cada prato chegue com a qualidade.",
+    reverse: true,
+    image: "./images/servicos/transportadas.jpg",
+  },
+  {
+    title: "Refeições Administradas",
+    description:
+      "Também disponibilizamos o serviço completo de refeições administradas “on-site”, instalando e gerenciando cozinhas ou refeitórios diretamente na sua empresa ou instituição. Nossa equipe especializada prepara e serve o cardápio no local, adaptando-o facilmente a necessidades específicas—dietas restritivas, eventos especiais ou ajustes de última hora.",
+    reverse: false,
+    image: "./images/servicos/administradas.jpg",
   },
 ];
 
@@ -70,12 +85,7 @@ function Servicos() {
           {mainServiceData.map((service, index) => (
             <ServiceRow key={index} reverse={service.reverse}>
               <ImageContainer>
-                {/* 3. Substituir a <img> pelo <Carousel> */}
-                <Carousel
-                  images={carouselImages}
-                  autoplay={true}
-                  interval={2500}
-                />
+                <img src={service.image} />
               </ImageContainer>
               <TextContainer>
                 <h3>{service.title}</h3>
