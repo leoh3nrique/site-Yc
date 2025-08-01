@@ -110,7 +110,7 @@ export const IconWrapper = styled.div`
 
 export const StatNumber = styled.p`
   font-family: "Staatliches", sans-serif;
-  font-size: 60px;
+  font-size: 45px;
   color: ${(props) => props.color};
   font-weight: 600;
   margin: 0;
