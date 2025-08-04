@@ -18,9 +18,9 @@ export const ContainerAboutUs = styled.div`
 
   h1,
   h2 {
-    color: #F1B75C;
+    color: #f1b75c;
     font-size: clamp(2rem, 5vw, 3rem);
-    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+    font-family: "Lucida Handwriting", "Brush Script MT", normal;
     margin-bottom: 1.7rem;
   }
 
@@ -91,7 +91,7 @@ export const ValoresList = styled.ul`
   li::before {
     content: "✓";
     margin-right: 10px;
-    color: #A73129;
+    color: #a73129;
     font-weight: bold;
   }
 `;

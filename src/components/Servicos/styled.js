@@ -16,7 +16,7 @@ export const MainTitle = styled.h1`
   color: #1c779f;
   font-size: clamp(2.2rem, 5vw, 2.8rem);
   padding: 1rem;
-  font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+  font-family: "Lucida Handwriting", "Brush Script MT", normal;
 `;
 
 // --- 1. Estilos da Seção Principal ---
@@ -52,7 +52,7 @@ export const TextContainer = styled.div`
   min-height: 250px;
   h3 {
     font-size: clamp(1.8rem, 4vw, 2.2rem);
-    color: #A73129;
+    color: #a73129;
     margin-bottom: 1rem;
   }
   p {
@@ -67,9 +67,10 @@ export const TextContainer = styled.div`
 
 export const DifferentialsSection = styled.section`
   width: 100%;
-  padding: rem 5%;
+  padding: 1.5em;
   background-color: #fff;
   min-height: 400px;
+  margin: 2em 0;
 
   .cards-container {
     display: grid;
@@ -180,7 +181,7 @@ export const ContainerInsumos = styled.div`
 export const TitleInsumos = styled.h2`
   font-family: "Staatliches", sans-serif;
   font-size: 3em;
-  color: #F1B75C;
+  color: #f1b75c;
 `;
 
 export const ContentInsumos = styled.p`

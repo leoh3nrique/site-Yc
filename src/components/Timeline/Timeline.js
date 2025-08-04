@@ -82,10 +82,9 @@ const Timeline = () => {
   );
 };
 
-
 const TimelineContainer = styled.section`
   width: 100%;
-  max-width: 960px; /* Limita a largura para o efeito de card */
+  max-width: 900px; /* Limita a largura para o efeito de card */
   margin: 3rem auto; /* Centraliza o card na página */
   padding: 2.5rem; /* Espaçamento interno */
   font-family: "Helvetica", "Arial", sans-serif;
@@ -94,15 +93,15 @@ const TimelineContainer = styled.section`
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
 
   @media (max-width: 768px) {
-    margin: 2rem 1rem;
     padding: 1.5rem;
+    width: 100%;
   }
 `;
 
 const MainTitle = styled.h1`
   text-align: center;
   font-size: clamp(1.8rem, 4vw, 2.4rem);
-  color: #A73129;
+  color: #a73129;
   font-weight: bold;
   font-family: "Arial", sans-serif;
   text-transform: uppercase;
