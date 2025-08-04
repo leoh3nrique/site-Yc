@@ -179,12 +179,12 @@ export const ContainerInsumos = styled.div`
 `;
 export const TitleInsumos = styled.h2`
   font-family: "Staatliches", sans-serif;
-  font-size: 55px;
+  font-size: 3em;
   color: #F1B75C;
 `;
 
 export const ContentInsumos = styled.p`
-  font-size: 25px;
+  font-size: 1.6em;
   color: white;
 `;
 

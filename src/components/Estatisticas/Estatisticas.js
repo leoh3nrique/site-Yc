@@ -1,4 +1,4 @@
-import { IoPeopleOutline, IoPeopleSharp } from "react-icons/io5";
+import { MdMapsHomeWork, MdOutlineFoodBank, MdOutlineMapsHomeWork } from "react-icons/md";
 import {
   StatsContainer,
   StatsGrid,
@@ -12,33 +12,31 @@ import {
   IconChart,
   IconMedal,
 } from "./styled";
-import { MdOutlineFoodBank, MdOutlineMapsHomeWork } from "react-icons/md";
 
 const statsData = [
   {
-    icon: <IoPeopleSharp size={190} color="#FAF9F6" />,
+    icon: <IconBuilding />,
     number: "150+",
     title: "Colaboradores",
-    color: "#1c779f",
+    description: "Equipe dedicada e apaixonada por servir.",
   },
   {
-    icon: <MdOutlineFoodBank size={190} color="#FAF9F6" />,
-    number: "9.000KG",
-    title: "de insumos por dia",
-    color: "#A73129",
+    icon: <MdOutlineFoodBank size={50} color="#A73129" />,
+    number: "9",
+    title: "Toneladas",
+    description: "Mais de 9 toneladas consumidas por dia.",
   },
   {
-    icon: <MdOutlineMapsHomeWork size={190} color="#FAF9F6" />,
+    icon: <MdOutlineMapsHomeWork size={50} color="#A73129" />,
     number: "6",
-    title: "Unidades atendidas",
+    title: "Unidades",
     description: "Índice de aprovação de nossos clientes.",
-    color: "#F1B75C",
   },
   {
-    icon: <MdOutlineFoodBank size={190} color="#FAF9F6" />,
-    number: "150.000",
-    title: "Refeições por mês",
-    color: "#1c779f",
+    icon: <IconMedal />,
+    number: "150K+",
+    title: "Refeições Servidas",
+    description: "Mensalmente em todos os nossos contratos.",
   },
 ];
 
@@ -49,9 +47,10 @@ function Estatisticas() {
       <StatsGrid>
         {statsData.map((stat, index) => (
           <StatCard key={index}>
-            <IconWrapper color={stat.color}>{stat.icon}</IconWrapper>
-            <StatNumber color={stat.color}>{stat.number}</StatNumber>
-            <StatTitle color={stat.color}>{stat.title}</StatTitle>
+            <IconWrapper>{stat.icon}</IconWrapper>
+            <StatNumber>{stat.number}</StatNumber>
+            <StatTitle>{stat.title}</StatTitle>
+            <StatDescription>{stat.description}</StatDescription>
           </StatCard>
         ))}
       </StatsGrid>
