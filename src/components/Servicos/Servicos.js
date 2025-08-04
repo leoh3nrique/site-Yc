@@ -11,6 +11,11 @@ import {
   IconWrapper,
   OtherServicesSection,
   OtherServiceCard,
+  BackgroundInsumos,
+  ContainerInsumos,
+  TitleInsumos,
+  ContentInsumos,
+  ButtonInsumos,
 } from "./styled";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
@@ -76,6 +81,8 @@ const otherServicesData = [
   { image: "./images/comidas/desjejum.jpg", title: "Desjejum" },
 ];
 
+const background = "./images/fundo-insumos.png";
+
 function Servicos() {
   return (
     <div>
@@ -108,6 +115,21 @@ function Servicos() {
             ))}
           </div>
         </DifferentialsSection>
+        <BackgroundInsumos bgImage={background}>
+          <ContainerInsumos>
+            <TitleInsumos>Seleção de Insumos</TitleInsumos>
+            <ContentInsumos>
+              A Yes Cooking acredita que uma alimentação saudável começa na
+              seleção dos fornecedores qualificando a rastreabilidade dos
+              insumos. Não importa se será servida em uma universidade, um
+              hospital ou uma lanchonete.
+            </ContentInsumos>
+            <ContentInsumos>
+              Gostaria de fazer parte do time? Entre em contato!
+            </ContentInsumos>
+            <ButtonInsumos>Contato</ButtonInsumos>
+          </ContainerInsumos>
+        </BackgroundInsumos>
 
         <OtherServicesSection>
           <HeaderSection>

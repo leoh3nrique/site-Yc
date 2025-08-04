@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledAnchor } from "../Apresentation/styled";
 
 export const ServicesPageContainer = styled.div`
   width: 100%;
@@ -12,8 +13,9 @@ export const HeaderSection = styled.div`
 `;
 
 export const MainTitle = styled.h1`
-  color: #1bb7d1;
+  color: #1c779f;
   font-size: clamp(2.2rem, 5vw, 2.8rem);
+  padding: 1rem;
   font-family: "Lucida Handwriting", "Brush Script MT", cursive;
 `;
 
@@ -47,9 +49,10 @@ export const ImageContainer = styled.div`
 
 export const TextContainer = styled.div`
   flex: 1;
+  min-height: 250px;
   h3 {
     font-size: clamp(1.8rem, 4vw, 2.2rem);
-    color: #fb4121;
+    color: #A73129;
     margin-bottom: 1rem;
   }
   p {
@@ -66,6 +69,7 @@ export const DifferentialsSection = styled.section`
   width: 100%;
   padding: rem 5%;
   background-color: #fff;
+  min-height: 400px;
 
   .cards-container {
     display: grid;
@@ -143,4 +147,49 @@ export const OtherServiceCard = styled.div`
   &:hover img {
     transform: scale(1.05);
   }
+`;
+
+export const BackgroundInsumos = styled.div`
+  width: 100%;
+  height: 75vh;
+  background-image: url(${(props) => props.bgImage});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+
+  padding: 5rem;
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 80vh;
+    text-align: center;
+  }
+`;
+
+export const ContainerInsumos = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+  max-width: 960px;
+  margin: 2rem auto;
+`;
+export const TitleInsumos = styled.h2`
+  font-family: "Staatliches", sans-serif;
+  font-size: 55px;
+  color: #F1B75C;
+`;
+
+export const ContentInsumos = styled.p`
+  font-size: 25px;
+  color: white;
+`;
+
+export const ButtonInsumos = styled(StyledAnchor)`
+  background-color: #1c779f;
+  max-width: 215px;
+  font-size: 1.3rem;
 `;
