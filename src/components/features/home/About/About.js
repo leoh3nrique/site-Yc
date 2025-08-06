@@ -1,18 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { ButtonAbout, ContainerAbout } from "./styled";
+import { ContainerAbout } from "./styled";
+import Button from "../../../ui/Button";
 
 function About() {
   const navigate = useNavigate();
-
-  const goToCultura = () => {
-    navigate("/cultura");
-  };
 
   return (
     <ContainerAbout>
       <h1>Quem Somos</h1>
       <p className="main-description">
-        Na <span className="vermelho">Yes</span><span>Cooking</span>, acreditamos que uma boa refeição vai além do
+        Na <span className="vermelho">Yes</span>
+        <span>Cooking</span>, acreditamos que uma boa refeição vai além do
         sabor: é um ato de cuidado, missão e propósito. Somos especializados na
         produção e fornecimento de refeições para instituições públicas de
         ensino superior, com foco em qualidade, responsabilidade e acolhimento.
@@ -28,7 +26,10 @@ function About() {
         e processos eficientes. Mais do que alimentar, buscamos impactar vidas
         com excelência e propósito.
       </p>
-      <ButtonAbout onClick={goToCultura}>Saiba mais</ButtonAbout>
+
+      <Button as="a" href="/cultura" variant="primary">
+        Saiba Mais
+      </Button>
     </ContainerAbout>
   );
 }

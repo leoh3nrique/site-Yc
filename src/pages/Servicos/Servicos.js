@@ -20,9 +20,10 @@ import {
   SectionInfoEquipamentos,
   SectionCarouselEquipamentos,
 } from "./styled";
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
-import Carousel from "../Carousel/Carousel"; // 1. Importar o Carousel
+import { Footer } from "../../components/layout/Footer/Footer";
+import { Header } from "../../components/layout/Header/Header";
+import Carousel from "../../components/ui/Carousel/Carousel";
+import PageLayout from "../../components/layout/PageLayout";
 
 const carouselImages = [
   "./images/equipamentos/4.jpg",
@@ -87,8 +88,7 @@ const background = "./images/fundo-insumos.png";
 
 function Servicos() {
   return (
-    <div>
-      <Header />
+    <PageLayout>
       <ServicesPageContainer>
         <MainSection>
           {mainServiceData.map((service, index) => (
@@ -160,8 +160,7 @@ function Servicos() {
           </ContainerInsumos>
         </BackgroundInsumos>
       </ServicesPageContainer>
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }
 

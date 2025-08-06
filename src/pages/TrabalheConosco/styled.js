@@ -86,33 +86,7 @@ export const Textarea = styled.textarea`
   resize: vertical;
 `;
 
-export const Button = styled.button`
-  align-self: flex-end;
-  padding: 0.9rem 2rem;
-  background-color: #3c3c3c;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
 
-  &:hover:not(:disabled) {
-    background-color: #2a2a2a;
-    transform: translateY(-2px);
-  }
-
-  &:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-  }
-
-  @media (max-width: 768px) {
-    align-self: center;
-    width: 100%;
-  }
-`;
 
 // Estilos específicos para o upload de arquivo
 export const FileInputWrapper = styled.div`

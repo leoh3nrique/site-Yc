@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledAnchor, StyledButton } from "../Apresentation/styled";
+import { StyledAnchor, StyledButton } from "../WelcomeSection/styled";
 
 export const ContainerAbout = styled.div`
   display: flex;

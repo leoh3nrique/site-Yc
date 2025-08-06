@@ -22,7 +22,11 @@ export const unidades = [
       telefone: "(11) 8765-4321",
       email: "aras@ufs.car.br",
     },
-    images: ["./images/unidades/ar/ar1.jpg", "./images/unidades/ar/ar2.jpg"],
+    images: [
+      "./images/unidades/ar/ar1.jpg",
+      "./images/unidades/ar/ar2.jpg",
+      "./images/unidades/ar/ar3.jpg",
+    ],
   },
   {
     id: 3,
@@ -39,9 +43,6 @@ export const unidades = [
       "./images/unidades/soro/soro2.jpg",
       "./images/unidades/soro/soro3.jpg",
       "./images/unidades/soro/soro4.jpg",
-      "./images/unidades/soro/soro5.jpg",
-      "./images/unidades/soro/soro6.jpg",
-      "./images/unidades/soro/soro8.jpg",
     ],
   },
   {
@@ -59,8 +60,6 @@ export const unidades = [
       "./images/unidades/buri/br2.jpg",
       "./images/unidades/buri/br3.jpg",
       "./images/unidades/buri/br4.jpg",
-      "./images/unidades/buri/br5.jpg",
-      "./images/unidades/buri/br6.jpg",
     ],
   },
   {
@@ -79,10 +78,6 @@ export const unidades = [
       "./images/unidades/rp/rp2.jpg",
       "./images/unidades/rp/rp3.jpg",
       "./images/unidades/rp/rp4.jpg",
-      "./images/unidades/rp/rp5.jpg",
-      "./images/unidades/rp/rp6.jpg",
-      "./images/unidades/rp/rp7.jpg",
-      "./images/unidades/rp/rp8.jpg",
     ],
   },
 ];

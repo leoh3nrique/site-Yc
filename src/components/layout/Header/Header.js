@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { goToPage } from "../../App";
 import { ContainerHeader, NavLinks, LinkNav, MobileIcon, Logo } from "./styled";
+import { goToPage } from "../../../App";
 
 export function Header() {
   const navigate = useNavigate();

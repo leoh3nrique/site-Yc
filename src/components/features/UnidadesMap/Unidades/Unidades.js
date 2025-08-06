@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
-import MapComponent from "../../components/Map/Map";
-import { unidades } from "../../data";
-import Carousel from "../../components/Carousel/Carousel";
+import { Footer } from "../../../layout/Footer/Footer";
+import { Header } from "../../../layout/Header/Header";
+import MapComponent from "../Map/Map";
+import { unidades } from "../../../../data";
+import Carousel from "../../../ui/Carousel/Carousel";
 import {
   PageContainer,
   HeaderSection,

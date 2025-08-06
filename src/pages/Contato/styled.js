@@ -163,30 +163,3 @@ export const StyledCheckbox = styled.input`
   accent-color: #1bb7d1; /* Cor do checkbox quando marcado */
 `;
 
-export const Button = styled.button`
-  align-self: flex-end; /* Alinha o botão à direita */
-  padding: 0.9rem 2rem;
-  background-color: #3c3c3c; /* Cor escura do botão */
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-
-  &:hover:not(:disabled) {
-    background-color: #2a2a2a;
-    transform: translateY(-2px);
-  }
-
-  &:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-  }
-
-  @media (max-width: 768px) {
-    align-self: center; /* Centraliza o botão em telas menores */
-    width: 100%;
-  }
-`;

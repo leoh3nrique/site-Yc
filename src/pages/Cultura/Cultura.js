@@ -1,7 +1,7 @@
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
-import Timeline from "../../components/Timeline/Timeline";
-import Estatisticas from "../../components/Estatisticas/Estatisticas";
+import { Footer } from "../../components/layout/Footer/Footer";
+import { Header } from "../../components/layout/Header/Header";
+import Timeline from "../../components/features/cultura/Timeline/Timeline";
+import Estatisticas from "../../components/features/cultura/Estatisticas/Estatisticas";
 
 // 1. Importando os novos ícones do react-icons
 import { FaHeart } from "react-icons/fa";
@@ -15,7 +15,8 @@ import {
   ValoresList,
   IconWrapper, // 2. Importando o novo wrapper de estilo
 } from "./styled";
-import Unidades from "../../components/Unidades/Unidades";
+import Unidades from "../../components/features/UnidadesMap/Unidades/Unidades";
+import PageLayout from "../../components/layout/PageLayout";
 
 // 3. Dados atualizados para usar os novos ícones
 const culturaData = [
@@ -46,8 +47,7 @@ const culturaData = [
 
 function AboutUs() {
   return (
-    <>
-      <Header />
+    <PageLayout>
       <ContainerAboutUs>
         <h2>Nossa Cultura</h2>
         <SectionCultura>
@@ -73,8 +73,7 @@ function AboutUs() {
       <Estatisticas />
       <Timeline />
       <Unidades />
-      <Footer />
-    </>
+    </PageLayout>
   );
 }
 

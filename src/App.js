@@ -6,11 +6,11 @@ import {
   ScrollRestoration,
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import AboutUs from "./pages/AboutUs/AboutUs";
+import AboutUs from "./pages/Cultura/Cultura";
 import Contato from "./pages/Contato/Contato";
 import TrabalheConosco from "./pages/TrabalheConosco/TrabalheConosco";
-import Servicos from "./components/Servicos/Servicos";
-import ScrollToTop from "./components/ScrollToTop";
+import Servicos from "./pages/Servicos/Servicos";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 export const goToPage = (navigate, page) => {
   navigate(`/${page}`);

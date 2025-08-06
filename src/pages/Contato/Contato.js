@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react"; // Adicione useEffect
 import emailjs from "@emailjs/browser";
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
+import PageLayout from "../../components/layout/PageLayout";
+import TabNav from "../../components/ui/TabNav/TabNav";
+import Button from "../../components/ui/Button";
+import { useForm } from "../../hooks/useForm";
+
 import {
   ContactPageContainer,
   FormContainer,
@@ -12,16 +14,22 @@ import {
   Textarea,
   CheckboxWrapper,
   StyledCheckbox,
-  Button,
   FormTitle,
   TwoColumns,
-  Notification, // Importe o novo componente de notificação
+  Notification,
 } from "./styled";
-import TabNav from "../../components/TabNav/TabNav";
 import { ContainerDescription } from "../TrabalheConosco/styled";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const {
+    formData,
+    isSending,
+    setIsSending,
+    notification,
+    showNotification,
+    handleChange,
+    resetForm,
+  } = useForm({
     nome: "",
     telefone: "",
     email: "",
@@ -29,34 +37,6 @@ const Contact = () => {
     mensagem: "",
     aceite: false,
   });
-  const [isSending, setIsSending] = useState(false);
-  const [notification, setNotification] = useState({
-    show: false,
-    message: "",
-    type: "success", // 'success' ou 'error'
-  });
-
-  // Efeito para esconder a notificação após 3 segundos
-  useEffect(() => {
-    if (notification.show) {
-      const timer = setTimeout(() => {
-        setNotification({ ...notification, show: false });
-      }, 3000);
-      return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado
-    }
-  }, [notification]);
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
-
-  const showNotification = (message, type = "success") => {
-    setNotification({ show: true, message, type });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,11 +48,11 @@ const Contact = () => {
     setIsSending(true);
 
     const templateParams = {
-      nome: formData.nome,
-      telefone: formData.telefone,
+      from_name: formData.nome,
+      phone: formData.telefone,
       email: formData.email,
-      setor: formData.setor,
-      mensagem: formData.mensagem,
+      sector: formData.setor,
+      message: formData.mensagem,
     };
 
     emailjs
@@ -82,18 +62,11 @@ const Contact = () => {
         templateParams,
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
-      .then((response) => {
+      .then(() => {
         showNotification("Mensagem enviada com sucesso!");
-        setFormData({
-          nome: "",
-          telefone: "",
-          email: "",
-          setor: "",
-          mensagem: "",
-          aceite: false,
-        });
+        resetForm(); // Limpa o formulário
       })
-      .catch((err) => {
+      .catch(() => {
         showNotification("Ocorreu um erro ao enviar a mensagem.", "error");
       })
       .finally(() => {
@@ -102,11 +75,10 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <Header />
-      {/* <Notification show={notification.show} type={notification.type}>
+    <PageLayout>
+      <Notification show={notification.show} type={notification.type}>
         {notification.message}
-      </Notification> */}
+      </Notification>
       <TabNav activeTab="contact" />
 
       <ContactPageContainer>
@@ -118,15 +90,8 @@ const Contact = () => {
               A YesCooking está sempre aberta a parcerias com fornecedores
               comprometidos com qualidade, responsabilidade e ética.
             </p>
-            <p className="main-description">
-              Se você deseja fornecer insumos, equipamentos, ou outras soluções,
-              entre em contato conosco. Vamos juntos alimentar vidas com
-              excelência.
-            </p>
-            <p className="main-description">Preencha o formulário abaixo:</p>
           </ContainerDescription>
           <Form onSubmit={handleSubmit}>
-            {/* ... o resto do seu formulário ... */}
             <TwoColumns>
               <FormGroup>
                 <Input
@@ -198,19 +163,22 @@ const Contact = () => {
               />
               <label htmlFor="aceite">
                 Declaro que li e estou de acordo com o{" "}
-                <a href="/aviso-de-privacidade" target="_blank">
+                <a
+                  href="/aviso-de-privacidade"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   aviso de privacidade
                 </a>
               </label>
             </CheckboxWrapper>
-            <Button type="submit" disabled={isSending}>
+            <Button type="submit" variant="dark" disabled={isSending}>
               {isSending ? "Enviando..." : "Enviar mensagem"}
             </Button>
           </Form>
         </FormContainer>
       </ContactPageContainer>
-      <Footer />
-    </>
+    </PageLayout>
   );
 };
 

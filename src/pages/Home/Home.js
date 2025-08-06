@@ -1,19 +1,13 @@
-import About from "../../components/About/About";
-import WelcomeSection from "../../components/Apresentation/Apresentation";
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
-
+import About from "../../components/features/home/About/About";
+import WelcomeSection from "../../components/features/home/WelcomeSection/WelcomeSection";
+import PageLayout from "../../components/layout/PageLayout";
 
 function Home() {
-
   return (
-    <div>
-      <Header />
+    <PageLayout>
       <WelcomeSection />
       <About />
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }
 

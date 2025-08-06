@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
+import React, { useState } from "react";
+import PageLayout from "../../components/layout/PageLayout";
+import TabNav from "../../components/ui/TabNav/TabNav";
+import Button from "../../components/ui/Button"; // <-- 1. Importa o novo botão
+import { useForm } from "../../hooks/useForm"; // <-- 2. Importa o hook de formulário
+
 import {
   PageContainer,
   FormContainer,
@@ -9,7 +12,6 @@ import {
   Input,
   Select,
   Textarea,
-  Button,
   FormTitle,
   TwoColumns,
   Notification,
@@ -18,84 +20,53 @@ import {
   FileInputLabel,
   ContainerDescription,
 } from "./styled";
-import TabNav from "../../components/TabNav/TabNav";
 
 const TrabalheConosco = () => {
-  const [formData, setFormData] = useState({
+  const [fileName, setFileName] = useState("");
+
+  const {
+    formData,
+    isSending,
+    setIsSending,
+    notification,
+    showNotification,
+    handleChange,
+    resetForm,
+  } = useForm({
     nome: "",
     telefone: "",
     email: "",
     area: "",
-    mensagem: "",
     curriculo: null,
+    mensagem: "",
   });
-  const [isSending, setIsSending] = useState(false);
-  const [notification, setNotification] = useState({
-    show: false,
-    message: "",
-    type: "success",
-  });
-  const [fileName, setFileName] = useState("");
-
-  useEffect(() => {
-    if (notification.show) {
-      const timer = setTimeout(() => {
-        setNotification({ ...notification, show: false });
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [notification]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setFormData((prevData) => ({
-        ...prevData,
-        curriculo: file,
-      }));
-      setFileName(file.name);
+    handleChange(e); // Chama o handler do hook
+    if (e.target.files[0]) {
+      setFileName(e.target.files[0].name);
+    } else {
+      setFileName("");
     }
-  };
-
-  const showNotification = (message, type = "success") => {
-    setNotification({ show: true, message, type });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSending(true);
 
-    // Simulação de envio
     setTimeout(() => {
       showNotification("Candidatura enviada com sucesso!");
       setIsSending(false);
-      setFormData({
-        nome: "",
-        telefone: "",
-        email: "",
-        area: "",
-        mensagem: "",
-        curriculo: null,
-      });
+      resetForm();
       setFileName("");
     }, 1500);
   };
 
   return (
-    <>
-      <Header />
-      {/* <Notification show={notification.show} type={notification.type}>
+    <PageLayout>
+      <Notification show={notification.show} type={notification.type}>
         {notification.message}
-      </Notification> */}
-
+      </Notification>
       <TabNav activeTab="work" />
       <PageContainer>
         <FormContainer>
@@ -103,16 +74,9 @@ const TrabalheConosco = () => {
           <ContainerDescription>
             <p className="main-description">
               Você acredita que é possível transformar vidas através da
-              alimentação? Na YesCooking, buscamos pessoas comprometidas,
-              éticas e empenhadas por servir com excelência.
+              alimentação? Na YesCooking, buscamos pessoas comprometidas, éticas
+              e empenhadas por servir com excelência.
             </p>
-            <p className="main-description">
-              Somos uma equipe que valoriza a dedicação, o trabalho em equipe e
-              o propósito de impactar positivamente a comunidade acadêmica.
-              Venha fazer parte da nossa missão.
-            </p>
-            {/* <p className="main-description"></p> */}
-            <p className="main-description">Preencha o formulário abaixo:</p>
           </ContainerDescription>
           <Form onSubmit={handleSubmit}>
             <TwoColumns>
@@ -169,6 +133,7 @@ const TrabalheConosco = () => {
               <FileInputWrapper>
                 <FileInput
                   id="curriculo"
+                  name="curriculo"
                   type="file"
                   onChange={handleFileChange}
                   accept=".pdf,.doc,.docx"
@@ -187,14 +152,14 @@ const TrabalheConosco = () => {
                 onChange={handleChange}
               ></Textarea>
             </FormGroup>
-            <Button type="submit" disabled={isSending}>
+            {/* 5. Usa o novo componente Button */}
+            <Button type="submit" variant="dark" disabled={isSending}>
               {isSending ? "Enviando..." : "Enviar candidatura"}
             </Button>
           </Form>
         </FormContainer>
       </PageContainer>
-      <Footer />
-    </>
+    </PageLayout>
   );
 };
 

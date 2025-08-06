@@ -1,5 +1,5 @@
 import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
-import useWindowSize from "../../hooks/useWindowSize";
+import useWindowSize from "../../../../hooks/useWindowSize";
 
 const containerStyle = {
   width: "100%",

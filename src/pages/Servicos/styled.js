@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledAnchor } from "../Apresentation/styled";
+import { StyledAnchor } from "../../components/features/home/WelcomeSection/styled";
 
 export const ServicesPageContainer = styled.div`
   width: 100%;

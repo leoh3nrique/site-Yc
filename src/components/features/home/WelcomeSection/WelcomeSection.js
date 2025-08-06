@@ -3,10 +3,10 @@ import {
   ContainerApresentation,
   SectionButtons,
   SectionPlayVideo,
-  StyledAnchor,
   StyledTitleApresentation,
 } from "./styled";
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import VideoPlayer from "../../VideoPlayer/VideoPlayer";
+import Button from "../../../ui/Button";
 
 function WelcomeSection() {
   const background = "./images/utils/apresentation.jpeg";
@@ -19,9 +19,9 @@ function WelcomeSection() {
           A nossa missão é fazer a missão!
         </StyledTitleApresentation>
         <SectionButtons>
-          <StyledAnchor class="btn-conheca" href="/servicos">
+          <Button as="a" href="/servicos" variant="primary">
             Conheça
-          </StyledAnchor>
+          </Button>
           <SectionPlayVideo>
             <button>
               <VideoPlayer videoId="dQw4w9WgXcQ" />
