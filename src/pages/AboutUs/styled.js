@@ -19,8 +19,9 @@ export const ContainerAboutUs = styled.div`
   h1,
   h2 {
     color: #f1b75c;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-family: "Lucida Handwriting", "Brush Script MT", normal;
+    font-family: "Staatliches", sans-serif;
+    font-size: 3em;
+
     margin-bottom: 1.7rem;
   }
 

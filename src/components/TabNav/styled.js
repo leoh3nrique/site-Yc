@@ -7,7 +7,7 @@ export const TabContainer = styled.div`
   gap: 2rem;
   background-color: #1c779f;
   margin-bottom: 2rem;
-  min-height: 50px;
+  height: 70px;
 `;
 
 export const TabButton = styled.button`
@@ -29,13 +29,13 @@ export const TabButton = styled.button`
     left: 0;
     right: 0;
     height: 3px;
-    background-color: #FAF9F6;
+    background-color: #faf9f6;
     transform: ${({ isActive }) => (isActive ? "scaleX(1)" : "scaleX(0)")};
     transition: transform 0.3s ease-in-out;
   }
 
   &:hover {
-    color: #FAF9F6;
+    color: #faf9f6;
   }
 
   @media (max-width: 720px) {

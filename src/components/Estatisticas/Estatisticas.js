@@ -20,7 +20,7 @@ import {
 const statsData = [
   {
     icon: <IconBuilding />,
-    number: "150+",
+    number: "150",
     title: "Colaboradores",
     description: "Equipe dedicada e apaixonada por servir.",
   },
@@ -38,7 +38,7 @@ const statsData = [
   },
   {
     icon: <IconMedal />,
-    number: "170.000+",
+    number: "170.000",
     title: "Refeições Servidas",
     description: "Mensalmente em todos os nossos contratos.",
   },

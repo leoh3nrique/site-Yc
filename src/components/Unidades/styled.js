@@ -11,9 +11,9 @@ export const HeaderSection = styled.div`
 `;
 
 export const MainTitle = styled.h1`
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: 3em;
   color: #2c3e50;
-  font-family: "Lucida Handwriting", "Brush Script MT", normal;
+  font-family: "Staatliches", sans-serif;
 `;
 
 export const Subtitle = styled.p`
@@ -57,7 +57,6 @@ export const DetailsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  
 
   @media (min-width: 1024px) {
     height: 700px; /* Mesma altura do mapa, para um alinhamento perfeito */

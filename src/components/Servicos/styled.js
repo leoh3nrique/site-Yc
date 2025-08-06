@@ -14,9 +14,9 @@ export const HeaderSection = styled.div`
 
 export const MainTitle = styled.h1`
   color: #f1b75c;
-  font-size: clamp(2.2rem, 5vw, 2.8rem);
+  font-family: "Staatliches", sans-serif;
   padding: 1rem;
-  font-family: "Lucida Handwriting", "Brush Script MT", normal;
+  font-size: 3em;
 `;
 
 // --- 1. Estilos da Seção Principal ---
@@ -144,7 +144,6 @@ export const BackgroundInsumos = styled.div`
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: darken;
-
   padding: 5rem;
 
   @media (max-width: 768px) {
@@ -202,7 +201,7 @@ export const ContainerEquipamentos = styled.div`
   justify-content: center;
   align-items: center;
   gap: 150px;
-  padding: 10px;
+  padding: 20px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -260,6 +259,7 @@ export const SectionCarouselEquipamentos = styled.div`
   width: 600px;
   height: 450px;
   object-fit: cover;
+  padding: 10px;
 
   @media (max-width: 768px) {
     width: 100%;

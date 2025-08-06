@@ -103,7 +103,7 @@ const TrabalheConosco = () => {
           <ContainerDescription>
             <p className="main-description">
               Você acredita que é possível transformar vidas através da
-              alimentação? Na Yes Cooking, buscamos pessoas comprometidas,
+              alimentação? Na YesCooking, buscamos pessoas comprometidas,
               éticas e empenhadas por servir com excelência.
             </p>
             <p className="main-description">

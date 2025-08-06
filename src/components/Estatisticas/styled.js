@@ -8,7 +8,7 @@ export const IconBuilding = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#A73129", 
+  stroke: "#A73129",
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -25,7 +25,7 @@ export const IconCalendar = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#1bb7d1", 
+  stroke: "#1bb7d1",
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -43,7 +43,7 @@ export const IconChart = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#2ecc71", 
+  stroke: "#2ecc71",
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -59,7 +59,7 @@ export const IconMedal = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#9b59b6", 
+  stroke: "#9b59b6",
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -79,18 +79,15 @@ export const StatsContainer = styled.div`
 
   h1 {
     color: #1c779f;
-    font-size: clamp(2rem, 5vw, 3rem); /* Fonte fluida */
-    font-family: "Lucida Handwriting", "Brush Script MT", normal;
+    font-family: "Staatliches", sans-serif;
+    font-size: 3em;
     margin-bottom: 1.5rem;
   }
 `;
 
 export const StatsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -99,7 +96,7 @@ export const StatsGrid = styled.div`
 export const StatCard = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
-  border-top: 4px solid #A73129;
+  border-top: 4px solid #a73129;
   padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -145,4 +142,3 @@ export const StatDescription = styled.p`
   color: #7f8c8d;
   line-height: 1.5;
 `;
-

@@ -115,7 +115,7 @@ const Contact = () => {
           <ContainerDescription>
             <p className="main-description">
               Tem um produto ou serviço que pode contribuir com a nossa missão?
-              A Yes Cooking está sempre aberta a parcerias com fornecedores
+              A YesCooking está sempre aberta a parcerias com fornecedores
               comprometidos com qualidade, responsabilidade e ética.
             </p>
             <p className="main-description">
