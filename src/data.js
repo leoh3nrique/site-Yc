@@ -10,11 +10,7 @@ export const unidades = [
       telefone: "(11) 1234-5678",
       email: "sac@ufs.car.br",
     },
-    images: [
-      "./images/timeline/timeline01.jpg",
-      "./images/unidades/sc/sc3.jpg",
-      "./images/unidades/sc/sc1.jpg",
-    ],
+    images: ["./images/unidades/sc/sc1.jpg", "./images/unidades/sc/sc2.jpg"],
   },
   {
     id: 2,
@@ -26,10 +22,7 @@ export const unidades = [
       telefone: "(11) 8765-4321",
       email: "aras@ufs.car.br",
     },
-    images: [
-      "./images/unidades/ar/teste1.jpg",
-      "./images/unidades/ar/teste2.jpg",
-    ],
+    images: ["./images/unidades/ar/ar1.jpg", "./images/unidades/ar/ar2.jpg"],
   },
   {
     id: 3,
@@ -42,12 +35,13 @@ export const unidades = [
       email: "sorocaba@ufs.car.br",
     },
     images: [
+      "./images/unidades/soro/soro1.jpg",
       "./images/unidades/soro/soro2.jpg",
       "./images/unidades/soro/soro3.jpg",
       "./images/unidades/soro/soro4.jpg",
       "./images/unidades/soro/soro5.jpg",
       "./images/unidades/soro/soro6.jpg",
-      "./images/unidades/soro/soro1.jpg",
+      "./images/unidades/soro/soro8.jpg",
     ],
   },
   {
@@ -64,6 +58,9 @@ export const unidades = [
       "./images/unidades/buri/br1.jpg",
       "./images/unidades/buri/br2.jpg",
       "./images/unidades/buri/br3.jpg",
+      "./images/unidades/buri/br4.jpg",
+      "./images/unidades/buri/br5.jpg",
+      "./images/unidades/buri/br6.jpg",
     ],
   },
   {

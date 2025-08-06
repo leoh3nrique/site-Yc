@@ -47,7 +47,6 @@ const Unidades = () => {
               onSelectUnit={handleSelectUnit}
             />
           </MapWrapper>
-
           {selectedUnit && (
             <DetailsCard>
               <div>
@@ -62,33 +61,6 @@ const Unidades = () => {
               />
 
               <Description>{selectedUnit.descricao}</Description>
-
-              <ContactList>
-                <ContactItem>
-                  <Icon>
-                    <FaMapMarkerAlt />
-                  </Icon>
-                  <span>
-                    <strong>Endereço:</strong> {selectedUnit.endereco}
-                  </span>
-                </ContactItem>
-                <ContactItem>
-                  <Icon>
-                    <FaPhone />
-                  </Icon>
-                  <span>
-                    <strong>Telefone:</strong> {selectedUnit.contato.telefone}
-                  </span>
-                </ContactItem>
-                <ContactItem>
-                  <Icon>
-                    <FaEnvelope />
-                  </Icon>
-                  <span>
-                    <strong>Email:</strong> {selectedUnit.contato.email}
-                  </span>
-                </ContactItem>
-              </ContactList>
             </DetailsCard>
           )}
         </ContentContainer>

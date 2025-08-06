@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CarouselContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  max-height: 400px;
   border-radius: 15px;
   overflow: hidden;
 `;
@@ -12,7 +11,7 @@ export const CarouselContainer = styled.div`
 export const CarouselWrapper = styled.div`
   width: 100%;
   height: 100%;
-  
+
   > div {
     display: flex;
     height: 100%;
@@ -23,10 +22,11 @@ export const CarouselSlide = styled.div`
   flex-shrink: 0;
   width: 100%;
   height: 100%;
-  
+
   img {
     width: 100%;
-    height: 100%;
+    height: 85%;
+    position: center;
     object-fit: cover;
   }
 `;
@@ -52,15 +52,15 @@ export const NavButton = styled.button`
   ${CarouselContainer}:hover & {
     opacity: 1;
   }
-  
+
   &:hover {
     background-color: rgba(255, 255, 255, 1);
   }
-  
+
   &.left {
     left: 10px;
   }
-  
+
   &.right {
     right: 10px;
   }
@@ -82,6 +82,7 @@ export const Dot = styled.button`
   border: none;
   padding: 0;
   cursor: pointer;
-  background-color: ${({ isActive }) => (isActive ? 'white' : 'rgba(255, 255, 255, 0.5)')};
+  background-color: ${({ isActive }) =>
+    isActive ? "white" : "rgba(255, 255, 255, 0.5)"};
   transition: background-color 0.3s;
 `;
