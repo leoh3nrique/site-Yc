@@ -9,11 +9,11 @@ export const ServicesPageContainer = styled.div`
 export const HeaderSection = styled.div`
   text-align: center;
   max-width: 900px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 1rem auto;
 `;
 
 export const MainTitle = styled.h1`
-  color: #1c779f;
+  color: #f1b75c;
   font-size: clamp(2.2rem, 5vw, 2.8rem);
   padding: 1rem;
   font-family: "Lucida Handwriting", "Brush Script MT", normal;
@@ -22,7 +22,7 @@ export const MainTitle = styled.h1`
 // --- 1. Estilos da Seção Principal ---
 export const MainSection = styled.section`
   width: 100%;
-  padding: 4rem 5%;
+  padding: 3rem 5%;
   background-color: #f8f9fa;
 `;
 
@@ -36,7 +36,7 @@ export const ServiceRow = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.1rem;
   }
 `;
 
@@ -57,27 +57,12 @@ export const TextContainer = styled.div`
   }
   p {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.9;
     color: #666;
   }
   @media (max-width: 768px) {
     text-align: center;
-  }
-`;
-
-export const DifferentialsSection = styled.section`
-  width: 100%;
-  padding: 1.5em;
-  background-color: #fff;
-  min-height: 400px;
-  margin: 2em 0;
-
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    min-height: 340px;
   }
 `;
 
@@ -182,10 +167,13 @@ export const TitleInsumos = styled.h2`
   font-family: "Staatliches", sans-serif;
   font-size: 3em;
   color: #f1b75c;
+  font-weight: bold;
 `;
 
 export const ContentInsumos = styled.p`
   font-size: 1.6em;
+  line-height: 1.6;
+  font-weight: bold;
   color: white;
 `;
 
@@ -193,4 +181,88 @@ export const ButtonInsumos = styled(StyledAnchor)`
   background-color: #1c779f;
   max-width: 215px;
   font-size: 1.3rem;
+`;
+export const DifferentialsSection = styled.section`
+  width: 100%;
+  padding: 1.5em;
+  background-color: #1c779f;
+  min-height: 400px;
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+`;
+
+export const ContainerEquipamentos = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  padding: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+  }
+`;
+
+export const SectionInfoEquipamentos = styled.div`
+  width: 600px;
+  height: 450px;
+
+  p {
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 18px;
+  }
+
+  ul li {
+    margin-bottom: 8px;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 27px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+
+    p {
+      font-size: 16px;
+    }
+
+    ul {
+      font-size: 16px;
+    }
+
+    span {
+      font-size: 22px;
+    }
+  }
+`;
+
+export const SectionCarouselEquipamentos = styled.div`
+  width: 600px;
+  height: 450px;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;

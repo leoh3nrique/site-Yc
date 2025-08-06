@@ -16,24 +16,26 @@ import {
   TitleInsumos,
   ContentInsumos,
   ButtonInsumos,
+  ContainerEquipamentos,
+  SectionInfoEquipamentos,
+  SectionCarouselEquipamentos,
 } from "./styled";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import Carousel from "../Carousel/Carousel"; // 1. Importar o Carousel
 
-// 2. Definir as imagens para o carrossel
 const carouselImages = [
-  "./images/servicos/principal.jpg",
-  "./images/servicos/principal.jpg",
-  "./images/servicos/administradas.jpg",
-  "./images/servicos/transportadas.jpg",
+  "./images/equipamentos/4.jpg",
+  "./images/equipamentos/1.jpg",
+  "./images/equipamentos/2.jpg",
+  "./images/equipamentos/3.jpg",
 ];
 
 const mainServiceData = [
   {
     title: "Refeições Universitárias",
     description:
-      "A Yes Cooking oferece um serviço completo de alimentação para universidades públicas, com foco em nutrição, sabor e eficiência. Planejamos e executamos cardápios que atendem às necessidades de uma rotina acadêmica agitada, garantindo qualidade e bem-estar em cada prato.",
+      "A YesCooking oferece um serviço completo de alimentação para universidades públicas, com foco em nutrição, sabor e eficiência. Planejamos e executamos cardápios que atendem às necessidades de uma rotina acadêmica agitada, garantindo qualidade e bem-estar em cada prato.",
     reverse: false,
     image: "./images/servicos/principal.jpg",
   },
@@ -106,20 +108,47 @@ function Servicos() {
           <HeaderSection>
             <MainTitle>Nossos Diferenciais</MainTitle>
           </HeaderSection>
-          <div className="cards-container">
+          {/* <div className="cards-container">
             {differentialsData.map((item, index) => (
               <DifferentialCard key={index}>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
               </DifferentialCard>
             ))}
-          </div>
+          </div> */}
+
+          <ContainerEquipamentos>
+            <SectionInfoEquipamentos>
+              <p>
+                Na <span>YesCooking</span>, a qualidade começa na estrutura.
+                Nossas cozinhas contam com equipamentos industriais modernos,
+                capazes de atender com excelência grandes volumes, sem abrir mão
+                da segurança alimentar e da eficiência energética.
+              </p>
+
+              <ul>
+                <li>Filtros de ar, exaustores e coifas industriais</li>
+                <li>Fornos combinados e ultracongeladores (Cook & Chill)</li>
+                <li>Equipamentos de cocção a vapor e pressão</li>
+                <li>Câmaras frias monitoradas 24h</li>
+              </ul>
+
+              <p>
+                Essa estrutura nos permite entregar refeições{" "}
+                <span>seguras, padronizadas</span> e dentro das normas mais
+                exigentes.
+              </p>
+            </SectionInfoEquipamentos>
+            <SectionCarouselEquipamentos>
+              <Carousel images={carouselImages} loop />
+            </SectionCarouselEquipamentos>
+          </ContainerEquipamentos>
         </DifferentialsSection>
         <BackgroundInsumos bgImage={background}>
           <ContainerInsumos>
             <TitleInsumos>Seleção de Insumos</TitleInsumos>
             <ContentInsumos>
-              A Yes Cooking acredita que uma alimentação saudável começa na
+              A YesCooking acredita que uma alimentação saudável começa na
               seleção dos fornecedores qualificando a rastreabilidade dos
               insumos. Não importa se será servida em uma universidade, um
               hospital ou uma lanchonete.

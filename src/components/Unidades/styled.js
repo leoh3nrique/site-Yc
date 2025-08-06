@@ -57,6 +57,7 @@ export const DetailsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  
 
   @media (min-width: 1024px) {
     height: 700px; /* Mesma altura do mapa, para um alinhamento perfeito */

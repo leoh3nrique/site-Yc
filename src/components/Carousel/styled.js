@@ -6,11 +6,13 @@ export const CarouselContainer = styled.div`
   height: 100%;
   border-radius: 15px;
   overflow: hidden;
+  object-fit: cover;
 `;
 
 export const CarouselWrapper = styled.div`
   width: 100%;
   height: 100%;
+  object-fit: cover;
 
   > div {
     display: flex;
@@ -25,9 +27,10 @@ export const CarouselSlide = styled.div`
 
   img {
     width: 100%;
-    height: 85%;
-    position: center;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
   }
 `;
 
