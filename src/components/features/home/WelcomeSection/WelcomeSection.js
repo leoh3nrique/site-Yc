@@ -5,7 +5,7 @@ import {
   SectionPlayVideo,
   StyledTitleApresentation,
 } from "./styled";
-import VideoPlayer from "../../VideoPlayer/VideoPlayer";
+import VideoPlayer from "../../../ui/VideoPlayer/VideoPlayer";
 import Button from "../../../ui/Button";
 
 function WelcomeSection() {
