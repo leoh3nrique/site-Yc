@@ -30,7 +30,6 @@ const Contact = () => {
     aceite: false,
   });
   const [isSending, setIsSending] = useState(false);
-  // Novo estado para controlar a notificação
   const [notification, setNotification] = useState({
     show: false,
     message: "",

@@ -3,8 +3,8 @@ import styled from "styled-components";
 // --- NOVO WRAPPER PARA OS ÍCONES ---
 // Este componente envolve os ícones e aplica os estilos de cor e tamanho
 export const IconWrapper = styled.div`
-  color: #1bb7d1; /* Cor principal dos ícones */
-  font-size: 50px; /* Tamanho dos ícones */
+  color: #1c779f; /* Cor principal dos ícones */
+  font-size: 60px; /* Tamanho dos ícones */
 `;
 
 export const ContainerAboutUs = styled.div`
@@ -18,15 +18,15 @@ export const ContainerAboutUs = styled.div`
 
   h1,
   h2 {
-    color: #1bb7d1;
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
-    margin-bottom: 1.5rem;
+    color: #f1b75c;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-family: "Lucida Handwriting", "Brush Script MT", normal;
+    margin-bottom: 1.7rem;
   }
 
   .main-description {
     max-width: 800px;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.7;
     color: #555;
     margin-bottom: 1rem;
@@ -46,7 +46,7 @@ export const CardCultura = styled.div`
   background-color: #fff;
   min-height: 250px;
   border-radius: 15px;
-  border-top: 5px solid #fb4121;
+  border-top: 4px solid #a73129;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   display: flex;
@@ -56,7 +56,7 @@ export const CardCultura = styled.div`
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.07);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   }
 
@@ -91,7 +91,7 @@ export const ValoresList = styled.ul`
   li::before {
     content: "✓";
     margin-right: 10px;
-    color: #fb4121;
+    color: #a73129;
     font-weight: bold;
   }
 `;

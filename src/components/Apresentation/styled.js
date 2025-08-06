@@ -79,7 +79,7 @@ export const StyledAnchor = styled.a`
   text-decoration: none;
   outline: none;
   color: white;
-  background-color: #1bb7d1;
+  background-color: #1c779f;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s, border 0.3s;
   padding: 0.8rem 1.5rem;
@@ -108,7 +108,7 @@ export const SectionPlayVideo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 55px;
+    max-width: 55px;
     height: 55px;
     background-color: transparent;
     border: 1px solid white;

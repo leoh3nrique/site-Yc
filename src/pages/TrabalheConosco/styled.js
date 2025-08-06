@@ -20,7 +20,7 @@ export const FormContainer = styled.div`
 export const FormTitle = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  color: #f1b75c;
   font-family: "Lucida Handwriting", "Brush Script MT", normal;
   font-size: clamp(2rem, 5vw, 2.5rem);
 `;

@@ -39,7 +39,7 @@ export const ContentContainer = styled.div`
 export const MapWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 400px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -57,6 +57,7 @@ export const DetailsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  
 
   @media (min-width: 1024px) {
     height: 700px; /* Mesma altura do mapa, para um alinhamento perfeito */

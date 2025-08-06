@@ -12,14 +12,14 @@ function About() {
     <ContainerAbout>
       <h1>Quem Somos</h1>
       <p className="main-description">
-        Na Yes Cooking, acreditamos que uma boa refeição vai além do sabor: é um
-        ato de cuidado, missão e propósito. Somos especializados na produção e
-        fornecimento de refeições para instituições públicas de ensino superior,
-        com foco em qualidade, responsabilidade e acolhimento.
+        Na <span className="vermelho">Yes</span><span>Cooking</span>, acreditamos que uma boa refeição vai além do
+        sabor: é um ato de cuidado, missão e propósito. Somos especializados na
+        produção e fornecimento de refeições para instituições públicas de
+        ensino superior, com foco em qualidade, responsabilidade e acolhimento.
       </p>
       <p className="main-description">
         Atualmente, servimos com excelência as universidades UFSCar (São Carlos,
-        Sorocaba e Buri) e a USP Ribeirão Preto, oferecendo alimentação
+        Sorocaba, Araras e Buri e a USP Ribeirão Preto), oferecendo alimentação
         nutritiva, saborosa e acessível a estudantes, servidores e toda a
         comunidade universitária.
       </p>

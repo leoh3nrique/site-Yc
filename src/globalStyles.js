@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    /* Define o tamanho da fonte base de forma fluida */
     font-size: 16px; /* Fallback para browsers antigos */
     @media (max-width: 1080px) {
       font-size: 93.75%; /* 15px */
@@ -23,11 +22,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: #f8f9fa; /* Um fundo suave para o corpo */
     -webkit-font-smoothing: antialiased;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 
   body, input, textarea, button {
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
   }
 

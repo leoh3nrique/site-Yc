@@ -14,7 +14,7 @@ function WelcomeSection() {
   return (
     <ContainerApresentation bgImage={background}>
       <Apresentation>
-        <h1> Bem vindo a Yes Cooking</h1>
+        <h1> Bem vindo a YesCooking</h1>
         <StyledTitleApresentation>
           A nossa missão é fazer a missão!
         </StyledTitleApresentation>

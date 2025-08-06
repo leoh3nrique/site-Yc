@@ -5,8 +5,9 @@ export const TabContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 2rem;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #1c779f;
   margin-bottom: 2rem;
+  min-height: 50px;
 `;
 
 export const TabButton = styled.button`
@@ -16,7 +17,7 @@ export const TabButton = styled.button`
   font-size: 1.3rem;
   cursor: pointer;
   position: relative;
-  color: ${({ isActive }) => (isActive ? "#fb4121" : "#666")};
+  color: ${({ isActive }) => (isActive ? "#FAF9F6" : "#FAF9F6")};
   font-weight: ${({ isActive }) => (isActive ? "bold" : "normal")};
   transition: color 0.3s;
 
@@ -28,13 +29,13 @@ export const TabButton = styled.button`
     left: 0;
     right: 0;
     height: 3px;
-    background-color: #fb4121;
+    background-color: #FAF9F6;
     transform: ${({ isActive }) => (isActive ? "scaleX(1)" : "scaleX(0)")};
     transition: transform 0.3s ease-in-out;
   }
 
   &:hover {
-    color: #fb4121;
+    color: #FAF9F6;
   }
 
   @media (max-width: 720px) {

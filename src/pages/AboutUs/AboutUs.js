@@ -54,7 +54,6 @@ function AboutUs() {
           {culturaData.map((item) => (
             <CardCultura key={item.title}>
               <div className="card-title">
-                {/* 4. O ícone agora é envolvido pelo IconWrapper para estilização */}
                 <IconWrapper>{item.icon}</IconWrapper>
                 <h3>{item.title}</h3>
               </div>

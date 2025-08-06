@@ -16,9 +16,9 @@ export function Footer() {
         <FooterColumn>
           <FooterTitle>
             <img
-              src="./images/utils/logoYc.png"
+              src="./images/utils/logoBranca.png"
               alt="Yes Cooking Logo"
-              style={{ width: "150px" }}
+              style={{ width: "170px" }}
             />
           </FooterTitle>
           <p>A nossa missão é fazer a missão!</p>

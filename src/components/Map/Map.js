@@ -1,4 +1,5 @@
 import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const containerStyle = {
   width: "100%",
@@ -26,6 +27,12 @@ const MapComponent = ({ unidades, selectedUnit, onSelectUnit }) => {
     scaledSize: isLoaded ? new window.google.maps.Size(45, 45) : null,
   };
 
+  const { width } = useWindowSize();
+
+  const isMobile = width < 900;
+
+  const zoomLevel = isMobile ? 6.5 : 7.5;
+
   if (loadError) {
     return <div>Erro ao carregar o mapa</div>;
   }
@@ -38,7 +45,7 @@ const MapComponent = ({ unidades, selectedUnit, onSelectUnit }) => {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={6.8}
+      zoom={zoomLevel}
       options={{
         streetViewControl: false,
         mapTypeControl: false,

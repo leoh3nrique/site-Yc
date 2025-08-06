@@ -8,7 +8,7 @@ export const IconBuilding = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#fb4121", 
+  stroke: "#A73129", 
   strokeWidth: "2",
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -78,7 +78,7 @@ export const StatsContainer = styled.div`
   text-align: center;
 
   h1 {
-    color: #1bb7d1;
+    color: #1c779f;
     font-size: clamp(2rem, 5vw, 3rem); /* Fonte fluida */
     font-family: "Lucida Handwriting", "Brush Script MT", normal;
     margin-bottom: 1.5rem;
@@ -99,7 +99,7 @@ export const StatsGrid = styled.div`
 export const StatCard = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
-  border-top: 4px solid #fb4121;
+  border-top: 4px solid #A73129;
   padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -145,3 +145,4 @@ export const StatDescription = styled.p`
   color: #7f8c8d;
   line-height: 1.5;
 `;
+
