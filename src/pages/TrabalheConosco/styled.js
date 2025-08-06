@@ -21,8 +21,9 @@ export const FormTitle = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
   color: #f1b75c;
-  font-family: "Lucida Handwriting", "Brush Script MT", normal;
-  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-family: "Staatliches", sans-serif;
+
+  font-size: 3em;
 `;
 
 export const Form = styled.form`

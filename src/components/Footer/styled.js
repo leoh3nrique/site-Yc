@@ -4,7 +4,6 @@ export const FooterContainer = styled.footer`
   background-color: #1c779f;
   color: #ecf0f1;
   padding: 3rem 5%;
-  margin-top: 4rem;
 `;
 
 export const FooterContent = styled.div`
@@ -29,8 +28,8 @@ export const FooterColumn = styled.div`
 `;
 
 export const FooterTitle = styled.h3`
-  font-size: 18px;
-  color: #fb4121;
+  font-size: 22px;
+  color: white;
   margin-bottom: 10px;
   font-family: "Staatliches", sans-serif;
   letter-spacing: 1px;
@@ -39,7 +38,7 @@ export const FooterTitle = styled.h3`
 export const FooterLink = styled.a`
   color: #ecf0f1;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   transition: color 0.3s ease;
 `;
 
@@ -47,7 +46,7 @@ export const ContactInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 export const Icon = styled.span`

@@ -159,20 +159,6 @@ function Servicos() {
             <ButtonInsumos>Contato</ButtonInsumos>
           </ContainerInsumos>
         </BackgroundInsumos>
-
-        <OtherServicesSection>
-          <HeaderSection>
-            <MainTitle>Outras Soluções</MainTitle>
-          </HeaderSection>
-          <div className="gallery-container">
-            {otherServicesData.map((item, index) => (
-              <OtherServiceCard key={index}>
-                <img src={item.image} alt={item.title} />
-                <h5>{item.title}</h5>
-              </OtherServiceCard>
-            ))}
-          </div>
-        </OtherServicesSection>
       </ServicesPageContainer>
       <Footer />
     </div>
