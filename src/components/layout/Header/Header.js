@@ -26,39 +26,39 @@ export function Header() {
         onClick={() => handleNavigate("")}
       />
 
-      <MobileIcon onClick={toggleMenu} isOpen={isOpen}>
+      <MobileIcon onClick={toggleMenu} $isOpen={isOpen}>
         <div />
         <div />
         <div />
       </MobileIcon>
 
-      <NavLinks isOpen={isOpen}>
+      <NavLinks $isOpen={isOpen}>
         <LinkNav
-          isActive={checkIsActive("/")}
+          $isActive={checkIsActive("/")}
           onClick={() => handleNavigate("")}
         >
           Início
         </LinkNav>
         <LinkNav
-          isActive={checkIsActive("/cultura")}
+          $isActive={checkIsActive("/cultura")}
           onClick={() => handleNavigate("cultura")}
         >
           Cultura
         </LinkNav>
         <LinkNav
-          isActive={checkIsActive("/servicos")}
+          $isActive={checkIsActive("/servicos")}
           onClick={() => handleNavigate("servicos")}
         >
           Serviços
         </LinkNav>
         <LinkNav
-          isActive={checkIsActive("/trabalhe-conosco")}
+          $isActive={checkIsActive("/trabalhe-conosco")}
           onClick={() => handleNavigate("trabalhe-conosco")}
         >
           Trabalhe Conosco
         </LinkNav>
         <LinkNav
-          isActive={checkIsActive("/contato")}
+         $isActive={checkIsActive("/contato")}
           onClick={() => handleNavigate("contato")}
         >
           Contato

@@ -17,8 +17,8 @@ export const TabButton = styled.button`
   font-size: 1.3rem;
   cursor: pointer;
   position: relative;
-  color: ${({ isActive }) => (isActive ? "#FAF9F6" : "#FAF9F6")};
-  font-weight: ${({ isActive }) => (isActive ? "bold" : "normal")};
+  color: ${({ $isActive }) => ($isActive ? "#FAF9F6" : "#FAF9F6")};
+  font-weight: ${({ $isActive }) => ($isActive ? "bold" : "normal")};
   transition: color 0.3s;
 
   /* Borda inferior que indica a aba ativa */

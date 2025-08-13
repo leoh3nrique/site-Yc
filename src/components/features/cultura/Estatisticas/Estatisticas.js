@@ -19,7 +19,7 @@ import {
 
 const statsData = [
   {
-    icon: <IconBuilding />,
+    icon: <MdOutlineFoodBank size={50} color="#A73129" />,
     number: "150",
     title: "Colaboradores",
     description: "Equipe dedicada e apaixonada por servir.",
@@ -37,7 +37,7 @@ const statsData = [
     description: "Índice de aprovação de nossos clientes.",
   },
   {
-    icon: <IconMedal />,
+    icon: <MdOutlineFoodBank size={50} color="#A73129" />,
     number: "170.000",
     title: "Refeições Servidas",
     description: "Mensalmente em todos os nossos contratos.",

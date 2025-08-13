@@ -1,4 +1,10 @@
-import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useJsApiLoader,
+  AdvancedMarkerElement,
+  MarkerF,
+} from "@react-google-maps/api";
+
 import useWindowSize from "../../../../hooks/useWindowSize";
 
 const containerStyle = {

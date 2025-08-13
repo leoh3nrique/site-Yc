@@ -257,8 +257,6 @@ export const SectionInfoEquipamentos = styled.div`
 
 export const SectionCarouselEquipamentos = styled.div`
   width: 600px;
-  height: 450px;
-  object-fit: cover;
   padding: 10px;
 
   @media (max-width: 768px) {

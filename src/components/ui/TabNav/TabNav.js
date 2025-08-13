@@ -8,13 +8,13 @@ const TabNav = ({ activeTab }) => {
   return (
     <TabContainer>
       <TabButton
-        isActive={activeTab === "work"}
+        $isActive={activeTab === "work"}
         onClick={() => navigate("/trabalhe-conosco")}
       >
         Trabalhe Conosco
       </TabButton>
       <TabButton
-        isActive={activeTab === "contact"}
+        $isActive={activeTab === "contact"}
         onClick={() => navigate("/contato")}
       >
         Fale Conosco

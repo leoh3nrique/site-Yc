@@ -45,14 +45,12 @@ export const NavLinks = styled.nav`
     width: 100%;
     height: 100vh;
 
-    /* CORREÇÃO 2: Fundo um pouco mais claro */
-    background-color: rgba(0, 0, 0, 0.75); /* 75% de opacidade */
+    background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(5px);
 
     transition: transform 0.3s ease-in-out;
-    transform: ${({ isOpen }) =>
-      isOpen ? "translateX(0)" : "translateX(100%)"};
-    /* Z-index abaixo do header, logo e ícone */
+    transform: ${({ $isOpen }) =>
+      $isOpen ? "translateX(0)" : "translateX(100%)"};
     z-index: 1011;
   }
 `;
@@ -72,8 +70,8 @@ export const LinkNav = styled.button`
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
-    ${({ isActive }) =>
-      isActive &&
+    ${({ $isActive }) =>
+      $isActive &&
       css`
         background-color: #1bb7d1;
         color: white;
@@ -81,8 +79,8 @@ export const LinkNav = styled.button`
   }
 
   @media (min-width: 769px) {
-    ${({ isActive }) =>
-      isActive &&
+    ${({ $isActive }) =>
+      $isActive &&
       css`
         background-color: #1c779f;
         color: white;
@@ -113,8 +111,8 @@ export const MobileIcon = styled.div`
       transform-origin: 1px;
     }
 
-    ${({ isOpen }) =>
-      isOpen &&
+    ${({ $isOpen }) =>
+      $isOpen &&
       css`
         div:nth-child(1) {
           transform: rotate(45deg);

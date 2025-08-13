@@ -38,21 +38,21 @@ const mainServiceData = [
     description:
       "A YesCooking oferece um serviço completo de alimentação para universidades públicas, com foco em nutrição, sabor e eficiência. Planejamos e executamos cardápios que atendem às necessidades de uma rotina acadêmica agitada, garantindo qualidade e bem-estar em cada prato.",
     reverse: false,
-    image: "./images/servicos/principal.jpg",
+    image: "./images/servicos/principal.webp",
   },
   {
     title: "Refeições Tranportadas",
     description:
       "Na nossa empresa, preparamos as refeições em uma cozinha central de última geração e as entregamos diretamente no seu ponto de consumo, sempre respeitando rigorosos padrões de higiene e controle de temperatura. Utilizamos embalagens térmicas de alta performance e nossa frota de veículos isotérmicos garante que cada prato chegue com a qualidade.",
     reverse: true,
-    image: "./images/servicos/transportadas.jpg",
+    image: "./images/servicos/transportadas.webp",
   },
   {
     title: "Refeições Administradas",
     description:
       "Também disponibilizamos o serviço completo de refeições administradas “on-site”, instalando e gerenciando cozinhas ou refeitórios diretamente na sua empresa ou instituição. Nossa equipe especializada prepara e serve o cardápio no local, adaptando-o facilmente a necessidades específicas—dietas restritivas, eventos especiais ou ajustes de última hora.",
     reverse: false,
-    image: "./images/servicos/administradas.jpg",
+    image: "./images/servicos/administradas.webp",
   },
 ];
 
@@ -94,7 +94,7 @@ function Servicos() {
           {mainServiceData.map((service, index) => (
             <ServiceRow key={index} reverse={service.reverse}>
               <ImageContainer>
-                <img src={service.image} />
+                <img src={service.image} loading="lazy" />
               </ImageContainer>
               <TextContainer>
                 <h3>{service.title}</h3>
@@ -108,14 +108,7 @@ function Servicos() {
           <HeaderSection>
             <MainTitle>Nossos Diferenciais</MainTitle>
           </HeaderSection>
-          {/* <div className="cards-container">
-            {differentialsData.map((item, index) => (
-              <DifferentialCard key={index}>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
-              </DifferentialCard>
-            ))}
-          </div> */}
+         
 
           <ContainerEquipamentos>
             <SectionInfoEquipamentos>

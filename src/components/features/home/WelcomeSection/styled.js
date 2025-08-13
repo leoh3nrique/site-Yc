@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerApresentation = styled.div`
   width: 100%;
   height: 110vh;
-  background-image: url(${(props) => props.bgImage});
+  background-image: url(${(props) => props.$bgImage});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

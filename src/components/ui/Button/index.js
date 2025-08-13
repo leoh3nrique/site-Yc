@@ -13,7 +13,7 @@ import { StyledButton } from "./styled";
  */
 const Button = ({ children, variant = "primary", as, ...props }) => {
   return (
-    <StyledButton variant={variant} as={as} {...props}>
+    <StyledButton $variant={variant} as={as} {...props}>
       {children}
     </StyledButton>
   );

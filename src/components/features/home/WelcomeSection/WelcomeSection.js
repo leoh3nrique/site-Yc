@@ -12,7 +12,7 @@ function WelcomeSection() {
   const background = "./images/utils/apresentation.jpeg";
 
   return (
-    <ContainerApresentation bgImage={background}>
+    <ContainerApresentation $bgImage={background}>
       <Apresentation>
         <h1> Bem vindo a YesCooking</h1>
         <StyledTitleApresentation>
@@ -23,9 +23,7 @@ function WelcomeSection() {
             Conheça
           </Button>
           <SectionPlayVideo>
-            <button>
-              <VideoPlayer videoId="dQw4w9WgXcQ" />
-            </button>
+            <VideoPlayer videoId="dQw4w9WgXcQ" />
             <span>Assistir Vídeo</span>
           </SectionPlayVideo>
         </SectionButtons>

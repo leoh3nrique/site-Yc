@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const StyledButton = styled.button`
   border: 1px solid transparent;
@@ -21,25 +21,28 @@ export const StyledButton = styled.button`
     cursor: not-allowed;
   }
 
-  
-  ${({ variant }) => variant === 'primary' && css`
-    background-color: #1c779f;
-    color: white;
+  ${({ $variant }) =>
+    $variant === "primary" &&
+    css`
+      background-color: #1c779f;
+      color: white;
 
-    /* &:hover:not(:disabled) {
+      /* &:hover:not(:disabled) {
       background-color: transparent;
       border: 1px solid white;
     } */
-  `}
+    `}
 
-  ${({ variant }) => variant === 'dark' && css`
-    background-color: #3c3c3c;
-    color: #fff;
-    border-radius: 30px;
-    padding: 0.9rem 2rem;
+  ${({ $variant }) =>
+    $variant === "dark" &&
+    css`
+      background-color: #3c3c3c;
+      color: #fff;
+      border-radius: 30px;
+      padding: 0.9rem 2rem;
 
-    &:hover:not(:disabled) {
-      background-color: #2a2a2a;
-    }
-  `}
+      &:hover:not(:disabled) {
+        background-color: #2a2a2a;
+      }
+    `}
 `;
