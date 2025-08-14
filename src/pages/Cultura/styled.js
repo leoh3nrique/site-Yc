@@ -7,6 +7,14 @@ export const IconWrapper = styled.div`
   font-size: 60px; /* Tamanho dos ícones */
 `;
 
+export const MainTitle = styled.h2`
+  color: #f1b75c;
+  font-family: "Staatliches", sans-serif;
+  font-size: 3em;
+  margin: 1.7rem;
+  text-align: center;
+`;
+
 export const ContainerAboutUs = styled.div`
   display: flex;
   flex-direction: column;
@@ -40,7 +48,6 @@ export const SectionCultura = styled.div`
   gap: 2.5rem;
   width: 100%;
   max-width: 1200px;
-  margin-top: 1rem;
 `;
 
 export const CardCultura = styled.div`
@@ -95,4 +102,49 @@ export const ValoresList = styled.ul`
     color: #a73129;
     font-weight: bold;
   }
+`;
+
+export const SectionAboutInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3px;
+  padding: 10px;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1400px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+export const ContainerInfoApresentation = styled.div`
+  width: 600px;
+  margin-right: 50px;
+  p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: #666;
+  }
+  @media (max-width: 768px) {
+    width: 95%;
+    height: 300px;
+    margin: 0 auto;
+  }
+`;
+
+export const ContainerVideo = styled.div`
+  height: 450px;
+  overflow: hidden;
+  border-radius: 20px;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 400px;
+  }
+`;
+
+export const BackgroundVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 `;

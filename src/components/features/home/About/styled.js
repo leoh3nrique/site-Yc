@@ -18,19 +18,19 @@ export const ContainerAbout = styled.div`
   }
   .main-description {
     max-width: 800px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: #555;
     margin-bottom: 1rem;
   }
   span {
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #f1b75c;
   }
   .vermelho {
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #fb4121;
   }
 `;

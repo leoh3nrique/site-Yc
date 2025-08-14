@@ -15,7 +15,7 @@ export const ContainerHeader = styled.header`
 `;
 
 export const Logo = styled.img`
-  width: 180px;
+  width: 160px;
   height: auto;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
@@ -56,7 +56,7 @@ export const NavLinks = styled.nav`
 `;
 
 export const LinkNav = styled.button`
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   border: none;
   background: none;

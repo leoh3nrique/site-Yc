@@ -13,7 +13,12 @@ import {
   SectionCultura,
   CardCultura,
   ValoresList,
-  IconWrapper, // 2. Importando o novo wrapper de estilo
+  IconWrapper,
+  SectionAboutInfo,
+  BackgroundVideo,
+  MainTitle,
+  ContainerVideo,
+  ContainerInfoApresentation, // 2. Importando o novo wrapper de estilo
 } from "./styled";
 import Unidades from "../../components/features/UnidadesMap/Unidades/Unidades";
 import PageLayout from "../../components/layout/PageLayout";
@@ -48,8 +53,24 @@ const culturaData = [
 function AboutUs() {
   return (
     <PageLayout>
+      <MainTitle>Nossa Cultura</MainTitle>
+      <SectionAboutInfo>
+        <ContainerInfoApresentation>
+          <p>
+            Somos uma empresa missionária dedicada à alimentação coletiva,
+            unindo qualidade, cuidado e propósito. Servimos com excelência para
+            nutrir corpo e alma, oferecendo refeições que levam acolhimento,
+            comunhão e esperança. Cada prato é preparado com dedicação,
+            refletindo nossos valores e o compromisso de servir com amor.
+          </p>
+        </ContainerInfoApresentation>
+        <ContainerVideo>
+          <BackgroundVideo autoPlay loop muted playsInline>
+            <source src="/videos/videoYc.mp4" type="video/mp4" />
+          </BackgroundVideo>
+        </ContainerVideo>
+      </SectionAboutInfo>
       <ContainerAboutUs>
-        <h2>Nossa Cultura</h2>
         <SectionCultura>
           {culturaData.map((item) => (
             <CardCultura key={item.title}>
@@ -71,7 +92,7 @@ function AboutUs() {
       </ContainerAboutUs>
 
       <Estatisticas />
-      <Timeline />
+      {/* <Timeline /> */}
       <Unidades />
     </PageLayout>
   );

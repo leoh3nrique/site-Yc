@@ -26,7 +26,7 @@ export const Apresentation = styled.div`
 
   h1 {
     font-family: "Staatliches", sans-serif;
-    font-size: 55px;
+    font-size: 50px;
     color: #fb4121;
     text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
       1px 1px 0px black;
@@ -44,7 +44,7 @@ export const Apresentation = styled.div`
 `;
 
 export const StyledTitleApresentation = styled.a`
-  font-size: 55px;
+  font-size: 45px;
   color: white;
   font-family: "Lucida Handwriting", "Brush Script MT", cursive;
   text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
