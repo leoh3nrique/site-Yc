@@ -38,9 +38,9 @@ const statsData = [
   },
   {
     icon: <MdOutlineFoodBank size={50} color="#A73129" />,
-    number: "170.000",
+    number: "2 Mi",
     title: "Refeições Servidas",
-    description: "Mensalmente em todos os nossos contratos.",
+    description: "Anualmente em todos os nossos contratos.",
   },
 ];
 

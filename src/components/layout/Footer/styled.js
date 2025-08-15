@@ -4,7 +4,6 @@ export const FooterContainer = styled.footer`
   background-color: #1c779f;
   color: #ecf0f1;
   padding: 3rem 5%;
-  max-height: 500px;
 `;
 
 export const FooterContent = styled.div`
