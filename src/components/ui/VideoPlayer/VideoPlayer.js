@@ -10,7 +10,7 @@ const VideoPlayer = ({ videoId }) => {
   return (
     <div>
       <button onClick={handlePlayVideo}>
-        <img src="./images/utils/iconPlay.webp" alt="assistir video" />
+        <img src="./images/utils/iconPlay.png" />
       </button>
     </div>
   );

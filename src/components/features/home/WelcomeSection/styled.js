@@ -43,7 +43,7 @@ export const Apresentation = styled.div`
   }
 `;
 
-export const StyledTitleApresentation = styled.p`
+export const StyledTitleApresentation = styled.a`
   font-size: 45px;
   color: white;
   font-family: "Lucida Handwriting", "Brush Script MT", cursive;

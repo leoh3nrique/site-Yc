@@ -42,10 +42,6 @@ export const ServiceRow = styled.div`
 
 export const ImageContainer = styled.div`
   flex: 1.13;
-  aspect-ratio: 4 / 3;
-  background-color: #f0f0f0;
-  border-radius: 8px; /* Opcional: para combinar com o estilo de outros elementos */
-  overflow: hidden;
   img {
     width: 100%;
   }

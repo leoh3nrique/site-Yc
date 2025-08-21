@@ -12,7 +12,7 @@ export const HeaderSection = styled.div`
 
 export const MainTitle = styled.h1`
   font-size: 3em;
-  color: #1c779f;
+  color: #2c3e50;
   font-family: "Staatliches", sans-serif;
 `;
 
@@ -67,12 +67,12 @@ export const DetailsCard = styled.div`
 export const DetailsTitle = styled.h2`
   font-family: "Staatliches", sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.2rem);
-  color: #f1b75c;
+  color: #2c3e50;
 `;
 
 export const Tag = styled.span`
   font-size: 0.8rem;
-  color: #A73129;
+  color: #fb4121;
   font-weight: bold;
   &::before {
     content: "●";

@@ -113,7 +113,6 @@ export const SectionAboutInfo = styled.div`
   flex-direction: row;
   margin: 0 auto;
   max-width: 1400px;
-  isolation: isolate;
   @media (max-width: 768px) {
     flex-direction: column;
   }

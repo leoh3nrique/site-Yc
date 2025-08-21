@@ -24,12 +24,12 @@ const MapComponent = ({ unidades, selectedUnit, onSelectUnit }) => {
   };
 
   const defaultIcon = {
-    url: "./images/utils/redmarker.webp",
+    url: "./images/utils/redmarker.png",
     scaledSize: isLoaded ? new window.google.maps.Size(35, 35) : null,
   };
 
   const highlightedIcon = {
-    url: "./images/utils/bluemarker.webp",
+    url: "./images/utils/bluemarker.png",
     scaledSize: isLoaded ? new window.google.maps.Size(45, 45) : null,
   };
 

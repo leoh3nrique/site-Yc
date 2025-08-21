@@ -21,7 +21,7 @@ export function Header() {
   return (
     <ContainerHeader>
       <Logo
-        src="./images/utils/logoBranca.webp"
+        src="./images/utils/logoBranca.png"
         alt="Yes Cooking Logo"
         onClick={() => handleNavigate("")}
       />
@@ -58,7 +58,7 @@ export function Header() {
           Trabalhe Conosco
         </LinkNav>
         <LinkNav
-          $isActive={checkIsActive("/contato")}
+         $isActive={checkIsActive("/contato")}
           onClick={() => handleNavigate("contato")}
         >
           Contato

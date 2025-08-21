@@ -9,7 +9,7 @@ import VideoPlayer from "../../../ui/VideoPlayer/VideoPlayer";
 import Button from "../../../ui/Button";
 
 function WelcomeSection() {
-  const background = "./images/utils/apresentation.webp";
+  const background = "./images/utils/apresentation.jpeg";
 
   return (
     <ContainerApresentation $bgImage={background}>

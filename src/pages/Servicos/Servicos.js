@@ -7,6 +7,10 @@ import {
   ImageContainer,
   TextContainer,
   DifferentialsSection,
+  DifferentialCard,
+  IconWrapper,
+  OtherServicesSection,
+  OtherServiceCard,
   BackgroundInsumos,
   ContainerInsumos,
   TitleInsumos,
@@ -16,13 +20,16 @@ import {
   SectionInfoEquipamentos,
   SectionCarouselEquipamentos,
 } from "./styled";
+import { Footer } from "../../components/layout/Footer/Footer";
+import { Header } from "../../components/layout/Header/Header";
 import Carousel from "../../components/ui/Carousel/Carousel";
 import PageLayout from "../../components/layout/PageLayout";
 
-const carouselImagesEquipamentos = [
-  "./images/equipamentos/equipamento1.webp",
-  "./images/equipamentos/equipamento2.webp",
-  "./images/equipamentos/equipamento3.webp",
+const carouselImages = [
+  "./images/equipamentos/4.jpg",
+  "./images/equipamentos/1.jpg",
+  "./images/equipamentos/2.jpg",
+  "./images/equipamentos/3.jpg",
 ];
 
 const mainServiceData = [
@@ -49,7 +56,35 @@ const mainServiceData = [
   },
 ];
 
-const background = "./images/fundo-insumos.webp";
+const differentialsData = [
+  {
+    icon: "⚙️",
+    title: "Equipamentos",
+    description:
+      "Contamos com equipamentos de última geração que asseguram eficiência, segurança alimentar e alto padrão de qualidade em cada etapa do processo.",
+  },
+  {
+    icon: "❄️",
+    title: "Ultracongelamento Cook & Chill",
+    description:
+      "Aplicamos a técnica Cook & Chill para preservar sabor, textura e valor nutricional dos alimentos, refeições sempre frescas e deliciosas.",
+  },
+  {
+    icon: "🌱",
+    title: "Cardápios inclusivos",
+    description:
+      "Oferecemos opções vegetarianas e veganas cuidadosamente elaboradas, garantindo refeições equilibradas, saborosas e acessíveis a todos os perfis alimentares.",
+  },
+];
+
+const otherServicesData = [
+  { image: "./images/servicos/marmitas.jpg", title: "Marmitas" },
+  { image: "./images/comidas/coofebreak.jpg", title: "Coffee Breaks" },
+  { image: "./images/comidas/lanche.jpg", title: "Lanches" },
+  { image: "./images/comidas/desjejum.jpg", title: "Desjejum" },
+];
+
+const background = "./images/fundo-insumos.png";
 
 function Servicos() {
   return (
@@ -73,6 +108,7 @@ function Servicos() {
           <HeaderSection>
             <MainTitle>Nossos Diferenciais</MainTitle>
           </HeaderSection>
+         
 
           <ContainerEquipamentos>
             <SectionInfoEquipamentos>
@@ -97,7 +133,7 @@ function Servicos() {
               </p>
             </SectionInfoEquipamentos>
             <SectionCarouselEquipamentos>
-              <Carousel images={carouselImagesEquipamentos} loop />
+              <Carousel images={carouselImages} loop />
             </SectionCarouselEquipamentos>
           </ContainerEquipamentos>
         </DifferentialsSection>
