@@ -60,7 +60,7 @@ const Unidades = () => {
                 loop
               />
 
-              <Description>{selectedUnit.descricao}</Description>
+              {/* <Description>{selectedUnit.descricao}</Description> */}
             </DetailsCard>
           )}
         </ContentContainer>

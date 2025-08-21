@@ -16,7 +16,7 @@ export function Footer() {
         <FooterColumn>
           <FooterTitle>
             <img
-              src="./images/utils/logoBranca.png"
+              src="./images/utils/logoBranca.webp"
               alt="Yes Cooking Logo"
               style={{ width: "170px" }}
             />
