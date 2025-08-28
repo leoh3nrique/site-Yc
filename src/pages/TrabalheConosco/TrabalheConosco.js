@@ -19,13 +19,21 @@ import {
   TwoColumns,
   ContainerDescription,
 } from "./styled";
-import { CheckboxWrapper, ContactPageContainer, StyledCheckbox } from "../Contato/styled";
+import {
+  CheckboxWrapper,
+  ContactPageContainer,
+  StyledCheckbox,
+} from "../Contato/styled";
+import { useNavigate } from "react-router";
+import { goToPage } from "../../App";
 
 const TrabalheConosco = () => {
   const [state, handleSubmit] = useForm(
     `${process.env.REACT_APP_FORMSPREE_ID_WORK}`
   );
   const [curriculoUrl, setCurriculoUrl] = useState("");
+
+  const navigate = useNavigate();
 
   const uploaderRef = useCallback((divElement) => {
     if (divElement !== null) {
@@ -174,7 +182,7 @@ const TrabalheConosco = () => {
               <label htmlFor="aceite">
                 Declaro que li e estou de acordo com o{" "}
                 <a
-                  href="/aviso-de-privacidade"
+                  onClick={() => goToPage(navigate, "aviso-de-privacidade")}
                   target="_blank"
                   rel="noreferrer"
                 >

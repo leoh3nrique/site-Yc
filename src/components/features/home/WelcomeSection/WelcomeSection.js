@@ -7,9 +7,12 @@ import {
 } from "./styled";
 import VideoPlayer from "../../../ui/VideoPlayer/VideoPlayer";
 import Button from "../../../ui/Button";
+import { useNavigate } from "react-router";
+import { goToPage } from "../../../../App";
 
 function WelcomeSection() {
   const background = "./images/utils/apresentation.jpeg";
+  const navigate = useNavigate();
 
   return (
     <ContainerApresentation $bgImage={background}>
@@ -19,7 +22,11 @@ function WelcomeSection() {
           A nossa missão é fazer a missão!
         </StyledTitleApresentation>
         <SectionButtons>
-          <Button as="a" href="/servicos" variant="primary">
+          <Button
+            onClick={() => goToPage(navigate, "servicos")}
+            as="a"
+            variant="primary"
+          >
             Conheça
           </Button>
           <SectionPlayVideo>

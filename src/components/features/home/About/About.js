@@ -17,9 +17,9 @@ function About() {
       </p>
       <p className="main-description">
         Atualmente, servimos com excelência as universidades UFSCar (São Carlos,
-        Sorocaba, Araras e Buri e a USP Ribeirão Preto), oferecendo alimentação
-        nutritiva, saborosa e acessível a estudantes, servidores e toda a
-        comunidade universitária.
+        Sorocaba, Araras e Buri) e a USP (Ribeirão Preto), oferecendo
+        alimentação nutritiva, saborosa e acessível a estudantes, servidores e
+        toda a comunidade universitária.
       </p>
       <p className="main-description">
         Nossa equipe é comprometida e preparada, contando com estrutura moderna
@@ -27,7 +27,11 @@ function About() {
         com excelência e propósito.
       </p>
 
-      <Button as="a" href="/cultura" variant="primary">
+      <Button
+        as="a"
+        onClick={() => goToPage(navigate, "cultura")}
+        variant="primary"
+      >
         Saiba Mais
       </Button>
     </ContainerAbout>
