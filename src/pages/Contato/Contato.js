@@ -17,16 +17,14 @@ import {
   StyledCheckbox,
   FormTitle,
   TwoColumns,
-  Notification,
 } from "./styled";
 import { ContainerDescription } from "../TrabalheConosco/styled";
 
 const Contact = () => {
-  // 2. Configure o hook do Formspree com um NOVO ID para este formulário
-  //    Lembre-se de criar um formulário separado no Formspree para "Contato"
-  const [state, handleSubmit] = useForm("mdklkkqq"); // <-- SUBSTITUA PELO SEU ID
+  const [state, handleSubmit] = useForm(
+    `${process.env.REACT_APP_FORMSPREE_ID_CONTACT}`
+  );
 
-  // 3. Se o formulário foi enviado com sucesso, mostramos uma mensagem de agradecimento.
   if (state.succeeded) {
     return (
       <PageLayout>
@@ -60,7 +58,6 @@ const Contact = () => {
             </p>
           </ContainerDescription>
 
-          {/* 4. O onSubmit agora é o 'handleSubmit' do Formspree */}
           <Form onSubmit={handleSubmit}>
             <TwoColumns>
               <FormGroup>
@@ -147,7 +144,6 @@ const Contact = () => {
               </label>
             </CheckboxWrapper>
 
-            {/* O botão é desabilitado automaticamente durante o envio */}
             <Button type="submit" $variant="dark" disabled={state.submitting}>
               {state.submitting ? "Enviando..." : "Enviar mensagem"}
             </Button>

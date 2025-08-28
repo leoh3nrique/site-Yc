@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react"; 
+import React, { useState, useCallback } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import PageLayout from "../../components/layout/PageLayout";
 import TabNav from "../../components/ui/TabNav/TabNav";
@@ -19,9 +19,12 @@ import {
   TwoColumns,
   ContainerDescription,
 } from "./styled";
+import { CheckboxWrapper, ContactPageContainer, StyledCheckbox } from "../Contato/styled";
 
 const TrabalheConosco = () => {
-  const [state, handleSubmit] = useForm("mpwjwvwa");
+  const [state, handleSubmit] = useForm(
+    `${process.env.REACT_APP_FORMSPREE_ID_WORK}`
+  );
   const [curriculoUrl, setCurriculoUrl] = useState("");
 
   const uploaderRef = useCallback((divElement) => {
@@ -43,14 +46,13 @@ const TrabalheConosco = () => {
         uploader.addEventListener("change", handleUploadChange);
       }
 
-      // Função de limpeza (opcional, mas boa prática)
       return () => {
         if (uploader) {
           uploader.removeEventListener("change", handleUploadChange);
         }
       };
     }
-  }, []); 
+  }, []);
 
   if (state.succeeded) {
     return (
@@ -162,6 +164,24 @@ const TrabalheConosco = () => {
                 rows="6"
               />
             </FormGroup>
+            <CheckboxWrapper>
+              <StyledCheckbox
+                type="checkbox"
+                name="aceite"
+                id="aceite"
+                required
+              />
+              <label htmlFor="aceite">
+                Declaro que li e estou de acordo com o{" "}
+                <a
+                  href="/aviso-de-privacidade"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  aviso de privacidade
+                </a>
+              </label>
+            </CheckboxWrapper>
 
             <Button type="submit" $variant="dark" disabled={state.submitting}>
               {state.submitting ? "Enviando..." : "Enviar candidatura"}
