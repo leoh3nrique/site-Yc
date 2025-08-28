@@ -59,8 +59,6 @@ const Unidades = () => {
                 pagination={{ clickable: true }}
                 loop
               />
-
-              <Description>{selectedUnit.descricao}</Description>
             </DetailsCard>
           )}
         </ContentContainer>
