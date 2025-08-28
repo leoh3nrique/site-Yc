@@ -1,9 +1,7 @@
 import {
   BrowserRouter,
   Route,
-  Router,
   Routes,
-  ScrollRestoration,
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import AboutUs from "./pages/Cultura/Cultura";

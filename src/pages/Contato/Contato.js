@@ -1,9 +1,10 @@
-import emailjs from "@emailjs/browser";
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react"; // 1. Importe do Formspree
 import PageLayout from "../../components/layout/PageLayout";
 import TabNav from "../../components/ui/TabNav/TabNav";
 import Button from "../../components/ui/Button";
-import { useForm } from "../../hooks/useForm";
 
+// Importações dos seus styled-components
 import {
   ContactPageContainer,
   FormContainer,
@@ -21,66 +22,33 @@ import {
 import { ContainerDescription } from "../TrabalheConosco/styled";
 
 const Contact = () => {
-  const {
-    formData,
-    isSending,
-    setIsSending,
-    notification,
-    showNotification,
-    handleChange,
-    resetForm,
-  } = useForm({
-    nome: "",
-    telefone: "",
-    email: "",
-    setor: "",
-    mensagem: "",
-    aceite: false,
-  });
+  // 2. Configure o hook do Formspree com um NOVO ID para este formulário
+  //    Lembre-se de criar um formulário separado no Formspree para "Contato"
+  const [state, handleSubmit] = useForm("mdklkkqq"); // <-- SUBSTITUA PELO SEU ID
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.aceite) {
-      showNotification("Você precisa aceitar o aviso de privacidade.", "error");
-      return;
-    }
-
-    setIsSending(true);
-
-    const templateParams = {
-      from_name: formData.nome,
-      phone: formData.telefone,
-      email: formData.email,
-      sector: formData.setor,
-      message: formData.mensagem,
-    };
-
-    emailjs
-      .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(() => {
-        showNotification("Mensagem enviada com sucesso!");
-        resetForm(); // Limpa o formulário
-      })
-      .catch(() => {
-        showNotification("Ocorreu um erro ao enviar a mensagem.", "error");
-      })
-      .finally(() => {
-        setIsSending(false);
-      });
-  };
+  // 3. Se o formulário foi enviado com sucesso, mostramos uma mensagem de agradecimento.
+  if (state.succeeded) {
+    return (
+      <PageLayout>
+        <TabNav activeTab="contact" />
+        <ContactPageContainer>
+          <FormContainer>
+            <FormTitle>Obrigado!</FormTitle>
+            <ContainerDescription>
+              <p className="main-description">
+                Sua mensagem foi recebida com sucesso. Entraremos em contato em
+                breve!
+              </p>
+            </ContainerDescription>
+          </FormContainer>
+        </ContactPageContainer>
+      </PageLayout>
+    );
+  }
 
   return (
     <PageLayout>
-      <Notification show={notification.show} type={notification.type}>
-        {notification.message}
-      </Notification>
       <TabNav activeTab="contact" />
-
       <ContactPageContainer>
         <FormContainer>
           <FormTitle>Entre em Contato</FormTitle>
@@ -91,25 +59,30 @@ const Contact = () => {
               comprometidos com qualidade, responsabilidade e ética.
             </p>
           </ContainerDescription>
+
+          {/* 4. O onSubmit agora é o 'handleSubmit' do Formspree */}
           <Form onSubmit={handleSubmit}>
             <TwoColumns>
               <FormGroup>
                 <Input
+                  id="nome"
                   type="text"
                   name="nome"
                   placeholder="Nome"
-                  value={formData.nome}
-                  onChange={handleChange}
                   required
+                />
+                <ValidationError
+                  prefix="Nome"
+                  field="nome"
+                  errors={state.errors}
                 />
               </FormGroup>
               <FormGroup>
                 <Input
+                  id="telefone"
                   type="tel"
                   name="telefone"
                   placeholder="Telefone"
-                  value={formData.telefone}
-                  onChange={handleChange}
                   required
                 />
               </FormGroup>
@@ -117,21 +90,20 @@ const Contact = () => {
             <TwoColumns>
               <FormGroup>
                 <Input
+                  id="email"
                   type="email"
                   name="email"
                   placeholder="E-mail"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
                 />
               </FormGroup>
               <FormGroup>
-                <Select
-                  name="setor"
-                  value={formData.setor}
-                  onChange={handleChange}
-                  required
-                >
+                <Select id="setor" name="setor" required>
                   <option value="" disabled>
                     Selecione um setor
                   </option>
@@ -144,21 +116,23 @@ const Contact = () => {
             </TwoColumns>
             <FormGroup>
               <Textarea
+                id="mensagem"
                 name="mensagem"
                 placeholder="Digite a sua mensagem"
                 rows="8"
-                value={formData.mensagem}
-                onChange={handleChange}
                 required
               ></Textarea>
+              <ValidationError
+                prefix="Mensagem"
+                field="mensagem"
+                errors={state.errors}
+              />
             </FormGroup>
             <CheckboxWrapper>
               <StyledCheckbox
                 type="checkbox"
                 name="aceite"
                 id="aceite"
-                checked={formData.aceite}
-                onChange={handleChange}
                 required
               />
               <label htmlFor="aceite">
@@ -172,8 +146,10 @@ const Contact = () => {
                 </a>
               </label>
             </CheckboxWrapper>
-            <Button type="submit" variant="dark" disabled={isSending}>
-              {isSending ? "Enviando..." : "Enviar mensagem"}
+
+            {/* O botão é desabilitado automaticamente durante o envio */}
+            <Button type="submit" $variant="dark" disabled={state.submitting}>
+              {state.submitting ? "Enviando..." : "Enviar mensagem"}
             </Button>
           </Form>
         </FormContainer>

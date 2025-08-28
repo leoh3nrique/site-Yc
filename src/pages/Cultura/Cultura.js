@@ -1,9 +1,5 @@
-import { Footer } from "../../components/layout/Footer/Footer";
-import { Header } from "../../components/layout/Header/Header";
-import Timeline from "../../components/features/cultura/Timeline/Timeline";
 import Estatisticas from "../../components/features/cultura/Estatisticas/Estatisticas";
 
-// 1. Importando os novos ícones do react-icons
 import { FaHeart } from "react-icons/fa";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { LuMountain } from "react-icons/lu";
@@ -18,12 +14,11 @@ import {
   BackgroundVideo,
   MainTitle,
   ContainerVideo,
-  ContainerInfoApresentation, // 2. Importando o novo wrapper de estilo
+  ContainerInfoApresentation,
 } from "./styled";
 import Unidades from "../../components/features/UnidadesMap/Unidades/Unidades";
 import PageLayout from "../../components/layout/PageLayout";
 
-// 3. Dados atualizados para usar os novos ícones
 const culturaData = [
   {
     title: "Missão",
@@ -92,7 +87,6 @@ function AboutUs() {
       </ContainerAboutUs>
 
       <Estatisticas />
-      {/* <Timeline /> */}
       <Unidades />
     </PageLayout>
   );

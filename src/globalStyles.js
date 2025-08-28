@@ -1,8 +1,6 @@
-// src/globalStyles.js
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  /* Reset e Padrões */
   * {
     margin: 0;
     padding: 0;
@@ -10,17 +8,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: 16px; /* Fallback para browsers antigos */
+    font-size: 16px; 
     @media (max-width: 1080px) {
-      font-size: 93.75%; /* 15px */
+      font-size: 93.75%; 
     }
     @media (max-width: 720px) {
-      font-size: 87.5%; /* 14px */
+      font-size: 87.5%; 
     }
   }
 
   body {
-    background: #f8f9fa; /* Um fundo suave para o corpo */
+    background: #f8f9fa; 
     -webkit-font-smoothing: antialiased;
     font-family: 'Open Sans', sans-serif;
   }

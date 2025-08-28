@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react"; 
+import { useForm, ValidationError } from "@formspree/react";
 import PageLayout from "../../components/layout/PageLayout";
 import TabNav from "../../components/ui/TabNav/TabNav";
-import Button from "../../components/ui/Button"; // <-- 1. Importa o novo botão
-import { useForm } from "../../hooks/useForm"; // <-- 2. Importa o hook de formulário
+import Button from "../../components/ui/Button";
+
+import { FileUploaderRegular } from "@uploadcare/react-uploader";
+import "@uploadcare/react-uploader/core.css";
 
 import {
   PageContainer,
@@ -14,89 +17,90 @@ import {
   Textarea,
   FormTitle,
   TwoColumns,
-  Notification,
-  FileInputWrapper,
-  FileInput,
-  FileInputLabel,
   ContainerDescription,
 } from "./styled";
 
 const TrabalheConosco = () => {
-  const [fileName, setFileName] = useState("");
+  const [state, handleSubmit] = useForm("mpwjwvwa");
+  const [curriculoUrl, setCurriculoUrl] = useState("");
 
-  const {
-    formData,
-    isSending,
-    setIsSending,
-    notification,
-    showNotification,
-    handleChange,
-    resetForm,
-  } = useForm({
-    nome: "",
-    telefone: "",
-    email: "",
-    area: "",
-    curriculo: null,
-    mensagem: "",
-  });
+  const uploaderRef = useCallback((divElement) => {
+    if (divElement !== null) {
+      const uploader = divElement.querySelector("lr-file-uploader-regular");
 
-  const handleFileChange = (e) => {
-    handleChange(e); // Chama o handler do hook
-    if (e.target.files[0]) {
-      setFileName(e.target.files[0].name);
-    } else {
-      setFileName("");
+      const handleUploadChange = (e) => {
+        const fileUrl = e.detail?.files[0]?.cdnUrl;
+        if (fileUrl) {
+          setCurriculoUrl(fileUrl);
+          console.log(
+            "SUCESSO: URL do currículo capturada via Callback Ref:",
+            fileUrl
+          );
+        }
+      };
+
+      if (uploader) {
+        uploader.addEventListener("change", handleUploadChange);
+      }
+
+      // Função de limpeza (opcional, mas boa prática)
+      return () => {
+        if (uploader) {
+          uploader.removeEventListener("change", handleUploadChange);
+        }
+      };
     }
-  };
+  }, []); 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSending(true);
-
-    setTimeout(() => {
-      showNotification("Candidatura enviada com sucesso!");
-      setIsSending(false);
-      resetForm();
-      setFileName("");
-    }, 1500);
-  };
-
+  if (state.succeeded) {
+    return (
+      <PageLayout>
+        <TabNav activeTab="contact" />
+        <ContactPageContainer>
+          <FormContainer>
+            <FormTitle>Obrigado!</FormTitle>
+            <ContainerDescription>
+              <p className="main-description">
+                Sua mensagem foi recebida com sucesso. Entraremos em contato em
+                breve!
+              </p>
+            </ContainerDescription>
+          </FormContainer>
+        </ContactPageContainer>
+      </PageLayout>
+    );
+  }
   return (
     <PageLayout>
-      <Notification show={notification.show} type={notification.type}>
-        {notification.message}
-      </Notification>
       <TabNav activeTab="work" />
       <PageContainer>
         <FormContainer>
           <FormTitle>Trabalhe Conosco</FormTitle>
           <ContainerDescription>
             <p className="main-description">
-              Você acredita que é possível transformar vidas através da
-              alimentação? Na YesCooking, buscamos pessoas comprometidas, éticas
-              e empenhadas por servir com excelência.
+              Buscamos pessoas comprometidas, éticas e empenhadas por servir com
+              excelência. Se você se identifica com nossa missão, envie sua
+              candidatura!
             </p>
           </ContainerDescription>
-          <Form onSubmit={handleSubmit}>
+
+          <Form onSubmit={handleSubmit} method="POST">
             <TwoColumns>
               <FormGroup>
                 <Input
+                  id="nome"
                   type="text"
                   name="nome"
                   placeholder="Nome completo"
-                  value={formData.nome}
-                  onChange={handleChange}
                   required
                 />
               </FormGroup>
               <FormGroup>
                 <Input
+                  id="telefone"
                   type="tel"
                   name="telefone"
                   placeholder="Telefone"
-                  value={formData.telefone}
-                  onChange={handleChange}
                   required
                 />
               </FormGroup>
@@ -104,23 +108,22 @@ const TrabalheConosco = () => {
             <TwoColumns>
               <FormGroup>
                 <Input
+                  id="email"
                   type="email"
                   name="email"
                   placeholder="E-mail"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
                 />
               </FormGroup>
               <FormGroup>
-                <Select
-                  name="area"
-                  value={formData.area}
-                  onChange={handleChange}
-                  required
-                >
+                <Select id="area" name="area" required defaultValue="">
                   <option value="" disabled>
-                    Selecione a área de interesse
+                    Selecione a área
                   </option>
                   <option value="nutricao">Nutrição</option>
                   <option value="administrativo">Administrativo</option>
@@ -129,32 +132,39 @@ const TrabalheConosco = () => {
                 </Select>
               </FormGroup>
             </TwoColumns>
+
             <FormGroup>
-              <FileInputWrapper>
-                <FileInput
-                  id="curriculo"
-                  name="curriculo"
-                  type="file"
-                  onChange={handleFileChange}
-                  accept=".pdf,.doc,.docx"
+              <label style={{ marginBottom: "8px", display: "block" }}>
+                Anexar Currículo*
+              </label>
+              <div ref={uploaderRef}>
+                <FileUploaderRegular
+                  pubkey="9b78056c14e13887cc45"
+                  maxFiles={1}
+                  sourceList="local"
+                  validationValidators={["accepts=.pdf,.doc,.docx"]}
                 />
-                <FileInputLabel htmlFor="curriculo">
-                  {fileName || "Anexar currículo (PDF, DOC)"}
-                </FileInputLabel>
-              </FileInputWrapper>
+              </div>
+
+              <input type="hidden" name="curriculo_url" value={curriculoUrl} />
+              <ValidationError
+                prefix="Currículo"
+                field="curriculo_url"
+                errors={state.errors}
+              />
             </FormGroup>
+
             <FormGroup>
               <Textarea
+                id="mensagem"
                 name="mensagem"
-                placeholder="Mensagem de apresentação (opcional)"
+                placeholder="Mensagem (opcional)"
                 rows="6"
-                value={formData.mensagem}
-                onChange={handleChange}
-              ></Textarea>
+              />
             </FormGroup>
-            {/* 5. Usa o novo componente Button */}
-            <Button type="submit" variant="dark" disabled={isSending}>
-              {isSending ? "Enviando..." : "Enviar candidatura"}
+
+            <Button type="submit" $variant="dark" disabled={state.submitting}>
+              {state.submitting ? "Enviando..." : "Enviar candidatura"}
             </Button>
           </Form>
         </FormContainer>
