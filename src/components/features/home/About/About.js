@@ -17,8 +17,8 @@ function About() {
         ensino superior, com foco em qualidade, responsabilidade e acolhimento.
       </p>
       <p className="main-description">
-        Atualmente, servimos com excelência as universidades UFSCar (São Carlos,
-        Sorocaba, Araras e Buri) e a USP (Ribeirão Preto), oferecendo
+        Atualmente, servimos com excelência as universidades <span className="unidades">UFSCar (São Carlos,
+        Sorocaba, Araras e Buri) e a USP (Ribeirão Preto)</span>, oferecendo
         alimentação nutritiva, saborosa e acessível a estudantes, servidores e
         toda a comunidade universitária.
       </p>

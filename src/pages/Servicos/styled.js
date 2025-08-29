@@ -137,7 +137,7 @@ export const OtherServiceCard = styled.div`
 
 export const BackgroundInsumos = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 67vh;
   background-image: url(${(props) => props.bgImage});
   background-size: cover;
   background-position: center;

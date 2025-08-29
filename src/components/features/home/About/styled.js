@@ -33,6 +33,11 @@ export const ContainerAbout = styled.div`
     font-size: 1.4rem;
     color: #fb4121;
   }
+  .unidades {
+    color: #555;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
 `;
 
 export const ButtonAbout = styled(StyledAnchor)`
