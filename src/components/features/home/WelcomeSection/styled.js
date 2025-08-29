@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 export const ContainerApresentation = styled.div`
   width: 100%;
-  height: 110vh;
+  height: 95vh;
   background-image: url(${(props) => props.$bgImage});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: darken;
 
   @media (max-width: 768px) {
     height: auto;
-    min-height: 80vh;
+    height: 55vh;
   }
 `;
 
@@ -21,24 +21,24 @@ export const Apresentation = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 110px;
+  padding: 130px;
   text-align: center;
 
   h1 {
     font-family: "Staatliches", sans-serif;
-    font-size: 50px;
+    font-size: 65px;
     color: #fb4121;
     text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
       1px 1px 0px black;
   }
 
   @media (max-width: 768px) {
-    padding: 60px 20px;
+    padding: 80px 20px;
     h1 {
-      font-size: 40px;
+      font-size: 30px;
     }
     a {
-      font-size: 24px;
+      font-size: 20px;
     }
   }
 `;

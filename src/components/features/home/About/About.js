@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ContainerAbout } from "./styled";
 import Button from "../../../ui/Button";
+import { goToPage } from "../../../../App";
 
 function About() {
   const navigate = useNavigate();

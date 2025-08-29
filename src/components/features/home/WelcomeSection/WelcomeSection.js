@@ -11,7 +11,7 @@ import { useNavigate } from "react-router";
 import { goToPage } from "../../../../App";
 
 function WelcomeSection() {
-  const background = "./images/utils/apresentation.jpeg";
+  const background = "./images/utils/teste.jpg";
   const navigate = useNavigate();
 
   return (
@@ -29,10 +29,10 @@ function WelcomeSection() {
           >
             Conheça
           </Button>
-          <SectionPlayVideo>
+          {/* <SectionPlayVideo>
             <VideoPlayer videoId="dQw4w9WgXcQ" />
             <span>Assistir Vídeo</span>
-          </SectionPlayVideo>
+          </SectionPlayVideo> */}
         </SectionButtons>
       </Apresentation>
     </ContainerApresentation>
