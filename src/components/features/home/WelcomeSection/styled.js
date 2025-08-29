@@ -35,10 +35,10 @@ export const Apresentation = styled.div`
   @media (max-width: 768px) {
     padding: 80px 20px;
     h1 {
-      font-size: 30px;
+      font-size: 35px;
     }
     a {
-      font-size: 20px;
+      font-size: 25px;
     }
   }
 `;
