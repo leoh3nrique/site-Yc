@@ -137,7 +137,7 @@ export const OtherServiceCard = styled.div`
 
 export const BackgroundInsumos = styled.div`
   width: 100%;
-  height: 67vh;
+  height: 60vh;
   background-image: url(${(props) => props.bgImage});
   background-size: cover;
   background-position: center;
@@ -203,7 +203,8 @@ export const ContainerEquipamentos = styled.div`
   gap: 150px;
   padding: 20px;
 
-  @media (max-width: 768px) {
+  
+  @media (max-width: 920px) {
     flex-direction: column;
     gap: 40px;
     padding: 20px;
@@ -237,6 +238,20 @@ export const SectionInfoEquipamentos = styled.div`
     font-size: 27px;
   }
 
+  @media (max-width: 920px) {
+    height: auto;
+    p {
+      font-size: 16px;
+    }
+
+    ul {
+      font-size: 16px;
+    }
+
+    span {
+      font-size: 22px;
+    }
+  }
   @media (max-width: 768px) {
     width: 100%;
     height: auto;
@@ -258,6 +273,10 @@ export const SectionInfoEquipamentos = styled.div`
 export const SectionCarouselEquipamentos = styled.div`
   width: 600px;
   padding: 10px;
+
+  @media (max-width: 920px) {
+    width: 100%;
+  }
 
   @media (max-width: 768px) {
     width: 100%;

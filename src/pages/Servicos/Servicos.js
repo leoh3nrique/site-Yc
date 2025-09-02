@@ -110,7 +110,6 @@ function Servicos() {
               insumos. Não importa se será servida em uma universidade, um
               hospital ou uma lanchonete.
             </ContentInsumos>
-            <ButtonInsumos>Contato</ButtonInsumos>
           </ContainerInsumos>
         </BackgroundInsumos>
       </ServicesPageContainer>
