@@ -23,13 +23,13 @@ const culturaData = [
   {
     title: "Missão",
     description:
-      "Oferecer refeições equilibradas e saborosas que promovam saúde, acolhimento e bem-estar à comunidade acadêmica, servindo com propósito e compromisso diário",
+      "Oferecer refeições equilibradas e saborosas que promovam saúde, acolhimento e bem-estar à comunidade acadêmica, servindo com propósito e compromisso diário.",
     icon: <FaHeart />,
   },
   {
     title: "Visão",
     description:
-      "Sempre continuar com excelência no serviço, e impacto positivo na sociedade e na vida de cada pessoa servida",
+      "Sempre continuar com excelência no serviço, e impacto positivo na sociedade e na vida de cada pessoa servida.",
     icon: <MdOutlineRemoveRedEye />,
   },
   {
@@ -52,7 +52,7 @@ function AboutUs() {
       <SectionAboutInfo>
         <ContainerInfoApresentation>
           <p>
-            Somos uma empresa missionária dedicada à alimentação coletiva,
+            Somos uma <span>empresa missionária</span> dedicada à alimentação coletiva,
             unindo qualidade, cuidado e propósito. Servimos com excelência para
             nutrir corpo e alma, oferecendo refeições que levam acolhimento,
             comunhão e esperança. Cada prato é preparado com dedicação,

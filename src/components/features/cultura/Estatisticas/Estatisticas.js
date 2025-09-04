@@ -17,37 +17,44 @@ import {
   IconMedal,
 } from "./styled";
 import { BsPeople } from "react-icons/bs";
-import { FaBalanceScale, FaBalanceScaleRight, FaTruck } from "react-icons/fa";
+import {
+  FaBalanceScale,
+  FaBalanceScaleRight,
+  FaBuilding,
+  FaTruck,
+  FaUsers,
+  FaUtensils,
+} from "react-icons/fa";
 import { LiaBalanceScaleSolid } from "react-icons/lia";
 import { FiTruck } from "react-icons/fi";
+import { GiGrain } from "react-icons/gi";
 
 const statsData = [
   {
-    icon: <BsPeople size={47} color="#A73129" />,
+    icon: <FaUsers size={47} color="#A73129" />,
     number: "150",
     title: "Colaboradores",
     description: "Equipe dedicada em servir.",
   },
   {
-    icon: <MdOutlineMapsHomeWork size={50} color="#A73129" />,
+    icon: <FaBuilding size={42} color="#A73129" />,
     number: "5",
     title: "Unidades",
-    description: "atendidas anualmente.",
+    description: "Atendidas anualmente.",
   },
   {
-    icon: <LiaBalanceScaleSolid size={58} color="#A73129" />,
+    icon: <GiGrain size={45} color="#A73129" />,
 
     number: "300",
     title: "Toneladas",
-    description: "consumidas por mês.",
+    description: "Insumos consumidos por mês.",
   },
 
   {
-    icon: <MdOutlineFoodBank size={52} color="#A73129" />,
-
+    icon: <FaUtensils size={44} color="#A73129" />,
     number: "2 Mi",
     title: "Refeições Servidas Anualmente",
-    description: "em nossos contratos.",
+    description: "Em nossos contratos.",
   },
 ];
 

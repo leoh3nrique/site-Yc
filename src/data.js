@@ -11,8 +11,8 @@ export const unidades = [
       email: "sac@ufs.car.br",
     },
     images: [
-      "./images/unidades/sc/sc1.webp",
       "./images/unidades/sc/sc2.webp",
+      "./images/unidades/sc/sc1.webp",
       "./images/unidades/sc/sc3.webp",
     ],
   },
@@ -77,7 +77,7 @@ export const unidades = [
     },
     images: [
       "./images/unidades/rp/rp1.webp",
-      "./images/unidades/rp/rp2.webp",
+      "./images/unidades/rp/rp2.jpg",
       "./images/unidades/rp/rp3.webp",
     ],
   },

@@ -14,7 +14,7 @@ export const TabButton = styled.button`
   background: none;
   border: none;
   padding: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   cursor: pointer;
   position: relative;
   color: ${({ $isActive }) => ($isActive ? "#FAF9F6" : "#FAF9F6")};
@@ -39,6 +39,6 @@ export const TabButton = styled.button`
   }
 
   @media (max-width: 720px) {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 `;

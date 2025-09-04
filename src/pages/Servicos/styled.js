@@ -5,7 +5,6 @@ export const ServicesPageContainer = styled.div`
   width: 100%;
 `;
 
-// --- Estilos Comuns ---
 export const HeaderSection = styled.div`
   text-align: center;
   max-width: 900px;
@@ -19,10 +18,9 @@ export const MainTitle = styled.h1`
   font-size: 3em;
 `;
 
-// --- 1. Estilos da Seção Principal ---
 export const MainSection = styled.section`
   width: 100%;
-  padding: 3rem 5%;
+  padding: 1rem 5%;
   background-color: #f8f9fa;
 `;
 
@@ -36,7 +34,13 @@ export const ServiceRow = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 2.1rem;
+    gap: 1.6rem;
+    height: 105vh;
+  }
+  @media (max-width: 400px) {
+    flex-direction: column;
+    gap: 1.6rem;
+    height: 81vh;
   }
 `;
 
@@ -148,7 +152,7 @@ export const BackgroundInsumos = styled.div`
 
   @media (max-width: 768px) {
     height: auto;
-    min-height: 80vh;
+    min-height: 70vh;
     text-align: center;
   }
 `;
@@ -174,6 +178,10 @@ export const ContentInsumos = styled.p`
   line-height: 1.6;
   font-weight: bold;
   color: white;
+  @media (max-width: 768px) {
+    font-size: 1.3em;
+    line-height: 1.5;
+  }
 `;
 
 export const ButtonInsumos = styled(StyledAnchor)`
@@ -203,7 +211,6 @@ export const ContainerEquipamentos = styled.div`
   gap: 150px;
   padding: 20px;
 
-  
   @media (max-width: 920px) {
     flex-direction: column;
     gap: 40px;

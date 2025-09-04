@@ -130,6 +130,9 @@ export const ContainerInfoApresentation = styled.div`
     width: 95%;
     margin: 0 auto;
   }
+  span{
+    font-weight: bold;
+  }
 `;
 
 export const ContainerVideo = styled.div`

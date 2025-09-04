@@ -12,7 +12,7 @@ export const HeaderSection = styled.div`
 
 export const MainTitle = styled.h1`
   font-size: 3em;
-  color: #2c3e50;
+  color: #F1B75C;
   font-family: "Staatliches", sans-serif;
 `;
 
@@ -72,7 +72,7 @@ export const DetailsTitle = styled.h2`
 
 export const Tag = styled.span`
   font-size: 0.8rem;
-  color: #fb4121;
+  color: #A73129;
   font-weight: bold;
   &::before {
     content: "●";
