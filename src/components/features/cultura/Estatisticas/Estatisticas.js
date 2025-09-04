@@ -40,14 +40,14 @@ const statsData = [
     icon: <FaBuilding size={42} color="#A73129" />,
     number: "5",
     title: "Unidades",
-    description: "Atendidas anualmente.",
+    description: "Atendidas num raio de 800km atendidas simultaneamente.",
   },
   {
     icon: <GiGrain size={45} color="#A73129" />,
 
     number: "300",
     title: "Toneladas",
-    description: "Insumos consumidos por mês.",
+    description: "Insumos in-natura consumidos por mês.",
   },
 
   {
