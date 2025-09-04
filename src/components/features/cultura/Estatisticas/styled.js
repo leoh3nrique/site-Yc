@@ -67,6 +67,6 @@ export const StatTitle = styled.h3`
 
 export const StatDescription = styled.p`
   font-size: 14px;
-  color: #7f8c8d;
+  color: #34495e;
   line-height: 1.5;
 `;
